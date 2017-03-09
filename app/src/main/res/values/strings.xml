@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Programming Teacher</string>
+    <string name="title_activity_problem_view">Problem_view</string>
+    <string name="title_activity_database_data_entry_initial">database_data_entry_initial</string>
+    <string name="undo">Undo action</string>
+    <string name="checkanswer">Check Answer</string>
+    <string name="action_settings">Settings</string>
+    <string name="example">Example</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="think_solve_score">Think . Solve . Score</string>
+    <string name="take_me_to_the_quest">Take me to the Quest</string>
+    <string name="programming_teacher">Programming Teacher</string>
+    <string name="_2016_programming_teacher_all_rights_reserved">©2016 Programming Teacher. All rights reserved.</string>
+    <string name="v1_0">v1.0</string>
+    <string name="this_application_helps_you_to_enhance_your_programming_and_algorithemic_knowledge_start_learning_today_and_see_where_programmingteacher_can_take_you">This application helps you to enhance your programming and algorithemic knowledge. Start learning today and see where ProgrammingTeacher can take you.</string>
+    <string name="credits_dr_rasika_dayarathne">Credits : Dr. Rasika Dayarathne</string>
+    <string name="pushpika_wanniachchi">Pushpika Wanniachchi</string>
+    <string name="lasith_niroshan">Lasith Niroshan</string>
+    <string name="manoj_tharanga">Manoj Tharanga</string>
+    <string name="dhanushka_chandana">Dhanushka Chandana</string>
+    <string name="lahiru_rangitha">Lahiru Rangitha</string>
+    <string name="tap_to_start">Tap To Start</string>
+    <string name="get_started">Get Started</string>
+    <string name="you_going_to_learn_programming_with_programming_teacher">You going to learn programming with Programming teacher.</string>
+    <string name="help_text"> \n\t*. You have to write pseudo code for solution. \n\n \t*. We are not aim any specific programming language. But we suppose you get clear idea about pseudo codes. In gaming area this you may use following functions and variables.\n\n\n  \t1. myScore - your current possition in the game board.\n\n  \t2. isPrime(n) - check wether given parameter is prime or not.\n\n  \t3. s.upper() - Converts given string(s) to upper case\n\n  \t4. input() - get ab input from user\n\n  \t5. modulo - the modulo operation finds the remainder after division of one number by another\n\tUsege : a modulo b\n\n  \t6. function - to declare a function \n\n  \t7. devide(a,b) - returns answer after a devide by b \n\n  \t8. setMyScore(n) - set your score/position to n</string>
+    <string name="click_take_me_to_the_quiz_to_begin_the_game">Click “Take me to the quiz” to begin the game.</string>
+    <string name="you_will_see_your_first_question_here">You will see your first question here.</string>
+    <string name="txt_three">Optional keywords are on your left and compulsory keywords are on your left.</string>
+    <string name="txt_six">Next question will appear once you correctly finished first question.</string>
+    <string name="txt_four">Arrange the answer to the question by clicking on keywords.</string>
+    <string name="txt_end">Think . Solve . Score</string>
+    <string name="txt_five">Click “Undo action ” to reset your selections. Click “Check answer” once you finished. You can use the “Game board icon to view your position”.
+</string>
+</resources>
