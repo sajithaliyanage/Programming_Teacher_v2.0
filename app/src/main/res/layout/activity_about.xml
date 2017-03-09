@@ -310,7 +310,7 @@
                                                         android:id="@+id/textView12"
                                                         android:textSize="16sp"
                                                         android:paddingTop="10dp"
-                                                        android:gravity="right"
+                                                        android:gravity="center"
                                                         android:paddingRight="5dp" />
 
                                                     <TextView
@@ -321,19 +321,9 @@
                                                         android:id="@+id/textView13"
                                                         android:textSize="16sp"
                                                         android:paddingTop="10dp"
-                                                        android:gravity="right"
+                                                        android:gravity="center"
                                                         android:paddingRight="5dp" />
 
-                                                    <TextView
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:textAppearance="?android:attr/textAppearanceMedium"
-                                                        android:text="@string/manoj_tharanga"
-                                                        android:id="@+id/textView14"
-                                                        android:textSize="16sp"
-                                                        android:paddingTop="10dp"
-                                                        android:paddingRight="5dp"
-                                                        android:gravity="right" />
                                                 </LinearLayout>
                                             </LinearLayout>
 
@@ -356,7 +346,7 @@
                                                         android:id="@+id/textView15"
                                                         android:textSize="16sp"
                                                         android:paddingTop="10dp"
-                                                        android:gravity="left"
+                                                        android:gravity="center"
                                                         android:paddingLeft="5dp" />
 
                                                     <TextView
@@ -367,6 +357,7 @@
                                                         android:id="@+id/textView16"
                                                         android:textSize="16sp"
                                                         android:paddingTop="10dp"
+                                                        android:gravity="center"
                                                         android:paddingLeft="5dp" />
                                                 </LinearLayout>
 
