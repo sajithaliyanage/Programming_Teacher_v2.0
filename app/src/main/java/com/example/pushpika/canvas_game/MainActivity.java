@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,7 +64,23 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             editor.putBoolean("firstRun", false);
             editor.commit();
 
-        beginUserInitiatedSignIn();
+        boolean connected = false;
+
+        //check the internet connection
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            connected = true;
+        } else
+            connected = false;
+
+        if(connected){
+            beginUserInitiatedSignIn();
+        }else{
+            Toast.makeText(MainActivity.this, "Check your internet connection!", Toast.LENGTH_LONG).show();
+        }
+
         findViewById(R.id.sign_out_button).setOnClickListener(this);
     }
 
@@ -96,8 +114,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         System.exit(0);
 
     }
-
-
 
     public void Go_Ques(View view){
         Intent transition_page = new Intent(this,NewQuestionView.class);
