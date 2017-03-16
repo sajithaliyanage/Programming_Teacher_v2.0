@@ -64,22 +64,16 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             editor.putBoolean("firstRun", false);
             editor.commit();
 
-        boolean connected = false;
-
         //check the internet connection
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             //we are connected to a network
-            connected = true;
-        } else
-            connected = false;
-
-        if(connected){
             beginUserInitiatedSignIn();
-        }else{
+        } else{
             Toast.makeText(MainActivity.this, "Check your internet connection!", Toast.LENGTH_LONG).show();
         }
+
 
         findViewById(R.id.sign_out_button).setOnClickListener(this);
     }
