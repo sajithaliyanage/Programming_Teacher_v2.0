@@ -76,6 +76,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 
 
         findViewById(R.id.sign_out_button).setOnClickListener(this);
+        findViewById(R.id.show_leaderboard).setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +89,11 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             signOut();
 //            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.sign_out_button).setVisibility(View.GONE);
+
+        }
+        if(view.getId() == R.id.show_leaderboard){
+            Log.v("Click","Leaderboard");
+            startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(), getString(R.string.number_guesses_leaderboard)), 2);
         }
     }
 //
