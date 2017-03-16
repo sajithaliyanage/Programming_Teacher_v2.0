@@ -15,8 +15,10 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+import com.google.android.gms.games.Games;
+import com.google.example.games.basegameutils.BaseGameActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseGameActivity implements View.OnClickListener {
 
     public static int position_width=0,position_height=0,cur_position=1,is_increment=-1,current_pos=1,target_pos=1;
     public static String target_class="P"; // A for
@@ -24,7 +26,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -59,6 +61,33 @@ public class MainActivity extends Activity {
             SharedPreferences.Editor editor = settings1.edit();
             editor.putBoolean("firstRun", false);
             editor.commit();
+
+        beginUserInitiatedSignIn();
+        findViewById(R.id.sign_out_button).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+//        if (view.getId() == R.id.sign_in_button) {
+//            beginUserInitiatedSignIn();
+//        }
+        // else
+        if (view.getId() == R.id.sign_out_button) {
+            signOut();
+//            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.sign_out_button).setVisibility(View.GONE);
+        }
+    }
+//
+    public void onSignInSucceeded() {
+//        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+        findViewById(R.id.sign_out_button).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onSignInFailed() {
+//        findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+        findViewById(R.id.sign_out_button).setVisibility(View.GONE);
     }
 
     @Override

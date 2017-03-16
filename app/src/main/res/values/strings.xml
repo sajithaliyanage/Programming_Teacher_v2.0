@@ -1,4 +1,7 @@
 <resources>
+    <string name="app_id">238213220121</string>
+    <string name="number_guesses_leaderboard">CgkImY71tPcGEAIQAQ</string>
+
     <string name="app_name">Programming Teacher</string>
     <string name="title_activity_problem_view">Problem_view</string>
     <string name="title_activity_database_data_entry_initial">database_data_entry_initial</string>

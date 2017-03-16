@@ -242,7 +242,29 @@
                             android:padding="10dp"
                             android:onClick="Go_Ques"
                             android:allowUndo="true" />
+                        <!-- sign-in button -->
+
+                        <!--<com.google.android.gms.common.SignInButton-->
+                            <!--android:id="@+id/sign_in_button"-->
+                            <!--android:layout_gravity="top|center"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content" />-->
+
+                        <!-- sign-out button -->
+
+                        <Button
+                            android:id="@+id/sign_out_button"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10px"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Out"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:layout_gravity="top|center"
+                            android:visibility="gone" />
                     </LinearLayout>
+
+
                 </LinearLayout>
 
                 <LinearLayout
