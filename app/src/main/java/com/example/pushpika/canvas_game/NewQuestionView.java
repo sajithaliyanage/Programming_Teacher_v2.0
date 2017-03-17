@@ -21,7 +21,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class NewQuestionView extends Activity {
+import com.google.android.gms.games.Games;
+import com.google.example.games.basegameutils.BaseGameActivity;
+
+public class NewQuestionView extends BaseGameActivity {
 
     DatabaseHelper mydb;
     LinearLayout compulsary_words_field,optional_words_field;
@@ -36,7 +39,7 @@ public class NewQuestionView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -69,6 +72,16 @@ public class NewQuestionView extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+    
+    @Override
+    public void onSignInSucceeded() {
+
+    }
+
+    @Override
+    public void onSignInFailed() {
+
     }
 
     public void dynamic_content(){
@@ -251,7 +264,10 @@ public class NewQuestionView extends Activity {
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action
         Log.i("TAG", "The current sequence is" + cur_seq ); //set text for button action
         if(answer_get.equals(cur_seq)){ //return true
-
+            //increment leaderboad score
+            if(getApiClient().isConnected()){
+                Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),100);
+            }
             //correct notification + increment board
             correctAnswer(view);
 

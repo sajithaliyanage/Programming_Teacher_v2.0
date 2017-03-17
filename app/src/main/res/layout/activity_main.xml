@@ -228,8 +228,7 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2">
+                        android:layout_height="96dp">
 
                         <Button
                             android:layout_width="wrap_content"
@@ -242,7 +241,59 @@
                             android:padding="10dp"
                             android:onClick="Go_Ques"
                             android:allowUndo="true" />
+                        <!-- sign-in button -->
+
+                        <!--<com.google.android.gms.common.SignInButton-->
+                            <!--android:id="@+id/sign_in_button"-->
+                            <!--android:layout_gravity="top|center"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content" />-->
+
+                        <!-- sign-out button -->
+
+                        <Button
+                            android:id="@+id/sign_out_button"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10px"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Out"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:layout_gravity="top|center"
+                            android:visibility="gone" />
                     </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/play_buttons"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <!-- show achievements -->
+
+                        <Button
+                            android:id="@+id/show_achievements"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20px"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:text="Achievements" />
+
+                        <!-- show leaderboards -->
+
+                        <Button
+                            android:id="@+id/show_leaderboard"
+                            android:layout_marginLeft="25px"
+                            android:textSize="20px"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:text="Leaderboard" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
                 <LinearLayout
