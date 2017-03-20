@@ -323,6 +323,20 @@ public class database_data_entry_initial extends Activity {
     public void insertData_Question() {
         //(String question_topic,String question_desc,
         // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
+        /*
+            param 1 = title
+            param 2 = description
+            param 3 = Question class
+            param 4 = Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
+            param 5 = start node (current place)
+            param 6 = current node
+            param 7 = on success current node, next node (promotion)
+            param 8 = on fail current node, next node (punishment)
+            param 9 = promotion class
+            param 10 = punishment class
+
+
+         */
 //        Q1
         mydb.insert_Question(
                 "1-Increase value",
@@ -344,8 +358,8 @@ public class database_data_entry_initial extends Activity {
 //        Q4
         mydb.insert_Question(
                 "4-Pass by reference",
-                "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
-                "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
+                "Current value of myScore is 6.\n Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n Set your score to n using setMyScore(n).",
+                "U","201,198,197,199,204,200,207,200,206,201,202,202,199|204,200,207,200,206,197,202,202,199","6","7","5","Q","T"
         );
 //        Q5
         mydb.insert_Question(
@@ -769,8 +783,8 @@ public class database_data_entry_initial extends Activity {
 
 
 
-
         //201,198,197,199,204,200,207,200,206,201,202,202,199
+        //204,200,207,200,206,197,202,202,199
 
         //question 22 class - V
 

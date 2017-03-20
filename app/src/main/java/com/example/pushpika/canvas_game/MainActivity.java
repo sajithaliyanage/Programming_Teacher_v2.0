@@ -54,6 +54,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             editor.putInt("Current_pos",1);
             editor.commit();
 
+            //initialize database in the 1st run
             Intent intent = new Intent(this,database_data_entry_initial.class);
             startActivity(intent);
             finish();
