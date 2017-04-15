@@ -38,22 +38,23 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         boolean firstRun = settings.getBoolean("firstRun", true);
 
         //set current class
-        target_class = settings.getString("Current_class","P");
+        target_class = settings.getString("Current_class","Z1");
         current_pos = settings.getInt("Current_pos",1);
         target_pos = settings.getInt("Current_pos",1);
         cur_position=current_pos;
 
-        Log.v("Data check","successfully");
-        Log.v("happened current share",String.valueOf(settings.getString("Current_class","DefaultClass")));
-        Log.v("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
+        Log.i("Data check","successfully");
+        Log.i("happened current share",String.valueOf(settings.getString("Current_class","DefaultClass")));
+        Log.i("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
         if (firstRun) {
             // here run your first-time instructions, for example :
             SharedPreferences settings1 = getSharedPreferences("prefs", 0);
             SharedPreferences.Editor editor = settings1.edit();
-            editor.putString("Current_class","P");
+            editor.putString("Current_class","Z1");
             editor.putInt("Current_pos",1);
             editor.commit();
 
+            //initialize database in the 1st run
             Intent intent = new Intent(this,database_data_entry_initial.class);
             startActivity(intent);
             finish();

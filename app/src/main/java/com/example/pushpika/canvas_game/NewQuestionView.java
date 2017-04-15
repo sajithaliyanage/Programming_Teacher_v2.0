@@ -24,6 +24,9 @@ import android.widget.TextView;
 import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class NewQuestionView extends BaseGameActivity {
 
     DatabaseHelper mydb;
@@ -35,6 +38,8 @@ public class NewQuestionView extends BaseGameActivity {
     String id_arr [] = new String[100];
     int cur_len=0;
 
+    //multiple answers
+    String answers[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +108,11 @@ public class NewQuestionView extends BaseGameActivity {
         promotion_class =question_object.promotion_class;
         punishment_class = question_object.punishment_class;
 
+        //split answer and set multiple answers
+        answers = answer_get.split("\\|");
+        for(int i=0;i<answers.length;i++){
+            answers[i] = answers[i].replaceAll(",", "");
+        }
 
         Log.i("TAG", "promotion class "+ promotion_class);
         Log.i("TAG", "punishment class "+ punishment_class);
@@ -254,7 +264,7 @@ public class NewQuestionView extends BaseGameActivity {
 
 
     public void check_answer(View view){
-        answer_get = answer_get.replaceAll(",", "");
+        //answer_get = answer_get.replaceAll(",", "");
         cur_seq="";
         int i;
         for(i=0;i<cur_len;i++){
@@ -263,7 +273,11 @@ public class NewQuestionView extends BaseGameActivity {
         cur_seq = cur_seq.replaceAll(",", "");
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action
         Log.i("TAG", "The current sequence is" + cur_seq ); //set text for button action
-        if(answer_get.equals(cur_seq)){ //return true
+
+        //multiple answer check
+        List<String> answerlist = Arrays.asList(answers);
+
+        if(answerlist.contains(cur_seq)){ //return true
             //increment leaderboad score
             if(getApiClient().isConnected()){
                 Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),100);

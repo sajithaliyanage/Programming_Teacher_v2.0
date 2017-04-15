@@ -56,258 +56,385 @@ public class database_data_entry_initial extends Activity {
     }
 
     public void insertData_tag_ques_assist() {
+
+        int z1 = 1;int z2 = 2;int z3 = 3;int z4 = 4;int z5 = 5;
+        int z6 = 6;int z7 = 7;int z8 = 8; int z9 = 9; int z10 = 10;
+        int z11 = 11; int z12 =12;
+
+        int p = 13;int a = 14;int t = 15;int u=16; int q = 17;int r=18;int b=19;
+        int c=20;int d=21;int e=22;int f=23;int g=24;int h=25;int i=26;int j=27;
+        int k=28;int l=29;int m=30;int n=31;int o=33;int s=32;
+
+        //Z
+        //question 22 class - Z1
+        mydb.insert_tag_que_assist(z1,208);
+        mydb.insert_tag_que_assist(z1,209);
+        mydb.insert_tag_que_assist(z1,210);
+        mydb.insert_tag_que_assist(z1,211);
+
+        //question 23 class - Z2
+        mydb.insert_tag_que_assist(z2,212);
+        mydb.insert_tag_que_assist(z2,213);
+        mydb.insert_tag_que_assist(z2,214);
+
+        //question 24 class - Z3
+        mydb.insert_tag_que_assist(z3,215);
+        mydb.insert_tag_que_assist(z3,216);
+        mydb.insert_tag_que_assist(z3,217);
+
+        //question 25 class - Z4
+        mydb.insert_tag_que_assist(z4,218);
+        mydb.insert_tag_que_assist(z4,219);
+        mydb.insert_tag_que_assist(z4,220);
+        mydb.insert_tag_que_assist(z4,221);
+        mydb.insert_tag_que_assist(z4,222);
+
+        //question 26 class - Z5
+        mydb.insert_tag_que_assist(z5,223);
+        mydb.insert_tag_que_assist(z5,224);
+        mydb.insert_tag_que_assist(z5,225);
+        mydb.insert_tag_que_assist(z5,226);
+        mydb.insert_tag_que_assist(z5,227);
+        mydb.insert_tag_que_assist(z5,228);
+        mydb.insert_tag_que_assist(z5,229);
+
+        //question 27 class - Z6
+        mydb.insert_tag_que_assist(z6,230);
+        mydb.insert_tag_que_assist(z6,231);
+        mydb.insert_tag_que_assist(z6,232);
+        mydb.insert_tag_que_assist(z6,233);
+        mydb.insert_tag_que_assist(z6,234);
+        mydb.insert_tag_que_assist(z6,235);
+        mydb.insert_tag_que_assist(z6,236);
+        mydb.insert_tag_que_assist(z6,237);
+
+        //question 28 class - Z7
+        mydb.insert_tag_que_assist(z7,238);
+        mydb.insert_tag_que_assist(z7,239);
+        mydb.insert_tag_que_assist(z7,240);
+        mydb.insert_tag_que_assist(z7,241);
+        mydb.insert_tag_que_assist(z7,242);
+        mydb.insert_tag_que_assist(z7,243);
+        mydb.insert_tag_que_assist(z7,244);
+        mydb.insert_tag_que_assist(z7,245);
+        mydb.insert_tag_que_assist(z7,246);
+        mydb.insert_tag_que_assist(z7,247);
+        mydb.insert_tag_que_assist(z7,248);
+        mydb.insert_tag_que_assist(z7,249);
+        mydb.insert_tag_que_assist(z7,250);
+        mydb.insert_tag_que_assist(z7,251);
+        mydb.insert_tag_que_assist(z7,252);
+        mydb.insert_tag_que_assist(z7,253);
+        mydb.insert_tag_que_assist(z7,254);
+
+        //question 29 class - Z8
+        mydb.insert_tag_que_assist(z8,255);
+        mydb.insert_tag_que_assist(z8,256);
+        mydb.insert_tag_que_assist(z8,257);
+        mydb.insert_tag_que_assist(z8,258);
+        mydb.insert_tag_que_assist(z8,259);
+        mydb.insert_tag_que_assist(z8,260);
+        mydb.insert_tag_que_assist(z8,261);
+        mydb.insert_tag_que_assist(z8,262);
+        mydb.insert_tag_que_assist(z8,263);
+
+        //question 30 class - Z9
+        mydb.insert_tag_que_assist(z9,264);
+        mydb.insert_tag_que_assist(z9,265);
+        mydb.insert_tag_que_assist(z9,266);
+        mydb.insert_tag_que_assist(z9,267);
+        mydb.insert_tag_que_assist(z9,268);
+        mydb.insert_tag_que_assist(z9,269);
+        mydb.insert_tag_que_assist(z9,270);
+        mydb.insert_tag_que_assist(z9,271);
+        mydb.insert_tag_que_assist(z9,272);
+        mydb.insert_tag_que_assist(z9,273);
+        mydb.insert_tag_que_assist(z9,274);
+
+        //question 31 class - Z10
+        mydb.insert_tag_que_assist(z10,275);
+        mydb.insert_tag_que_assist(z10,276);
+        mydb.insert_tag_que_assist(z10,277);
+        mydb.insert_tag_que_assist(z10,278);
+        mydb.insert_tag_que_assist(z10,279);
+        mydb.insert_tag_que_assist(z10,280);
+        mydb.insert_tag_que_assist(z10,281);
+        mydb.insert_tag_que_assist(z10,282);
+        mydb.insert_tag_que_assist(z10,283);
+
+        //question 32 class - Z11
+        mydb.insert_tag_que_assist(z11,284);
+        mydb.insert_tag_que_assist(z11,285);
+        mydb.insert_tag_que_assist(z11,286);
+        mydb.insert_tag_que_assist(z11,287);
+        mydb.insert_tag_que_assist(z11,288);
+        mydb.insert_tag_que_assist(z11,289);
+        mydb.insert_tag_que_assist(z11,290);
+        mydb.insert_tag_que_assist(z11,291);
+        mydb.insert_tag_que_assist(z11,292);
+
+        //question 33 class - Z12
+        mydb.insert_tag_que_assist(z12,293);
+        mydb.insert_tag_que_assist(z12,294);
+        mydb.insert_tag_que_assist(z12,295);
+        mydb.insert_tag_que_assist(z12,296);
+        mydb.insert_tag_que_assist(z12,297);
+        mydb.insert_tag_que_assist(z12,298);
+        mydb.insert_tag_que_assist(z12,299);
+        mydb.insert_tag_que_assist(z12,300);
+
         //P
-        mydb.insert_tag_que_assist(1,142);
-        mydb.insert_tag_que_assist(1,143);
-        mydb.insert_tag_que_assist(1,144);
-        mydb.insert_tag_que_assist(1,145);
-        mydb.insert_tag_que_assist(1,146);
-        mydb.insert_tag_que_assist(1,147);
+        mydb.insert_tag_que_assist(p,142);
+        mydb.insert_tag_que_assist(p,143);
+        mydb.insert_tag_que_assist(p,144);
+        mydb.insert_tag_que_assist(p,145);
+        mydb.insert_tag_que_assist(p,146);
+        mydb.insert_tag_que_assist(p,147);
 
         //A
-        mydb.insert_tag_que_assist(2,1);
-        mydb.insert_tag_que_assist(2,2);
-        mydb.insert_tag_que_assist(2,3);
-        mydb.insert_tag_que_assist(2,4);
-        mydb.insert_tag_que_assist(2,5);
+        mydb.insert_tag_que_assist(a,1);
+        mydb.insert_tag_que_assist(a,2);
+        mydb.insert_tag_que_assist(a,3);
+        mydb.insert_tag_que_assist(a,4);
+        mydb.insert_tag_que_assist(a,5);
 
         //T
-        mydb.insert_tag_que_assist(3,187);
-        mydb.insert_tag_que_assist(3,188);
-        mydb.insert_tag_que_assist(3,189);
-        mydb.insert_tag_que_assist(3,190);
-        mydb.insert_tag_que_assist(3,191);
-        mydb.insert_tag_que_assist(3,192);
-        mydb.insert_tag_que_assist(3,193);
-        mydb.insert_tag_que_assist(3,194);
-        mydb.insert_tag_que_assist(3,195);
-        mydb.insert_tag_que_assist(3,196);
+        mydb.insert_tag_que_assist(t,187);
+        mydb.insert_tag_que_assist(t,188);
+        mydb.insert_tag_que_assist(t,189);
+        mydb.insert_tag_que_assist(t,190);
+        mydb.insert_tag_que_assist(t,191);
+        mydb.insert_tag_que_assist(t,192);
+        mydb.insert_tag_que_assist(t,193);
+        mydb.insert_tag_que_assist(t,194);
+        mydb.insert_tag_que_assist(t,195);
+        mydb.insert_tag_que_assist(t,196);
 
         //U
-        mydb.insert_tag_que_assist(4,197);
-        mydb.insert_tag_que_assist(4,198);
-        mydb.insert_tag_que_assist(4,199);
-        mydb.insert_tag_que_assist(4,200);
-        mydb.insert_tag_que_assist(4,201);
-        mydb.insert_tag_que_assist(4,202);
-        mydb.insert_tag_que_assist(4,203);
-        mydb.insert_tag_que_assist(4,204);
-        mydb.insert_tag_que_assist(4,205);
-        mydb.insert_tag_que_assist(4,206);
-        mydb.insert_tag_que_assist(4,207);
+        mydb.insert_tag_que_assist(u,197);
+        mydb.insert_tag_que_assist(u,198);
+        mydb.insert_tag_que_assist(u,199);
+        mydb.insert_tag_que_assist(u,200);
+        mydb.insert_tag_que_assist(u,201);
+        mydb.insert_tag_que_assist(u,202);
+        mydb.insert_tag_que_assist(u,203);
+        mydb.insert_tag_que_assist(u,204);
+        mydb.insert_tag_que_assist(u,205);
+        mydb.insert_tag_que_assist(u,206);
+        mydb.insert_tag_que_assist(u,207);
 
         //Q
-        mydb.insert_tag_que_assist(5,148);
-        mydb.insert_tag_que_assist(5,149);
-        mydb.insert_tag_que_assist(5,150);
-        mydb.insert_tag_que_assist(5,151);
-        mydb.insert_tag_que_assist(5,152);
-        mydb.insert_tag_que_assist(5,153);
-        mydb.insert_tag_que_assist(5,154);
-        mydb.insert_tag_que_assist(5,155);
-        mydb.insert_tag_que_assist(5,156);
-        mydb.insert_tag_que_assist(5,157);
-        mydb.insert_tag_que_assist(5,158);
-        mydb.insert_tag_que_assist(5,159);
-        mydb.insert_tag_que_assist(5,160);
+        mydb.insert_tag_que_assist(q,148);
+        mydb.insert_tag_que_assist(q,149);
+        mydb.insert_tag_que_assist(q,150);
+        mydb.insert_tag_que_assist(q,151);
+        mydb.insert_tag_que_assist(q,152);
+        mydb.insert_tag_que_assist(q,153);
+        mydb.insert_tag_que_assist(q,154);
+        mydb.insert_tag_que_assist(q,155);
+        mydb.insert_tag_que_assist(q,156);
+        mydb.insert_tag_que_assist(q,157);
+        mydb.insert_tag_que_assist(q,158);
+        mydb.insert_tag_que_assist(q,159);
+        mydb.insert_tag_que_assist(q,160);
 
         //R
-        mydb.insert_tag_que_assist(6,161);
-        mydb.insert_tag_que_assist(6,162);
-        mydb.insert_tag_que_assist(6,163);
-        mydb.insert_tag_que_assist(6,164);
-        mydb.insert_tag_que_assist(6,165);
-        mydb.insert_tag_que_assist(6,166);
-        mydb.insert_tag_que_assist(6,167);
-        mydb.insert_tag_que_assist(6,168);
-        mydb.insert_tag_que_assist(6,169);
-        mydb.insert_tag_que_assist(6,170);
-        mydb.insert_tag_que_assist(6,171);
-        mydb.insert_tag_que_assist(6,172);
-        mydb.insert_tag_que_assist(6,173);
-        mydb.insert_tag_que_assist(6,174);
-        mydb.insert_tag_que_assist(6,175);
-        mydb.insert_tag_que_assist(6,176);
+        mydb.insert_tag_que_assist(r,161);
+        mydb.insert_tag_que_assist(r,162);
+        mydb.insert_tag_que_assist(r,163);
+        mydb.insert_tag_que_assist(r,164);
+        mydb.insert_tag_que_assist(r,165);
+        mydb.insert_tag_que_assist(r,166);
+        mydb.insert_tag_que_assist(r,167);
+        mydb.insert_tag_que_assist(r,168);
+        mydb.insert_tag_que_assist(r,169);
+        mydb.insert_tag_que_assist(r,170);
+        mydb.insert_tag_que_assist(r,171);
+        mydb.insert_tag_que_assist(r,172);
+        mydb.insert_tag_que_assist(r,173);
+        mydb.insert_tag_que_assist(r,174);
+        mydb.insert_tag_que_assist(r,175);
+        mydb.insert_tag_que_assist(r,176);
 
         //B
-        mydb.insert_tag_que_assist(7,6);
-        mydb.insert_tag_que_assist(7,7);
-        mydb.insert_tag_que_assist(7,8);
-        mydb.insert_tag_que_assist(7,9);
-        mydb.insert_tag_que_assist(7,10);
+        mydb.insert_tag_que_assist(b,6);
+        mydb.insert_tag_que_assist(b,7);
+        mydb.insert_tag_que_assist(b,8);
+        mydb.insert_tag_que_assist(b,9);
+        mydb.insert_tag_que_assist(b,10);
         //C
-        mydb.insert_tag_que_assist(8,6);
-        mydb.insert_tag_que_assist(8,10);
-        mydb.insert_tag_que_assist(8,11);
-        mydb.insert_tag_que_assist(8,12);
-        mydb.insert_tag_que_assist(8,13);
-        mydb.insert_tag_que_assist(8,14);
-        mydb.insert_tag_que_assist(8,15);
-        mydb.insert_tag_que_assist(8,16);
+        mydb.insert_tag_que_assist(c,6);
+        mydb.insert_tag_que_assist(c,10);
+        mydb.insert_tag_que_assist(c,11);
+        mydb.insert_tag_que_assist(c,12);
+        mydb.insert_tag_que_assist(c,13);
+        mydb.insert_tag_que_assist(c,14);
+        mydb.insert_tag_que_assist(c,15);
+        mydb.insert_tag_que_assist(c,16);
 
         //D
-        mydb.insert_tag_que_assist(9,17);
-        mydb.insert_tag_que_assist(9,18);
-        mydb.insert_tag_que_assist(9,19);
-        mydb.insert_tag_que_assist(9,20);
-        mydb.insert_tag_que_assist(9,21);
-        mydb.insert_tag_que_assist(9,22);
-        mydb.insert_tag_que_assist(9,23);
-        mydb.insert_tag_que_assist(9,24);
-        mydb.insert_tag_que_assist(9,25);
-        mydb.insert_tag_que_assist(9,26);
+        mydb.insert_tag_que_assist(d,17);
+        mydb.insert_tag_que_assist(d,18);
+        mydb.insert_tag_que_assist(d,19);
+        mydb.insert_tag_que_assist(d,20);
+        mydb.insert_tag_que_assist(d,21);
+        mydb.insert_tag_que_assist(d,22);
+        mydb.insert_tag_que_assist(d,23);
+        mydb.insert_tag_que_assist(d,24);
+        mydb.insert_tag_que_assist(d,25);
+        mydb.insert_tag_que_assist(d,26);
 
         //E
-        mydb.insert_tag_que_assist(10,27);
-        mydb.insert_tag_que_assist(10,28);
-        mydb.insert_tag_que_assist(10,29);
-        mydb.insert_tag_que_assist(10,30);
-        mydb.insert_tag_que_assist(10,31);
-        mydb.insert_tag_que_assist(10,32);
-        mydb.insert_tag_que_assist(10,33);
-        mydb.insert_tag_que_assist(10,34);
+        mydb.insert_tag_que_assist(e,27);
+        mydb.insert_tag_que_assist(e,28);
+        mydb.insert_tag_que_assist(e,29);
+        mydb.insert_tag_que_assist(e,30);
+        mydb.insert_tag_que_assist(e,31);
+        mydb.insert_tag_que_assist(e,32);
+        mydb.insert_tag_que_assist(e,33);
+        mydb.insert_tag_que_assist(e,34);
 
         //F
-        mydb.insert_tag_que_assist(11,35);
-        mydb.insert_tag_que_assist(11,36);
-        mydb.insert_tag_que_assist(11,37);
-        mydb.insert_tag_que_assist(11,38);
-        mydb.insert_tag_que_assist(11,39);
-        mydb.insert_tag_que_assist(11,40);
-        mydb.insert_tag_que_assist(11,41);
-        mydb.insert_tag_que_assist(11,42);
-        mydb.insert_tag_que_assist(11,43);
+        mydb.insert_tag_que_assist(f,35);
+        mydb.insert_tag_que_assist(f,36);
+        mydb.insert_tag_que_assist(f,37);
+        mydb.insert_tag_que_assist(f,38);
+        mydb.insert_tag_que_assist(f,39);
+        mydb.insert_tag_que_assist(f,40);
+        mydb.insert_tag_que_assist(f,41);
+        mydb.insert_tag_que_assist(f,42);
+        mydb.insert_tag_que_assist(f,43);
 
         //G
-        mydb.insert_tag_que_assist(12,44);
-        mydb.insert_tag_que_assist(12,45);
-        mydb.insert_tag_que_assist(12,46);
-        mydb.insert_tag_que_assist(12,47);
-        mydb.insert_tag_que_assist(12,48);
-        mydb.insert_tag_que_assist(12,49);
-        mydb.insert_tag_que_assist(12,50);
-        mydb.insert_tag_que_assist(12,51);
-        mydb.insert_tag_que_assist(12,52);
+        mydb.insert_tag_que_assist(g,44);
+        mydb.insert_tag_que_assist(g,45);
+        mydb.insert_tag_que_assist(g,46);
+        mydb.insert_tag_que_assist(g,47);
+        mydb.insert_tag_que_assist(g,48);
+        mydb.insert_tag_que_assist(g,49);
+        mydb.insert_tag_que_assist(g,50);
+        mydb.insert_tag_que_assist(g,51);
+        mydb.insert_tag_que_assist(g,52);
 
         //H
-        mydb.insert_tag_que_assist(13,53);
-        mydb.insert_tag_que_assist(13,54);
-        mydb.insert_tag_que_assist(13,55);
-        mydb.insert_tag_que_assist(13,56);
-        mydb.insert_tag_que_assist(13,57);
-        mydb.insert_tag_que_assist(13,58);
+        mydb.insert_tag_que_assist(h,53);
+        mydb.insert_tag_que_assist(h,54);
+        mydb.insert_tag_que_assist(h,55);
+        mydb.insert_tag_que_assist(h,56);
+        mydb.insert_tag_que_assist(h,57);
+        mydb.insert_tag_que_assist(h,58);
 
         //I
-        mydb.insert_tag_que_assist(14,59);
-        mydb.insert_tag_que_assist(14,60);
-        mydb.insert_tag_que_assist(14,61);
-        mydb.insert_tag_que_assist(14,62);
-        mydb.insert_tag_que_assist(14,63);
-        mydb.insert_tag_que_assist(14,64);
-        mydb.insert_tag_que_assist(14,65);
-        mydb.insert_tag_que_assist(14,66);
+        mydb.insert_tag_que_assist(i,59);
+        mydb.insert_tag_que_assist(i,60);
+        mydb.insert_tag_que_assist(i,61);
+        mydb.insert_tag_que_assist(i,62);
+        mydb.insert_tag_que_assist(i,63);
+        mydb.insert_tag_que_assist(i,64);
+        mydb.insert_tag_que_assist(i,65);
+        mydb.insert_tag_que_assist(i,66);
 
         //J
-        mydb.insert_tag_que_assist(15,67);
-        mydb.insert_tag_que_assist(15,68);
-        mydb.insert_tag_que_assist(15,69);
-        mydb.insert_tag_que_assist(15,70);
-        mydb.insert_tag_que_assist(15,71);
-        mydb.insert_tag_que_assist(15,72);
-        mydb.insert_tag_que_assist(15,73);
-        mydb.insert_tag_que_assist(15,74);
-        mydb.insert_tag_que_assist(15,75);
+        mydb.insert_tag_que_assist(j,67);
+        mydb.insert_tag_que_assist(j,68);
+        mydb.insert_tag_que_assist(j,69);
+        mydb.insert_tag_que_assist(j,70);
+        mydb.insert_tag_que_assist(j,71);
+        mydb.insert_tag_que_assist(j,72);
+        mydb.insert_tag_que_assist(j,73);
+        mydb.insert_tag_que_assist(j,74);
+        mydb.insert_tag_que_assist(j,75);
 
         //K
-        mydb.insert_tag_que_assist(16,76);
-        mydb.insert_tag_que_assist(16,77);
-        mydb.insert_tag_que_assist(16,78);
-        mydb.insert_tag_que_assist(16,79);
-        mydb.insert_tag_que_assist(16,80);
-        mydb.insert_tag_que_assist(16,81);
-        mydb.insert_tag_que_assist(16,82);
-        mydb.insert_tag_que_assist(16,83);
-        mydb.insert_tag_que_assist(16,84);
-        mydb.insert_tag_que_assist(16,85);
-        mydb.insert_tag_que_assist(16,86);
-        mydb.insert_tag_que_assist(16,87);
-        mydb.insert_tag_que_assist(16,88);
-        mydb.insert_tag_que_assist(16,89);
-        mydb.insert_tag_que_assist(16,90);
+        mydb.insert_tag_que_assist(k,76);
+        mydb.insert_tag_que_assist(k,77);
+        mydb.insert_tag_que_assist(k,78);
+        mydb.insert_tag_que_assist(k,79);
+        mydb.insert_tag_que_assist(k,80);
+        mydb.insert_tag_que_assist(k,81);
+        mydb.insert_tag_que_assist(k,82);
+        mydb.insert_tag_que_assist(k,83);
+        mydb.insert_tag_que_assist(k,84);
+        mydb.insert_tag_que_assist(k,85);
+        mydb.insert_tag_que_assist(k,86);
+        mydb.insert_tag_que_assist(k,87);
+        mydb.insert_tag_que_assist(k,88);
+        mydb.insert_tag_que_assist(k,89);
+        mydb.insert_tag_que_assist(k,90);
 
         //L
-        mydb.insert_tag_que_assist(17,91);
-        mydb.insert_tag_que_assist(17,92);
-        mydb.insert_tag_que_assist(17,93);
-        mydb.insert_tag_que_assist(17,94);
-        mydb.insert_tag_que_assist(17,95);
-        mydb.insert_tag_que_assist(17,96);
-        mydb.insert_tag_que_assist(17,97);
-        mydb.insert_tag_que_assist(17,98);
-        mydb.insert_tag_que_assist(17,99);
+        mydb.insert_tag_que_assist(l,91);
+        mydb.insert_tag_que_assist(l,92);
+        mydb.insert_tag_que_assist(l,93);
+        mydb.insert_tag_que_assist(l,94);
+        mydb.insert_tag_que_assist(l,95);
+        mydb.insert_tag_que_assist(l,96);
+        mydb.insert_tag_que_assist(l,97);
+        mydb.insert_tag_que_assist(l,98);
+        mydb.insert_tag_que_assist(l,99);
 
 
         //M
-        mydb.insert_tag_que_assist(18,100);
-        mydb.insert_tag_que_assist(18,101);
-        mydb.insert_tag_que_assist(18,102);
-        mydb.insert_tag_que_assist(18,103);
-        mydb.insert_tag_que_assist(18,104);
-        mydb.insert_tag_que_assist(18,105);
-        mydb.insert_tag_que_assist(18,106);
-        mydb.insert_tag_que_assist(18,107);
-        mydb.insert_tag_que_assist(18,108);
-        mydb.insert_tag_que_assist(18,109);
-        mydb.insert_tag_que_assist(18,110);
-        mydb.insert_tag_que_assist(18,111);
-        mydb.insert_tag_que_assist(18,112);
-        mydb.insert_tag_que_assist(18,113);
-        mydb.insert_tag_que_assist(18,114);
+        mydb.insert_tag_que_assist(m,100);
+        mydb.insert_tag_que_assist(m,101);
+        mydb.insert_tag_que_assist(m,102);
+        mydb.insert_tag_que_assist(m,103);
+        mydb.insert_tag_que_assist(m,104);
+        mydb.insert_tag_que_assist(m,105);
+        mydb.insert_tag_que_assist(m,106);
+        mydb.insert_tag_que_assist(m,107);
+        mydb.insert_tag_que_assist(m,108);
+        mydb.insert_tag_que_assist(m,109);
+        mydb.insert_tag_que_assist(m,110);
+        mydb.insert_tag_que_assist(m,111);
+        mydb.insert_tag_que_assist(m,112);
+        mydb.insert_tag_que_assist(m,113);
+        mydb.insert_tag_que_assist(m,114);
 
         //N
-        mydb.insert_tag_que_assist(19,115);
-        mydb.insert_tag_que_assist(19,116);
-        mydb.insert_tag_que_assist(19,117);
-        mydb.insert_tag_que_assist(19,118);
-        mydb.insert_tag_que_assist(19,119);
-        mydb.insert_tag_que_assist(19,120);
-        mydb.insert_tag_que_assist(19,121);
-        mydb.insert_tag_que_assist(19,122);
-        mydb.insert_tag_que_assist(19,123);
-        mydb.insert_tag_que_assist(19,124);
-        mydb.insert_tag_que_assist(19,125);
-        mydb.insert_tag_que_assist(19,126);
-        mydb.insert_tag_que_assist(19,127);
-        mydb.insert_tag_que_assist(19,128);
-        mydb.insert_tag_que_assist(19,129);
+        mydb.insert_tag_que_assist(n,115);
+        mydb.insert_tag_que_assist(n,116);
+        mydb.insert_tag_que_assist(n,117);
+        mydb.insert_tag_que_assist(n,118);
+        mydb.insert_tag_que_assist(n,119);
+        mydb.insert_tag_que_assist(n,120);
+        mydb.insert_tag_que_assist(n,121);
+        mydb.insert_tag_que_assist(n,122);
+        mydb.insert_tag_que_assist(n,123);
+        mydb.insert_tag_que_assist(n,124);
+        mydb.insert_tag_que_assist(n,125);
+        mydb.insert_tag_que_assist(n,126);
+        mydb.insert_tag_que_assist(n,127);
+        mydb.insert_tag_que_assist(n,128);
+        mydb.insert_tag_que_assist(n,129);
 
 
         //O
-        mydb.insert_tag_que_assist(21,130);
-        mydb.insert_tag_que_assist(21,131);
-        mydb.insert_tag_que_assist(21,132);
-        mydb.insert_tag_que_assist(21,133);
-        mydb.insert_tag_que_assist(21,134);
-        mydb.insert_tag_que_assist(21,135);
-        mydb.insert_tag_que_assist(21,136);
-        mydb.insert_tag_que_assist(21,137);
-        mydb.insert_tag_que_assist(21,138);
-        mydb.insert_tag_que_assist(21,139);
-        mydb.insert_tag_que_assist(21,140);
-        mydb.insert_tag_que_assist(21,141);
+        mydb.insert_tag_que_assist(o,130);
+        mydb.insert_tag_que_assist(o,131);
+        mydb.insert_tag_que_assist(o,132);
+        mydb.insert_tag_que_assist(o,133);
+        mydb.insert_tag_que_assist(o,134);
+        mydb.insert_tag_que_assist(o,135);
+        mydb.insert_tag_que_assist(o,136);
+        mydb.insert_tag_que_assist(o,137);
+        mydb.insert_tag_que_assist(o,138);
+        mydb.insert_tag_que_assist(o,139);
+        mydb.insert_tag_que_assist(o,140);
+        mydb.insert_tag_que_assist(o,141);
 
 
         //S
-        mydb.insert_tag_que_assist(20,177);
-        mydb.insert_tag_que_assist(20,178);
-        mydb.insert_tag_que_assist(20,179);
-        mydb.insert_tag_que_assist(20,180);
-        mydb.insert_tag_que_assist(20,181);
-        mydb.insert_tag_que_assist(20,182);
-        mydb.insert_tag_que_assist(20,183);
-        mydb.insert_tag_que_assist(20,184);
-        mydb.insert_tag_que_assist(20,185);
-        mydb.insert_tag_que_assist(20,186);
+        mydb.insert_tag_que_assist(s,177);
+        mydb.insert_tag_que_assist(s,178);
+        mydb.insert_tag_que_assist(s,179);
+        mydb.insert_tag_que_assist(s,180);
+        mydb.insert_tag_que_assist(s,181);
+        mydb.insert_tag_que_assist(s,182);
+        mydb.insert_tag_que_assist(s,183);
+        mydb.insert_tag_que_assist(s,184);
+        mydb.insert_tag_que_assist(s,185);
+        mydb.insert_tag_que_assist(s,186);
 
 
 
@@ -323,123 +450,201 @@ public class database_data_entry_initial extends Activity {
     public void insertData_Question() {
         //(String question_topic,String question_desc,
         // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
+        /*
+            param 1 = title
+            param 2 = description
+            param 3 = Question class
+            param 4 = Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
+            param 5 = start node (current place)
+            param 6 = current node
+            param 7 = on success current node, next node (promotion)
+            param 8 = on fail current node, next node (punishment)
+            param 9 = promotion class
+            param 10 = punishment class
+
+
+         */
+        //        Q22
+        mydb.insert_Question(
+                "Follow “GoTo” statement",
+                "Instruct to jump to the position 3",
+                "Z1","208,209","1","2","1","Z2","Z1");
+//        Q23
+        mydb.insert_Question(
+                "Follow “Go” statement",
+                "Instruct to go 2 steps forward",
+                "Z2","212,213","2","3","2","Z3","Z2");
+//        Q24
+        mydb.insert_Question(
+                "Follow “backward” statement",
+                "Instruct to go 1 step backward",
+                "Z3","215,216","3","4","3","Z4","Z3");
+//        Q25
+        mydb.insert_Question(
+                "Follow “Go” statement  and assigning value to a variable ",
+                "Instruct to go 2 steps forward",
+                "Z4","221,218,219","4","5","4","Z5","Z4");
+
+//        Q26
+        mydb.insert_Question(
+                "Calculate the total sum of two small numbers",
+                "Instruct to go 3 steps forward",
+                "Z5","227,228,225,226,229,223,224","5","6","5","Z6","Z5");
+//        Q27
+        mydb.insert_Question(
+                "Calculate the total sum of two small numbers",
+                "Instruct to jump to the position 14",
+                "Z6","234,233,235,232,230,231","6","7","6","Z7","Z6");
+//        Q28
+        mydb.insert_Question(
+                "Calculate the arithmetics values (and precedence of operands)",
+                "Instruct to jump to the position 20",
+                "Z7","241,242,243,244,239,248,253,249,245,250,254,246,251,247,252,238,253,239,254","7","8","7","Z8","Z7");
+//        Q29
+        mydb.insert_Question(
+                "The knowledge of conditional statements",
+                "Instruct to go 2 steps forward",
+                "Z8","257,258,259,260,261,262,263,255,256","8","9","8","Z9","Z8");
+//        Q30
+        mydb.insert_Question(
+                "The knowledge of conditional statements",
+                "Instruct to go 2 steps forward",
+                "Z9","266,270,267,272,268,271,273,269,274,267,264,265","9","10","9","Z10","Z9");
+//        Q31
+        mydb.insert_Question(
+                "Knowledge of modular arithmetic",
+                "Instruct to go 6 steps forward",
+                "Z10","277,283,278,281,280,275,276","10","11","10","Z11","Z10");
+//        Q32
+        mydb.insert_Question(
+                "Knowledge of modular arithmetic",
+                "Instruct to go 2 steps forward",
+                "Z11","286,292,287,290,291,284,285","11","12","11","Z12","Z11");
+//        Q33
+        mydb.insert_Question(
+                "Get the corresponding value of a given index of an array. (ordering and indexing mechanism of an array)",
+                "Instruct to jump to position 50",
+                "Z12","294,293,300","12","20","12","Z12","P");
 //        Q1
         mydb.insert_Question(
                 "1-Increase value",
                 "Increase your score by 2 only using myScore variable and + operator.Then print it",
-                "P","145,147,145,144,143,145,146","1","3","1","A","P"
+                "P","145,147,145,144,143,145,146","20","25","20","A","P"
         );
 //        Q2
         mydb.insert_Question(
                 "2-Swap ",
                 "SWAP two values , x=10 and y=20 using temp variable",
-                "A","5,2,1,3,4","3","5","3","T", "A"
+                "A","5,2,1,3,4","25","30","25","T", "A"
         );
 //        Q3
         mydb.insert_Question(
                 "3-Pass by value",
                 "Using divide function, increase your score to 6.",
-                "T","189,193,191,193,196,187,195,192,192,194","5","6","5","U","T"
+                "T","189,193,191,193,196,187,195,192,192,194","30","35","30","U","T"
         );
 //        Q4
         mydb.insert_Question(
                 "4-Pass by reference",
-                "Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n You can use myScore parameter without declaring.\nSet your score to n using setMyScore(n).",
-                "U","201,198,197,199,204,200,207,200,206,201,202,202,199","6","7","5","Q","T"
+                "Current value of myScore is 6.\n Using add function, increase your score to 7.\n function add(a,b){\n\treturn a+b;\n}\n Set your score to n using setMyScore(n).",
+                "U","201,198,197,199,204,200,207,200,206,201,202,202,199|204,200,207,200,206,197,202,202,199","35","40","30","Q","T"
         );
 //        Q5
         mydb.insert_Question(
                 "5-Modular problem",
                 "Write a function to return modular value and run it on main function to increase your score by 3 and print it\n * You should find a suitable divisor for this",
-                "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","7","10","5","R","T");
+                "Q","153,152,157,160,150,157,148,155,153,159,156,154,152,149,151,158,156,151","40","45","30","R","T");
 //        Q6
         mydb.insert_Question(
                 "6-Recursive function",
                 "Write a recursive program to implement power function which returns a^b when pass parameters as a and b.",
-                "R","164,171,175,165,170,174,165,161,176,163,169,165,161,167,171,168,163","10","12","7","B","Q");
+                "R","164,171,175,165,170,174,165,161,176,163,169,165,161,167,171,168,163","45","50","40","B","Q");
 //        Q7
         mydb.insert_Question(
                 "7-If-Else and isPrime() ",
                 "Check whether your score is prime or not",
-                "B", "10,9,8,6,7", "12", "14", "12", "C", "B"
+                "B", "10,9,8,6,7", "50", "55", "50", "C", "B"
         );
 //        Q8
         mydb.insert_Question(
                 "8-If-Elseif-else ",
                 "Use if-elseif and else conditions to put numbers into the correct categories.",
-                "C", "10,16,15,11,14,12,6,13", "14", "17", "12", "D", "B"
+                "C", "10,16,15,11,14,12,6,13", "55", "60", "50", "D", "B"
         );
 //        Q9
         mydb.insert_Question(
                 "9-Switch ",
                 "Print month name when month number entered,if that month number is less than 4,print month name as an output",
-                "D", "20,18,23,19,17,22,25,17,24,26,17,21,17", "17", "22", "14", "E", "C"
+                "D", "20,18,23,19,17,22,25,17,24,26,17,21,17", "60", "65", "55", "E", "C"
         );
 //        Q10
         mydb.insert_Question(
                 "10-for loop ",
                 "Print even numbers up to your score using for loop",
-                "E", "30,34,27,29,33,28,32", "22", "25", "22", "F", "E"
+                "E", "30,34,27,29,33,28,32", "65", "70", "65", "F", "E"
         );
 //        Q11
         mydb.insert_Question(
                 "11-for-each ",
                 "Get the sum of this array using for-each loop",
-                "F", "41,39,35,43,37", "25", "31", "22", "G", "E"
+                "F", "41,39,35,43,37", "70", "75", "65", "G", "E"
         );
 //        Q12
         mydb.insert_Question(
                 "12-do-while ",
                 "Print numbers 10 to 0 using do while loop",
-                "G", "47,48,44,46,45,52", "31", "35", "31", "H", "G"
+                "G", "47,48,44,46,45,52", "75", "80", "75", "H", "G"
         );
 //        Q13
         mydb.insert_Question(
                 "13-while-do ",
                 "Print Fibonacci Series using while loop until your score",
-                "H", "58,53,56,54,57,55", "35", "39", "31", "I", "G"
+                "H", "58,53,56,54,57,55", "80", "82", "75", "I", "G"
         );
 //        Q14
         mydb.insert_Question(
                 "14-Break statement ",
                 "Print the 'Algo' word fragment from 'Algorithm' word using break statement",
-                "I", "65,60,64,59,61,66,62", "39", "42", "39", "J", "I"
+                "I", "65,60,64,59,61,66,62", "82", "84", "82", "J", "I"
         );
 //        Q15
         mydb.insert_Question(
                 "15-Continue statement ",
                 "Print 'gain' word from 'grain' ",
-                "J", "72,74,71,67,75,69,73", "42","45","39","K","I");
+                "J", "72,74,71,67,75,69,73", "84","86","82","K","I");
 //        Q16
         mydb.insert_Question(
                 "16-Nested for loop",
                 "Print prime number up to your position",
-                "K","82,81,87,80,83,81,85,76,89,77,79,86,77,88,90","45","57","45","L","K");
+                "K","82,81,87,80,83,81,85,76,89,77,79,86,77,88,90","86","88","86","L","K");
 //        Q17
         mydb.insert_Question(
                 "17-pattern ",
                 "Print below pattern.\n1111\n" +"1     1\n"+"1     1\n"+"1     1\n" +"1111",
-                "L","94,93,94,98,92,97,99,91,95,96","57","67","57","M","L");
+                "L","94,93,94,98,92,97,99,91,95,96","88","90","88","M","L");
 //        Q18
         mydb.insert_Question(
                 "18-Palindrome number",
                 "Implement an algorithm for check input (number) is palindrome or not.",
-                "M","106,110,112,100,105,101,109,102,107,103,108,111","67","82","57","N","L");
+                "M","106,110,112,100,105,101,109,102,107,103,108,111","90","95","88","N","L");
 //        Q19
         mydb.insert_Question(
                 "19-Sentence Capitalizing",
                 "Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.",
-                "N","120,127,124,129,115,119,116,123,125,121,118,128,126,122","82","87","82","S","N");
+                "N","120,127,124,129,115,119,116,123,125,121,118,128,126,122","95","97","95","S","N");
 //        Q20
         mydb.insert_Question(
                 "20-OOP concepts",
                 "Consider following class.\n class Car{\n\tString color;\n\tfloat speed;\n\tvoid setColor(color);\n\tvoid setSpeed(color);\n\tvoid getSpeed();\n}\nCreate a car object and name it myCar.\nSet it's color to red.\nPrint the color of the car you created.",
-                "S","181,177,183,185,181,178,186,177,184,183,179,186,182,177,180,178,186","87","93","82","O","N");
+                "S","181,177,183,185,181,178,186,177,184,183,179,186,182,177,180,178,186","97","99","95","O","N");
 //        Q21
         mydb.insert_Question(
                 "21-Bubble sort",
                 "Implement the bubble sort algorithm",
-                "O","139,133,138,134,141,134,140,132,136,135,130","93","100","87","V","S");
+                "O","139,133,138,134,141,134,140,132,136,135,130","99","100","97","V","S");
+
+
+
 
     }
 
@@ -769,10 +974,125 @@ public class database_data_entry_initial extends Activity {
 
 
 
-
         //201,198,197,199,204,200,207,200,206,201,202,202,199
+        //204,200,207,200,206,197,202,202,199
 
-        //question 22 class - V
+        //question 22 class - Z1
+        mydb.insert_Tag("GOTO","MAIN","None");//id=208
+        mydb.insert_Tag("(3)","VARIABLE","None");//id=209
+        mydb.insert_Tag("(5)","VARIABLE","None");//id=210
+        mydb.insert_Tag("(7)","VARIABLE","None");//id=211
+
+        //question 23 class - Z2
+        mydb.insert_Tag("GO","MAIN","None");//id=212
+        mydb.insert_Tag("(2_steps _forward)","VARIABLE","None");//id=213
+        mydb.insert_Tag("(3_steps_forward)","VARIABLE","None");//id=214
+
+        //question 24 class - Z3
+        mydb.insert_Tag("GO","MAIN","None");//id=215
+        mydb.insert_Tag("(1_steps_backward)","VARIABLE","None");//id=216
+        mydb.insert_Tag("(2_steps_backward)","VARIABLE","None");//id=217
+
+        //question 25 class - Z4
+        mydb.insert_Tag("GO","MAIN","None");//id=218
+        mydb.insert_Tag("(X_steps_forward);","MAIN","None");//id=219
+        mydb.insert_Tag("X=1;","VARIABLE","None");//id=220
+        mydb.insert_Tag("X=2;","VARIABLE","None");//id=221
+        mydb.insert_Tag("X=3;","VARIABLE","None");//id=222
+
+        //question 26 class - Z5
+        mydb.insert_Tag("GO","MAIN","None");//id=223
+        mydb.insert_Tag("(Y_steps_forward);","MAIN","None");//id=224
+        mydb.insert_Tag("Y","VARIABLE","None");//id=225
+        mydb.insert_Tag("=","VARIABLE","None");//id=226
+        mydb.insert_Tag("A=2;","VARIABLE","None");//id=227
+        mydb.insert_Tag("B=1;","VARIABLE","None");//id=228
+        mydb.insert_Tag("A+B;","VARIABLE","None");//id=229
+
+        //question 27 class - Z6
+        mydb.insert_Tag("GOTO","MAIN","None");//id=230
+        mydb.insert_Tag("(Y);","MAIN","None");//id=231
+        mydb.insert_Tag("Y = A+B+C;","VARIABLE","None");//id=232
+        mydb.insert_Tag("B=7;","VARIABLE","None");//id=233
+        mydb.insert_Tag("A=3;","VARIABLE","None");//id=234
+        mydb.insert_Tag("C=4;","VARIABLE","None");//id=235
+        mydb.insert_Tag("D=5;","VARIABLE","None");//id=236
+        mydb.insert_Tag("Y = A+D+B;","VARIABLE","None");//id=237
+
+        //question 28 class - Z7
+        mydb.insert_Tag("GOTO","MAIN","None");//id=238
+        mydb.insert_Tag("Y","MAIN","None");//id=239
+        mydb.insert_Tag("(a+b)","VARIABLE","None");//id=240
+        mydb.insert_Tag("a=myPosition","VARIABLE","None");//id=241
+        mydb.insert_Tag("b=1","VARIABLE","None");//id=242
+        mydb.insert_Tag("c=4","VARIABLE","None");//id=243
+        mydb.insert_Tag("d=3","VARIABLE","None");//id=244
+        mydb.insert_Tag("+","VARIABLE","None");//id=245
+        mydb.insert_Tag("*","VARIABLE","None");//id=246
+        mydb.insert_Tag("/","VARIABLE","None");//id=247
+        mydb.insert_Tag("=","VARIABLE","None");//id=248
+        mydb.insert_Tag("a","VARIABLE","None");//id=249
+        mydb.insert_Tag("b","VARIABLE","None");//id=250
+        mydb.insert_Tag("c","VARIABLE","None");//id=251
+        mydb.insert_Tag("d","VARIABLE","None");//id=252
+        mydb.insert_Tag("(","VARIABLE","None");//id=253
+        mydb.insert_Tag(")","VARIABLE","None");//id=254
+
+        //question 29 class - Z8
+        mydb.insert_Tag("GO","MAIN","None");//id=255
+        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=256
+        mydb.insert_Tag("A = 20","VARIABLE","None");//id=257
+        mydb.insert_Tag("B=myPosition //assign current position value to B","VARIABLE","None");//id=258
+        mydb.insert_Tag("if","VARIABLE","None");//id=259
+        mydb.insert_Tag("(A==B)","VARIABLE","None");//id=260
+        mydb.insert_Tag("then","VARIABLE","None");//id=261
+        mydb.insert_Tag("Y=8","VARIABLE","None");//id=262
+        mydb.insert_Tag("X=Y/4","VARIABLE","None");//id=263
+
+        //question 30 class - Z9
+        mydb.insert_Tag("GO","MAIN","None");//id=264
+        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=265
+        mydb.insert_Tag("if","MAIN","None");//id=266
+        mydb.insert_Tag("Number of position to the left","VARIABLE","None");//id=267
+        mydb.insert_Tag("Number of position to the right","VARIABLE","None");//id=268
+        mydb.insert_Tag("X","VARIABLE","None");//id=269
+        mydb.insert_Tag("(","VARIABLE","None");//id=270
+        mydb.insert_Tag(")","VARIABLE","None");//id=271
+        mydb.insert_Tag("<","VARIABLE","None");//id=272
+        mydb.insert_Tag("then","VARIABLE","None");//id=273
+        mydb.insert_Tag("=","VARIABLE","None");//id=274
+
+        //question 31 class - Z10
+        mydb.insert_Tag("GO","MAIN","None");//id=275
+        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=276
+        mydb.insert_Tag("X","VARIABLE","None");//id=277
+        mydb.insert_Tag("51","VARIABLE","None");//id=278
+        mydb.insert_Tag("7","VARIABLE","None");//id=279
+        mydb.insert_Tag("15","VARIABLE","None");//id=280
+        mydb.insert_Tag("mod","VARIABLE","None");//id=281
+        mydb.insert_Tag("div","VARIABLE","None");//id=282
+        mydb.insert_Tag("=","VARIABLE","None");//id=283
+
+        //question 32 class - Z11
+        mydb.insert_Tag("GO","MAIN","None");//id=284
+        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=285
+        mydb.insert_Tag("X","VARIABLE","None");//id=286
+        mydb.insert_Tag("51","VARIABLE","None");//id=287
+        mydb.insert_Tag("7","VARIABLE","None");//id=288
+        mydb.insert_Tag("52","VARIABLE","None");//id=289
+        mydb.insert_Tag("mod","VARIABLE","None");//id=290
+        mydb.insert_Tag("div","VARIABLE","None");//id=291
+        mydb.insert_Tag("=","VARIABLE","None");//id=292
+
+        //question 33 class - Z12
+        mydb.insert_Tag("GOTO","MAIN","None");//id=293
+        mydb.insert_Tag("ArrayA ={35,50,60,23,45}","VARIABLE","None");//id=294
+        mydb.insert_Tag("49","VARIABLE","None");//id=295
+        mydb.insert_Tag("GO","VARIABLE","None");//id=296
+        mydb.insert_Tag("1_step_back","VARIABLE","None");//id=297
+        mydb.insert_Tag("ArrayB={35,52,60,23,45}","VARIABLE","None");//id=298
+        mydb.insert_Tag("(ArrayA[0])","VARIABLE","None");//id=299
+        mydb.insert_Tag("(ArrayA[1])","VARIABLE","None");//id=300
 
     }
 
