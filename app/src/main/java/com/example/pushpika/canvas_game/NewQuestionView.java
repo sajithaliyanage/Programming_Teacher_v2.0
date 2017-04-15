@@ -73,7 +73,7 @@ public class NewQuestionView extends BaseGameActivity {
         startActivity(intent);
         finish();
     }
-    
+
     @Override
     public void onSignInSucceeded() {
 
