@@ -10,6 +10,7 @@ import android.view.WindowManager;
  * Created by pushpika on 5/21/16.
  */
 public class SplashScreen extends Activity {
+    CheckLogged sessionLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class SplashScreen extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.splash);
+        sessionLogin = new CheckLogged(this);
 
         Thread timerThread = new Thread(){
             public void run(){
@@ -35,6 +37,7 @@ public class SplashScreen extends Activity {
             }
         };
         timerThread.start();
+        sessionLogin.setLogged();
     }
 
     @Override

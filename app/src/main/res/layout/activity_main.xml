@@ -242,18 +242,6 @@
                             android:onClick="Go_Ques"
                             android:allowUndo="true" />
                         <!-- sign-in button -->
-
-
-                        <Button
-                            android:id="@+id/sign_out_button"
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10px"
-                            android:layout_height="wrap_content"
-                            android:text="Sign Out"
-                            android:textColor="@color/background_floating_material_light"
-                            android:background="@android:color/holo_orange_dark"
-                            android:layout_gravity="top|center"
-                            android:visibility="gone" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/play_buttons"
@@ -281,6 +269,16 @@
                             android:layout_height="wrap_content" />
 
                         <Button
+                            android:id="@+id/sign_out_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Out"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:layout_gravity="top|center"
+                            android:visibility="gone" />
+
+                        <Button
                             android:id="@+id/show_leaderboard"
                             android:layout_marginLeft="25px"
                             android:textSize="20px"
@@ -288,7 +286,10 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/background_floating_material_light"
                             android:background="@android:color/holo_orange_dark"
-                            android:text="Leaderboard" />
+                            android:text="Leaderboard"
+                            android:visibility="gone"/>
+
+
                     </LinearLayout>
 
 
