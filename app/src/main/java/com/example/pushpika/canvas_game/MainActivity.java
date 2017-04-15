@@ -83,7 +83,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
 //            }
 //        }
 
-        sessionLogin.changeStatus();
+        //sessionLogin.changeStatus();
 
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
