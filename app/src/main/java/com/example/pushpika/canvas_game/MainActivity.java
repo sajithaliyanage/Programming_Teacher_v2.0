@@ -79,22 +79,12 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.show_leaderboard).setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.sign_in_button) {
-
-//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS)
-//                    != PackageManager.PERMISSION_GRANTED) {
-//                // Check Permissions Now
-//                ActivityCompat.requestPermissions(this,
-//                        new String[]{Manifest.permission.GET_ACCOUNTS}, REQUEST_LOCATION);
-//            } else {
-//                // permission has been granted, continue as usual
-//                Location myLocation =
-//                        LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-//            }
 
             beginUserInitiatedSignIn();
 
@@ -111,7 +101,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(), getString(R.string.number_guesses_leaderboard)), 2);
         }
     }
-//
+
+    @Override
     public void onSignInSucceeded() {
         findViewById(R.id.sign_in_button).setVisibility(View.GONE);
         findViewById(R.id.sign_out_button).setVisibility(View.VISIBLE);
