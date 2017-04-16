@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.games.Games;
+import com.google.android.gms.games.leaderboard.LeaderboardScore;
+import com.google.android.gms.games.leaderboard.Leaderboards;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
 import java.util.Arrays;
@@ -37,6 +39,7 @@ public class NewQuestionView extends BaseGameActivity {
     String text_arr [] = new String [100];
     String id_arr [] = new String[100];
     int cur_len=0;
+    long score;
 
     //multiple answers
     String answers[];
@@ -280,7 +283,7 @@ public class NewQuestionView extends BaseGameActivity {
         if(answerlist.contains(cur_seq)){ //return true
             //increment leaderboad score
             if(getApiClient().isConnected()){
-                Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),100);
+                Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
             }
             //correct notification + increment board
             correctAnswer(view);
@@ -293,14 +296,11 @@ public class NewQuestionView extends BaseGameActivity {
             //input field is empty
         }
         else{ //return false
-
-            //wrong notification + decrement board
             wrongAnswer(view);
-
-            //textView.setBackgroundColor(Color.RED);
-            //decrement_board();
         }
+
     }
+
 
     public void increment_board(){
         //Intent transition_page = new Intent(this,Question_view.class);
@@ -329,6 +329,8 @@ public class NewQuestionView extends BaseGameActivity {
         startActivity(transition_page);
         finish();
     }
+
+
 
     public void correctAnswer(View view) {
 

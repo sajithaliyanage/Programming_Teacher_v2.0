@@ -212,6 +212,7 @@ public class Question_view extends Activity {
         cur_seq = cur_seq.replaceAll(",", "");
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action
         Log.i("TAG", "The current sequence is" + cur_seq ); //set text for button action
+
         if(answer_get.equals(cur_seq)){
             //return true
             Dialog settingsDialog = new Dialog(this);
