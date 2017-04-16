@@ -5,9 +5,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +24,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.games.Games;
+import com.google.android.gms.location.LocationServices;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
 public class MainActivity extends BaseGameActivity implements View.OnClickListener {
@@ -72,20 +76,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         editor.putBoolean("firstRun", false);
         editor.commit();
 
-//        if(sessionLogin.getStatus()){
-//            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-//            if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-//                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-//                //we are connected to a network
-//                beginUserInitiatedSignIn();
-//            } else{
-//                Toast.makeText(MainActivity.this, "Check your internet connection!", Toast.LENGTH_LONG).show();
-//            }
-//        }
-
-        //sessionLogin.changeStatus();
-
-
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.show_leaderboard).setOnClickListener(this);
@@ -94,6 +84,18 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.sign_in_button) {
+
+//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS)
+//                    != PackageManager.PERMISSION_GRANTED) {
+//                // Check Permissions Now
+//                ActivityCompat.requestPermissions(this,
+//                        new String[]{Manifest.permission.GET_ACCOUNTS}, REQUEST_LOCATION);
+//            } else {
+//                // permission has been granted, continue as usual
+//                Location myLocation =
+//                        LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+//            }
+
             beginUserInitiatedSignIn();
 
         } else if (view.getId() == R.id.sign_out_button) {
@@ -154,19 +156,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         startActivity(intent);
         finish();
     }
-
-    public boolean isGooglePlayServicesAvailable(Activity activity) {
-        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
-        int status = googleApiAvailability.isGooglePlayServicesAvailable(activity);
-        if(status != ConnectionResult.SUCCESS) {
-            if(googleApiAvailability.isUserResolvableError(status)) {
-                googleApiAvailability.getErrorDialog(activity, status, 2404).show();
-            }
-            return false;
-        }
-        return true;
-    }
-
 
 }
 
