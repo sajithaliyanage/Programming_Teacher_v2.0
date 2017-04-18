@@ -39,7 +39,7 @@ public class NewQuestionView extends BaseGameActivity {
     String text_arr [] = new String [100];
     String id_arr [] = new String[100];
     int cur_len=0;
-    long score;
+    int score;
 
     //multiple answers
     String answers[];
@@ -110,6 +110,7 @@ public class NewQuestionView extends BaseGameActivity {
         punishment_node = question_object.punishment_node;
         promotion_class =question_object.promotion_class;
         punishment_class = question_object.punishment_class;
+        score = Integer.parseInt(start_node);
 
         //split answer and set multiple answers
         answers = answer_get.split("\\|");
@@ -281,13 +282,9 @@ public class NewQuestionView extends BaseGameActivity {
         List<String> answerlist = Arrays.asList(answers);
 
         if(answerlist.contains(cur_seq)){ //return true
-            //increment leaderboad score
-            if(getApiClient().isConnected()){
-                Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
-            }
             //correct notification + increment board
+            this.upgrade_leaderboard_score(score);
             correctAnswer(view);
-
             //textView.setBackgroundColor(Color.GREEN);
             //increment_board();
 
@@ -312,8 +309,18 @@ public class NewQuestionView extends BaseGameActivity {
         Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
         Log.i("TAG", "target pos"+ MainActivity.target_pos);
         Log.i("TAG", "Target class "+ MainActivity.target_class);
+        this.upgrade_leaderboard_score(score);
         startActivity(transition_page);
         finish();
+
+    }
+
+    public void upgrade_leaderboard_score(int value){
+
+        int score = value *100;
+        if(getApiClient().isConnected()){
+            Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
+        }
 
     }
 

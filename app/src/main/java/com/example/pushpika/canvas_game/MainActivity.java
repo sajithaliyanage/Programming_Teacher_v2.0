@@ -97,7 +97,8 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         }
         if(view.getId() == R.id.show_leaderboard){
             Log.v("Click","Leaderboard >>>>>>");
-
+            int score = current_pos*100;
+            Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
             startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(), getString(R.string.number_guesses_leaderboard)), 2);
         }
     }
