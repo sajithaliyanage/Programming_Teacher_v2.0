@@ -11,7 +11,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -252,15 +255,6 @@
 
                         <!-- show achievements -->
 
-                        <!--<Button-->
-                            <!--android:id="@+id/show_achievements"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:textSize="20px"-->
-                            <!--android:textColor="@color/background_floating_material_light"-->
-                            <!--android:background="@android:color/holo_orange_dark"-->
-                            <!--android:text="Achievements" />-->
-
                         <!-- show leaderboards -->
                         <com.google.android.gms.common.SignInButton
                             android:id="@+id/sign_in_button"
@@ -289,6 +283,17 @@
                             android:text="Leaderboard"
                             android:visibility="gone"/>
 
+                        <Button
+                            android:id="@+id/show_achievements"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20px"
+                            android:layout_marginLeft="25px"
+                            android:textColor="@color/background_floating_material_light"
+                            android:background="@android:color/holo_orange_dark"
+                            android:text="Achievements"
+                            android:visibility="gone"/>
+
 
                     </LinearLayout>
 
@@ -314,7 +319,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

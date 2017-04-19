@@ -79,6 +79,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.show_leaderboard).setOnClickListener(this);
+        findViewById(R.id.show_achievements).setOnClickListener(this);
 
     }
 
@@ -93,6 +94,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.sign_out_button).setVisibility(View.GONE);
             findViewById(R.id.show_leaderboard).setVisibility(View.GONE);
+            findViewById(R.id.show_achievements).setVisibility(View.GONE);
 
         }
         if(view.getId() == R.id.show_leaderboard){
@@ -100,6 +102,9 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             int score = current_pos*100;
             Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
             startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(), getString(R.string.number_guesses_leaderboard)), 2);
+
+        }else if (view.getId() == R.id.show_achievements){
+            startActivityForResult(Games.Achievements.getAchievementsIntent(getApiClient()), 1);
         }
     }
 
@@ -108,6 +113,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         findViewById(R.id.sign_in_button).setVisibility(View.GONE);
         findViewById(R.id.sign_out_button).setVisibility(View.VISIBLE);
         findViewById(R.id.show_leaderboard).setVisibility(View.VISIBLE);
+        findViewById(R.id.show_achievements).setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -115,6 +121,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
         findViewById(R.id.sign_out_button).setVisibility(View.GONE);
         findViewById(R.id.show_leaderboard).setVisibility(View.GONE);
+        findViewById(R.id.show_achievements).setVisibility(View.GONE);
     }
 
     @Override

@@ -2,4 +2,5 @@
 <resources>
     <string name="app_id">238213220121</string>
     <string name="number_guesses_leaderboard">CgkImY71tPcGEAIQAQ</string>
+    <string name="correct_guess_achievement">CgkImY71tPcGEAIQAg</string>
 </resources>

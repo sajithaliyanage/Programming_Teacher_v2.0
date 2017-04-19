@@ -322,6 +322,11 @@ public class NewQuestionView extends BaseGameActivity {
             Games.Leaderboards.submitScore(getApiClient(), getString(R.string.number_guesses_leaderboard),score);
         }
 
+        if(value == 1){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement));
+        }
+
     }
 
     public void decrement_board(){
