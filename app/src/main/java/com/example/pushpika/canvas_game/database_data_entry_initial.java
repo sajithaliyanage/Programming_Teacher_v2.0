@@ -182,7 +182,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z12,298);
         mydb.insert_tag_que_assist(z12,299);
         mydb.insert_tag_que_assist(z12,300);
-
+/*
         //P
         mydb.insert_tag_que_assist(p,142);
         mydb.insert_tag_que_assist(p,143);
@@ -436,7 +436,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(s,185);
         mydb.insert_tag_que_assist(s,186);
 
-
+*/
 
 
 
@@ -468,69 +468,71 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Follow “GoTo” statement",
                 "Instruct to jump to the position 3",
-                "Z1","208,209","1","2","1","Z2","Z1");
+                "Z1","208,209","1","3","1","Z2","Z1");
 //        Q23
         mydb.insert_Question(
                 "Follow “Go” statement",
                 "Instruct to go 2 steps forward",
-                "Z2","212,213","2","3","2","Z3","Z2");
+                "Z2","212,213","3","5","3","Z3","Z2");
 //        Q24
         mydb.insert_Question(
                 "Follow “backward” statement",
                 "Instruct to go 1 step backward",
-                "Z3","215,216","3","4","3","Z4","Z3");
+                "Z3","215,216","5","4","5","Z4","Z3");
 //        Q25
         mydb.insert_Question(
                 "Follow “Go” statement  and assigning value to a variable ",
                 "Instruct to go 2 steps forward",
-                "Z4","221,218,219","4","5","4","Z5","Z4");
+                "Z4","221,218,219","4","6","4","Z5","Z4");
 
 //        Q26
         mydb.insert_Question(
                 "Calculate the total sum of two small numbers",
                 "Instruct to go 3 steps forward",
-                "Z5","227,228,225,226,229,223,224","5","6","5","Z6","Z5");
+                "Z5","227,228,225,226,229,223,224","6","9","6","Z6","Z5");
 //        Q27
         mydb.insert_Question(
                 "Calculate the total sum of two small numbers",
                 "Instruct to jump to the position 14",
-                "Z6","234,233,235,232,230,231","6","7","6","Z7","Z6");
+                "Z6","234,233,235,232,230,231","9","14","9","Z7","Z6");
 //        Q28
         mydb.insert_Question(
                 "Calculate the arithmetics values (and precedence of operands)",
                 "Instruct to jump to the position 20",
-                "Z7","241,242,243,244,239,248,253,249,245,250,254,246,251,247,252,238,253,239,254","7","8","7","Z8","Z7");
+                "Z7","241,242,243,244,239,248,253,249,245,250,254,246,251,247,252,238,253,239,254","14","20","14","Z8","Z7");
 //        Q29
         mydb.insert_Question(
                 "The knowledge of conditional statements",
                 "Instruct to go 2 steps forward",
-                "Z8","257,258,259,260,261,262,263,255,256","8","9","8","Z9","Z8");
+                "Z8","257,258,259,260,261,262,263,255,256","20","22","20","Z9","Z8");
 //        Q30
         mydb.insert_Question(
                 "The knowledge of conditional statements",
                 "Instruct to go 2 steps forward",
-                "Z9","266,270,267,272,268,271,273,269,274,267,264,265","9","10","9","Z10","Z9");
+                "Z9","266,270,267,272,268,271,273,269,274,267,264,265","22","24","22","Z10","Z9");
 //        Q31
         mydb.insert_Question(
                 "Knowledge of modular arithmetic",
                 "Instruct to go 6 steps forward",
-                "Z10","277,283,278,281,280,275,276","10","11","10","Z11","Z10");
+                "Z10","277,283,278,281,280,275,276","24","30","24","Z11","Z10");
 //        Q32
         mydb.insert_Question(
                 "Knowledge of modular arithmetic",
                 "Instruct to go 2 steps forward",
-                "Z11","286,292,287,290,291,284,285","11","12","11","Z12","Z11");
+                "Z11","286,292,287,290,291,284,285","30","32","30","Z12","Z11");
 //        Q33
         mydb.insert_Question(
                 "Get the corresponding value of a given index of an array. (ordering and indexing mechanism of an array)",
                 "Instruct to jump to position 50",
-                "Z12","294,293,300","12","20","12","Z12","P");
+                "Z12","294,293,300","32","50","32","Z12","P");
+        /*
 //        Q1
         mydb.insert_Question(
                 "1-Increase value",
                 "Increase your score by 2 only using myScore variable and + operator.Then print it",
-                "P","145,147,145,144,143,145,146","20","25","20","A","P"
+                "P","145,147,145,144,143,145,146","50","52","50","A","P"
         );
+
 //        Q2
         mydb.insert_Question(
                 "2-Swap ",
@@ -644,7 +646,7 @@ public class database_data_entry_initial extends Activity {
                 "O","139,133,138,134,141,134,140,132,136,135,130","99","100","97","V","S");
 
 
-
+*/
 
     }
 
@@ -652,7 +654,7 @@ public class database_data_entry_initial extends Activity {
     public void insertData_tags(){
 
         //keyword is used for mainly use variables
-
+/*
         //question 01 class - A
         mydb.insert_Tag("x=y;\n","MAIN","None"); //id=1
         mydb.insert_Tag("temp=x;\n","MAIN","None"); //id=2
@@ -951,7 +953,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("divide","MAIN","None");//id=191
         mydb.insert_Tag(")","VARIABLE","None");//id=192
         mydb.insert_Tag("(","VARIABLE","None");//id=193
-        mydb.insert_Tag(";","VARIABLE","None");//id=194
+        mydb.insert_Tag(";\n","VARIABLE","None");//id=194
         mydb.insert_Tag("2","VARIABLE","None");//id=195
         mydb.insert_Tag("12","VARIABLE","None");//id=196
 
@@ -973,60 +975,60 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("add","MAIN","None");//id=207
 
 
-
+*/
         //201,198,197,199,204,200,207,200,206,201,202,202,199
         //204,200,207,200,206,197,202,202,199
 
         //question 22 class - Z1
         mydb.insert_Tag("GOTO","MAIN","None");//id=208
-        mydb.insert_Tag("(3)","VARIABLE","None");//id=209
-        mydb.insert_Tag("(5)","VARIABLE","None");//id=210
-        mydb.insert_Tag("(7)","VARIABLE","None");//id=211
+        mydb.insert_Tag("(3);\n","VARIABLE","None");//id=209
+        mydb.insert_Tag("(5);\n","VARIABLE","None");//id=210
+        mydb.insert_Tag("(7);\n","VARIABLE","None");//id=211
 
         //question 23 class - Z2
         mydb.insert_Tag("GO","MAIN","None");//id=212
-        mydb.insert_Tag("(2_steps _forward)","VARIABLE","None");//id=213
-        mydb.insert_Tag("(3_steps_forward)","VARIABLE","None");//id=214
+        mydb.insert_Tag("(2_steps _forward);\n","VARIABLE","None");//id=213
+        mydb.insert_Tag("(3_steps_forward);\n","VARIABLE","None");//id=214
 
         //question 24 class - Z3
         mydb.insert_Tag("GO","MAIN","None");//id=215
-        mydb.insert_Tag("(1_steps_backward)","VARIABLE","None");//id=216
-        mydb.insert_Tag("(2_steps_backward)","VARIABLE","None");//id=217
+        mydb.insert_Tag("(1_steps_backward);\n","VARIABLE","None");//id=216
+        mydb.insert_Tag("(2_steps_backward);\n","VARIABLE","None");//id=217
 
         //question 25 class - Z4
         mydb.insert_Tag("GO","MAIN","None");//id=218
-        mydb.insert_Tag("(X_steps_forward);","MAIN","None");//id=219
-        mydb.insert_Tag("X=1;","VARIABLE","None");//id=220
-        mydb.insert_Tag("X=2;","VARIABLE","None");//id=221
-        mydb.insert_Tag("X=3;","VARIABLE","None");//id=222
+        mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=219
+        mydb.insert_Tag("X=1;\n","VARIABLE","None");//id=220
+        mydb.insert_Tag("X=2;\n","VARIABLE","None");//id=221
+        mydb.insert_Tag("X=3;\n","VARIABLE","None");//id=222
 
         //question 26 class - Z5
         mydb.insert_Tag("GO","MAIN","None");//id=223
-        mydb.insert_Tag("(Y_steps_forward);","MAIN","None");//id=224
+        mydb.insert_Tag("(Y_steps_forward);\n","MAIN","None");//id=224
         mydb.insert_Tag("Y","VARIABLE","None");//id=225
         mydb.insert_Tag("=","VARIABLE","None");//id=226
-        mydb.insert_Tag("A=2;","VARIABLE","None");//id=227
-        mydb.insert_Tag("B=1;","VARIABLE","None");//id=228
-        mydb.insert_Tag("A+B;","VARIABLE","None");//id=229
+        mydb.insert_Tag("A=2;\n","VARIABLE","None");//id=227
+        mydb.insert_Tag("B=1;\n","VARIABLE","None");//id=228
+        mydb.insert_Tag("A+B;\n","VARIABLE","None");//id=229
 
         //question 27 class - Z6
         mydb.insert_Tag("GOTO","MAIN","None");//id=230
-        mydb.insert_Tag("(Y);","MAIN","None");//id=231
-        mydb.insert_Tag("Y = A+B+C;","VARIABLE","None");//id=232
-        mydb.insert_Tag("B=7;","VARIABLE","None");//id=233
-        mydb.insert_Tag("A=3;","VARIABLE","None");//id=234
-        mydb.insert_Tag("C=4;","VARIABLE","None");//id=235
-        mydb.insert_Tag("D=5;","VARIABLE","None");//id=236
-        mydb.insert_Tag("Y = A+D+B;","VARIABLE","None");//id=237
+        mydb.insert_Tag("(Y);\n","MAIN","None");//id=231
+        mydb.insert_Tag("Y = A+B+C;\n","VARIABLE","None");//id=232
+        mydb.insert_Tag("B=7;\n","VARIABLE","None");//id=233
+        mydb.insert_Tag("A=3;\n","VARIABLE","None");//id=234
+        mydb.insert_Tag("C=4;\n","VARIABLE","None");//id=235
+        mydb.insert_Tag("D=5;\n","VARIABLE","None");//id=236
+        mydb.insert_Tag("Y = A+D+B;\n","VARIABLE","None");//id=237
 
         //question 28 class - Z7
         mydb.insert_Tag("GOTO","MAIN","None");//id=238
         mydb.insert_Tag("Y","MAIN","None");//id=239
-        mydb.insert_Tag("(a+b)","VARIABLE","None");//id=240
-        mydb.insert_Tag("a=myPosition","VARIABLE","None");//id=241
-        mydb.insert_Tag("b=1","VARIABLE","None");//id=242
-        mydb.insert_Tag("c=4","VARIABLE","None");//id=243
-        mydb.insert_Tag("d=3","VARIABLE","None");//id=244
+        mydb.insert_Tag("(a+b);\n","VARIABLE","None");//id=240
+        mydb.insert_Tag("a=myPosition;\n","VARIABLE","None");//id=241
+        mydb.insert_Tag("b=1;\n","VARIABLE","None");//id=242
+        mydb.insert_Tag("c=4;\n","VARIABLE","None");//id=243
+        mydb.insert_Tag("d=3;\n","VARIABLE","None");//id=244
         mydb.insert_Tag("+","VARIABLE","None");//id=245
         mydb.insert_Tag("*","VARIABLE","None");//id=246
         mydb.insert_Tag("/","VARIABLE","None");//id=247
@@ -1040,18 +1042,18 @@ public class database_data_entry_initial extends Activity {
 
         //question 29 class - Z8
         mydb.insert_Tag("GO","MAIN","None");//id=255
-        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=256
-        mydb.insert_Tag("A = 20","VARIABLE","None");//id=257
-        mydb.insert_Tag("B=myPosition //assign current position value to B","VARIABLE","None");//id=258
+        mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=256
+        mydb.insert_Tag("A = 20;\n","VARIABLE","None");//id=257
+        mydb.insert_Tag("B=myPosition;\n","VARIABLE","None");//id=258
         mydb.insert_Tag("if","VARIABLE","None");//id=259
         mydb.insert_Tag("(A==B)","VARIABLE","None");//id=260
-        mydb.insert_Tag("then","VARIABLE","None");//id=261
-        mydb.insert_Tag("Y=8","VARIABLE","None");//id=262
-        mydb.insert_Tag("X=Y/4","VARIABLE","None");//id=263
+        mydb.insert_Tag("then\n","VARIABLE","None");//id=261
+        mydb.insert_Tag("Y=8;\n","VARIABLE","None");//id=262
+        mydb.insert_Tag("X=Y/4;\n","VARIABLE","None");//id=263
 
         //question 30 class - Z9
         mydb.insert_Tag("GO","MAIN","None");//id=264
-        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=265
+        mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=265
         mydb.insert_Tag("if","MAIN","None");//id=266
         mydb.insert_Tag("Number of position to the left","VARIABLE","None");//id=267
         mydb.insert_Tag("Number of position to the right","VARIABLE","None");//id=268
@@ -1059,12 +1061,12 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("(","VARIABLE","None");//id=270
         mydb.insert_Tag(")","VARIABLE","None");//id=271
         mydb.insert_Tag("<","VARIABLE","None");//id=272
-        mydb.insert_Tag("then","VARIABLE","None");//id=273
+        mydb.insert_Tag("then\n","VARIABLE","None");//id=273
         mydb.insert_Tag("=","VARIABLE","None");//id=274
 
         //question 31 class - Z10
         mydb.insert_Tag("GO","MAIN","None");//id=275
-        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=276
+        mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=276
         mydb.insert_Tag("X","VARIABLE","None");//id=277
         mydb.insert_Tag("51","VARIABLE","None");//id=278
         mydb.insert_Tag("7","VARIABLE","None");//id=279
@@ -1086,13 +1088,13 @@ public class database_data_entry_initial extends Activity {
 
         //question 33 class - Z12
         mydb.insert_Tag("GOTO","MAIN","None");//id=293
-        mydb.insert_Tag("ArrayA ={35,50,60,23,45}","VARIABLE","None");//id=294
+        mydb.insert_Tag("ArrayA ={35,50,60,23,45};\n","VARIABLE","None");//id=294
         mydb.insert_Tag("49","VARIABLE","None");//id=295
         mydb.insert_Tag("GO","VARIABLE","None");//id=296
         mydb.insert_Tag("1_step_back","VARIABLE","None");//id=297
-        mydb.insert_Tag("ArrayB={35,52,60,23,45}","VARIABLE","None");//id=298
-        mydb.insert_Tag("(ArrayA[0])","VARIABLE","None");//id=299
-        mydb.insert_Tag("(ArrayA[1])","VARIABLE","None");//id=300
+        mydb.insert_Tag("ArrayB={35,52,60,23,45};\n","VARIABLE","None");//id=298
+        mydb.insert_Tag("(ArrayA[0]);\n","VARIABLE","None");//id=299
+        mydb.insert_Tag("(ArrayA[1]);\n","VARIABLE","None");//id=300
 
     }
 
