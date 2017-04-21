@@ -182,7 +182,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z12,298);
         mydb.insert_tag_que_assist(z12,299);
         mydb.insert_tag_que_assist(z12,300);
-/*
+
         //P
         mydb.insert_tag_que_assist(p,142);
         mydb.insert_tag_que_assist(p,143);
@@ -436,7 +436,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(s,185);
         mydb.insert_tag_que_assist(s,186);
 
-*/
+
 
 
 
@@ -494,7 +494,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Calculate the total sum of two small numbers",
                 "Instruct to jump to the position 14",
-                "Z6","234,233,235,232,230,231","9","14","9","Z7","Z6");
+                "Z6","234,233,235,232,230,231|233,234,235,232,230,231|234,235,233,232,230,231|233,235,234,232,230,231","9","14","9","Z7","Z6");
 //        Q28
         mydb.insert_Question(
                 "Calculate the arithmetics values (and precedence of operands)",
@@ -525,7 +525,7 @@ public class database_data_entry_initial extends Activity {
                 "Get the corresponding value of a given index of an array. (ordering and indexing mechanism of an array)",
                 "Instruct to jump to position 50",
                 "Z12","294,293,300","32","50","32","Z12","P");
-        /*
+
 //        Q1
         mydb.insert_Question(
                 "1-Increase value",
@@ -646,7 +646,7 @@ public class database_data_entry_initial extends Activity {
                 "O","139,133,138,134,141,134,140,132,136,135,130","99","100","97","V","S");
 
 
-*/
+
 
     }
 
@@ -654,7 +654,7 @@ public class database_data_entry_initial extends Activity {
     public void insertData_tags(){
 
         //keyword is used for mainly use variables
-/*
+
         //question 01 class - A
         mydb.insert_Tag("x=y;\n","MAIN","None"); //id=1
         mydb.insert_Tag("temp=x;\n","MAIN","None"); //id=2
@@ -975,7 +975,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("add","MAIN","None");//id=207
 
 
-*/
+
         //201,198,197,199,204,200,207,200,206,201,202,202,199
         //204,200,207,200,206,197,202,202,199
 
@@ -1020,6 +1020,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("C=4;\n","VARIABLE","None");//id=235
         mydb.insert_Tag("D=5;\n","VARIABLE","None");//id=236
         mydb.insert_Tag("Y = A+D+B;\n","VARIABLE","None");//id=237
+        //234,233,235,232,230,231
 
         //question 28 class - Z7
         mydb.insert_Tag("GOTO","MAIN","None");//id=238
