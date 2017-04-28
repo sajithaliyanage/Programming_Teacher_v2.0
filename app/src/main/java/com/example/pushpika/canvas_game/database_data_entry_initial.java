@@ -556,7 +556,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Once a value is given, identify the corresponding position in the array",
                 "Instruct to goto position 53",
-                "Z13","302,303,308,306,309,304,307,305,310,301","50","53","50","Z14","Z13");
+                "Z13","302,303,308,306,309,304,307,305,310,301|302,303,308,306,309,304,307,305,301,310","50","53","50","Z14","Z13");
 
 
 //        Q35
@@ -1158,17 +1158,18 @@ public class database_data_entry_initial extends Activity {
     For (i=0;i++, i<4){
     If i==2 then K=ArrayC(i)
     }
-    Goto(ArrayC(i))
+    Goto(K)
  */
-        mydb.insert_Tag("Goto(K)\n","MAIN","None");//id=301
+//302,303,308,306,309,304,307,305,310,301|302,303,308,306,309,304,307,305,301,310
+        mydb.insert_Tag("Goto(K);\n","MAIN","None");//id=301
         mydb.insert_Tag("ArrayC={32,50,53,30}\n","MAIN","None");//id=302
         mydb.insert_Tag("For (i=0;i++, i<4){\n","MAIN","None");//id=303
         mydb.insert_Tag("K","MAIN","None");//id=304
-        mydb.insert_Tag("ArrayC(i)","MAIN","None");//id=305
+        mydb.insert_Tag("ArrayC(i);\n","MAIN","None");//id=305
         mydb.insert_Tag("i==2 ","VARIABLE","None");//id=306
         mydb.insert_Tag("=","VARIABLE","None");//id=307
         mydb.insert_Tag("If ","VARIABLE","None");//id=308
-        mydb.insert_Tag("then ","VARIABLE","None");//id=309
+        mydb.insert_Tag("then\n ","VARIABLE","None");//id=309
         mydb.insert_Tag("\n}\n","VARIABLE","None");//id=310
 
         //question 35 class - Z14

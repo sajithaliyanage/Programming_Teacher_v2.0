@@ -332,7 +332,22 @@ public class NewQuestionView extends BaseGameActivity {
 
         if(value == 1){
             if(getApiClient().isConnected())
-                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement));
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement1));
+        }else if(value == 5){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement2));
+        }else if(value == 14){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement3));
+        }else if(value == 30){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement4));
+        }else if(value == 50){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement5));
+        }else if(value == 100){
+            if(getApiClient().isConnected())
+                Games.Achievements.unlock(getApiClient(),getString(R.string.correct_guess_achievement6));
         }
 
     }
