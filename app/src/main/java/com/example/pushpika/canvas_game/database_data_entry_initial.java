@@ -59,7 +59,7 @@ public class database_data_entry_initial extends Activity {
 
         int z1 = 1;int z2 = 2;int z3 = 3;int z4 = 4;int z5 = 5;
         int z6 = 6;int z7 = 7;int z8 = 8; int z9 = 9; int z10 = 10;
-        int z11 = 11; int z12 =12;
+        int z11 = 11; int z12 =12;int z13 =13;int z14 =14;
 
         int p = 13;int a = 14;int t = 15;int u=16; int q = 17;int r=18;int b=19;
         int c=20;int d=21;int e=22;int f=23;int g=24;int h=25;int i=26;int j=27;
@@ -183,6 +183,31 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z12,299);
         mydb.insert_tag_que_assist(z12,300);
 
+
+        //question 34 class - Z13
+        mydb.insert_tag_que_assist(z13,301);
+        mydb.insert_tag_que_assist(z13,302);
+        mydb.insert_tag_que_assist(z13,303);
+        mydb.insert_tag_que_assist(z13,304);
+        mydb.insert_tag_que_assist(z13,305);
+        mydb.insert_tag_que_assist(z13,306);
+        mydb.insert_tag_que_assist(z13,307);
+        mydb.insert_tag_que_assist(z13,308);
+        mydb.insert_tag_que_assist(z13,309);
+        mydb.insert_tag_que_assist(z13,310);
+
+        //question 35 class - Z14
+        mydb.insert_tag_que_assist(z14,311);
+        mydb.insert_tag_que_assist(z14,312);
+        mydb.insert_tag_que_assist(z14,313);
+        mydb.insert_tag_que_assist(z14,314);
+        mydb.insert_tag_que_assist(z14,315);
+        mydb.insert_tag_que_assist(z14,316);
+        mydb.insert_tag_que_assist(z14,317);
+        mydb.insert_tag_que_assist(z14,318);
+        mydb.insert_tag_que_assist(z14,319);
+        mydb.insert_tag_que_assist(z14,320);
+/*
         //P
         mydb.insert_tag_que_assist(p,142);
         mydb.insert_tag_que_assist(p,143);
@@ -436,7 +461,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(s,185);
         mydb.insert_tag_que_assist(s,186);
 
-
+*/
 
 
 
@@ -524,8 +549,28 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Get the corresponding value of a given index of an array. (ordering and indexing mechanism of an array)",
                 "Instruct to jump to position 50",
-                "Z12","294,293,300","32","50","32","Z12","P");
+                "Z12","294,293,300","32","50","32","Z13","Z12");
+        //SET 02
 
+//        Q34
+        mydb.insert_Question(
+                "Once a value is given, identify the corresponding position in the array",
+                "Instruct to goto position 53",
+                "Z13","302,303,308,306,309,304,307,305,310,301","50","53","50","Z14","Z13");
+
+
+//        Q35
+        mydb.insert_Question(
+                "Count the total value of every item in an array and the length of an array",
+                "Instruct to goto 2 steps forward",
+                "Z14",
+                "312,315,316,313,320,314,318,311|312,316,315,313,320,314,318,311|315,312,316,313,320,314,318,311|315,316,312,313,320,314,318,311|316,312,315,313,320,314,318,311|316,315,312,313,320,314,318,311",
+                "53","55","53","Z15","Z14");
+
+
+
+
+        /*
 //        Q1
         mydb.insert_Question(
                 "1-Increase value",
@@ -646,7 +691,7 @@ public class database_data_entry_initial extends Activity {
                 "O","139,133,138,134,141,134,140,132,136,135,130","99","100","97","V","S");
 
 
-
+*/
 
     }
 
@@ -1096,6 +1141,49 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("ArrayB={35,52,60,23,45};\n","VARIABLE","None");//id=298
         mydb.insert_Tag("(ArrayA[0]);\n","VARIABLE","None");//id=299
         mydb.insert_Tag("(ArrayA[1]);\n","VARIABLE","None");//id=300
+
+
+        //question 34 class - Z13
+/*
+    ArrayC={32,50,53,30}
+    For (i=0;i++, i<4){
+    If i==2 then K=ArrayC(i)
+    }
+    Goto(ArrayC(i))
+ */
+        mydb.insert_Tag("Goto(K)\n","MAIN","None");//id=301
+        mydb.insert_Tag("ArrayC={32,50,53,30}\n","MAIN","None");//id=302
+        mydb.insert_Tag("For (i=0;i++, i<4){\n","MAIN","None");//id=303
+        mydb.insert_Tag("K","MAIN","None");//id=304
+        mydb.insert_Tag("ArrayC(i)","MAIN","None");//id=305
+        mydb.insert_Tag("i==2 ","VARIABLE","None");//id=306
+        mydb.insert_Tag("=","VARIABLE","None");//id=307
+        mydb.insert_Tag("If ","VARIABLE","None");//id=308
+        mydb.insert_Tag("then ","VARIABLE","None");//id=309
+        mydb.insert_Tag("\n}\n","VARIABLE","None");//id=310
+
+        //question 35 class - Z14
+/*
+        k=5
+        sum=0
+        ArrayA =[0,1,2,3,4]
+        For (i=0,i<k-1,i++){
+            Sum = sum + ArrayA[i]
+        }
+        X = Sum mod 4
+        Go X steps forward
+
+*/
+        mydb.insert_Tag("Go X steps forward\n","MAIN","None");//id=311
+        mydb.insert_Tag("ArrayA ={0,1,2,3,4}\n","MAIN","None");//id=312
+        mydb.insert_Tag("For (i=0,i<k-1,i++){\n","MAIN","None");//id=313
+        mydb.insert_Tag("\n}\n","MAIN","None");//id=314
+        mydb.insert_Tag("sum=0\n","VARIABLE","None");//id=315
+        mydb.insert_Tag("k=5\n","VARIABLE","None");//id=316
+        mydb.insert_Tag("k=4\n ","VARIABLE","None");//id=317
+        mydb.insert_Tag("X = sum mod 4\n ","VARIABLE","None");//id=318
+        mydb.insert_Tag("X = sum\n","VARIABLE","None");//id=319
+        mydb.insert_Tag("sum = sum + ArrayA[i]\n","VARIABLE","None");//id=320
 
     }
 
