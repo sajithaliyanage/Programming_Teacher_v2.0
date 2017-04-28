@@ -528,13 +528,13 @@ public class database_data_entry_initial extends Activity {
 //        Q29
         mydb.insert_Question(
                 "The knowledge of conditional statements",
-                "Instruct to go 2 steps forward",
+                "Instruct to go 2 steps forward if current position is 20",
                 "Z8","257,258,259,260,261,262,263,255,256","20","22","20","Z9","Z8");
 //        Q30
         mydb.insert_Question(
                 "The knowledge of conditional statements",
-                "Instruct to go 2 steps forward",
-                "Z9","266,270,267,272,268,271,273,269,274,267,264,265","22","24","22","Z10","Z9");
+                "Generate a random integer Y. Instruct to go 2 steps forward if Y is a multiple of 2",
+                "Z9","267,266,269,271,270,273,264,265","22","24","22","Z10","Z9");
 //        Q31
         mydb.insert_Question(
                 "Knowledge of modular arithmetic",
@@ -1092,22 +1092,29 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=256
         mydb.insert_Tag("A = 20;\n","VARIABLE","None");//id=257
         mydb.insert_Tag("B=myPosition;\n","VARIABLE","None");//id=258
-        mydb.insert_Tag("if","VARIABLE","None");//id=259
+        mydb.insert_Tag("if","MAIN","None");//id=259
         mydb.insert_Tag("(A==B)","VARIABLE","None");//id=260
         mydb.insert_Tag("then\n","VARIABLE","None");//id=261
         mydb.insert_Tag("Y=8;\n","VARIABLE","None");//id=262
         mydb.insert_Tag("X=Y/4;\n","VARIABLE","None");//id=263
 
         //question 30 class - Z9
+        /*
+        X=2
+        Y=RANDOM_INTEGER
+        if Y mod 2 == 0 then
+        GO (X_steps_forward)
+         */
+        //267,266,269,271,270,273,264,265
         mydb.insert_Tag("GO","MAIN","None");//id=264
-        mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=265
+        mydb.insert_Tag("(X_steps_forward)\n","MAIN","None");//id=265
         mydb.insert_Tag("if","MAIN","None");//id=266
-        mydb.insert_Tag("Number of position to the left","VARIABLE","None");//id=267
-        mydb.insert_Tag("Number of position to the right","VARIABLE","None");//id=268
-        mydb.insert_Tag("X","VARIABLE","None");//id=269
-        mydb.insert_Tag("(","VARIABLE","None");//id=270
-        mydb.insert_Tag(")","VARIABLE","None");//id=271
-        mydb.insert_Tag("<","VARIABLE","None");//id=272
+        mydb.insert_Tag("X=2\nY=RANDOM_INTEGER\n","MAIN","None");//id=267
+        mydb.insert_Tag("Y/2","VARIABLE","None");//id=268
+        mydb.insert_Tag("Y mod 2","VARIABLE","None");//id=269
+        mydb.insert_Tag("0","VARIABLE","None");//id=270
+        mydb.insert_Tag("==","VARIABLE","None");//id=271
+        mydb.insert_Tag("2","VARIABLE","None");//id=272
         mydb.insert_Tag("then\n","VARIABLE","None");//id=273
         mydb.insert_Tag("=","VARIABLE","None");//id=274
 

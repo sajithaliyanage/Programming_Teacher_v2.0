@@ -303,9 +303,17 @@ public class NewQuestionView extends BaseGameActivity {
         //Intent transition_page = new Intent(this,Question_view.class);
         Intent transition_page = new Intent(this,AnimationActivity.class);
         MainActivity.current_pos=Integer.parseInt(start_node);
-        MainActivity.is_increment = 1;
-        MainActivity.target_pos = Integer.parseInt(promotion_node);
-        MainActivity.target_class = promotion_class;
+        if(Integer.parseInt(start_node)>Integer.parseInt(promotion_node)){
+            MainActivity.is_increment = 1;
+            MainActivity.target_pos = Integer.parseInt(promotion_node);
+            MainActivity.target_class = promotion_class;
+        }else{
+            MainActivity.is_increment = 0;
+            MainActivity.target_pos = Integer.parseInt(promotion_node);
+            MainActivity.target_class = promotion_class;
+        }
+
+
         Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
         Log.i("TAG", "target pos"+ MainActivity.target_pos);
         Log.i("TAG", "Target class "+ MainActivity.target_class);
