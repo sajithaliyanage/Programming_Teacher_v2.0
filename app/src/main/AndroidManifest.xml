@@ -28,39 +28,39 @@
             android:value="@integer/google_play_services_version"/>
 
         <activity
-            android:name=".SplashScreen"
+            android:name="game.programming.whileloop.canvas_game.SplashScreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnimationActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.AnimationActivity"
                   android:screenOrientation="portrait" />
-        <activity android:name=".AnimationActivity2"
+        <activity android:name="game.programming.whileloop.canvas_game.AnimationActivity2"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".Question_view"
+        <activity android:name="game.programming.whileloop.canvas_game.Question_view"
                   android:screenOrientation="portrait" />
         <activity
-            android:name=".database_data_entry_initial"
+            android:name="game.programming.whileloop.canvas_game.database_data_entry_initial"
             android:label="@string/title_activity_database_data_entry_initial"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewQuestionView"
+        <activity android:name="game.programming.whileloop.canvas_game.NewQuestionView"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".AboutActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.AboutActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".ExampleActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.ExampleActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".HelpActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.HelpActivity"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".WinActivity"
+        <activity android:name="game.programming.whileloop.canvas_game.WinActivity"
                   android:screenOrientation="portrait"/>
     </application>
 

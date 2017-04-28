@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.pushpika.canvas_game.database_data_entry_initial"
+    tools:context="com.example.pushpika.canvas_game.game.example.pushpika.canvas_game.database_data_entry_initial"
     tools:showIn="@layout/activity_database_data_entry_initial">
 
     <LinearLayout

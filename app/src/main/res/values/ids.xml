@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_id">238213220121</string>
-    <string name="number_guesses_leaderboard">CgkImY71tPcGEAIQAQ</string>
-    <string name="correct_guess_achievement1">CgkImY71tPcGEAIQAg</string>
-    <string name="correct_guess_achievement2">CgkImY71tPcGEAIQAw</string>
-    <string name="correct_guess_achievement3">CgkImY71tPcGEAIQBA</string>
-    <string name="correct_guess_achievement4">CgkImY71tPcGEAIQBQ</string>
-    <string name="correct_guess_achievement5"> CgkImY71tPcGEAIQBg</string>
-    <string name="correct_guess_achievement6">CgkImY71tPcGEAIQBw</string>
+    <string name="app_id">115305720758</string>
+    <string name="number_guesses_leaderboard">CgkItteGxq0DEAIQAQ</string>
+    <string name="correct_guess_achievement1">CgkItteGxq0DEAIQAg</string>
+    <string name="correct_guess_achievement2">CgkItteGxq0DEAIQAw</string>
+    <string name="correct_guess_achievement3">CgkItteGxq0DEAIQBA</string>
+    <string name="correct_guess_achievement4">CgkItteGxq0DEAIQBQ</string>
+    <string name="correct_guess_achievement5">CgkItteGxq0DEAIQBg</string>
+    <string name="correct_guess_achievement6">CgkItteGxq0DEAIQBw</string>
 </resources>
