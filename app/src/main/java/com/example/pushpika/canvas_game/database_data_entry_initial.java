@@ -539,12 +539,12 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Knowledge of modular arithmetic",
                 "Instruct to go 6 steps forward",
-                "Z10","277,283,278,281,280,275,276","24","30","24","Z11","Z10");
+                "Z10","277,283,278,281,280,282,275,276","24","30","24","Z11","Z10");
 //        Q32
         mydb.insert_Question(
                 "Knowledge of modular arithmetic",
                 "Instruct to go 2 steps forward",
-                "Z11","286,292,287,290,291,284,285","30","32","30","Z12","Z11");
+                "Z11","286,292,287,290,288,289,284,285","30","32","30","Z12","Z11");
 //        Q33
         mydb.insert_Question(
                 "Get the corresponding value of a given index of an array. (ordering and indexing mechanism of an array)",
@@ -1119,6 +1119,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("=","VARIABLE","None");//id=274
 
         //question 31 class - Z10
+        //277,283,278,281,280,282,275,276
         mydb.insert_Tag("GO","MAIN","None");//id=275
         mydb.insert_Tag("(X_steps_forward);\n","MAIN","None");//id=276
         mydb.insert_Tag("X","VARIABLE","None");//id=277
@@ -1126,16 +1127,17 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("7","VARIABLE","None");//id=279
         mydb.insert_Tag("15","VARIABLE","None");//id=280
         mydb.insert_Tag("mod","VARIABLE","None");//id=281
-        mydb.insert_Tag("div","VARIABLE","None");//id=282
+        mydb.insert_Tag(";\n","VARIABLE","None");//id=282
         mydb.insert_Tag("=","VARIABLE","None");//id=283
 
         //question 32 class - Z11
+        //286,292,287,290,288,289,284,285
         mydb.insert_Tag("GO","MAIN","None");//id=284
-        mydb.insert_Tag("(X_steps_forward)","MAIN","None");//id=285
+        mydb.insert_Tag("(X_steps_forward);","MAIN","None");//id=285
         mydb.insert_Tag("X","VARIABLE","None");//id=286
         mydb.insert_Tag("51","VARIABLE","None");//id=287
         mydb.insert_Tag("7","VARIABLE","None");//id=288
-        mydb.insert_Tag("52","VARIABLE","None");//id=289
+        mydb.insert_Tag(";\n","VARIABLE","None");//id=289
         mydb.insert_Tag("mod","VARIABLE","None");//id=290
         mydb.insert_Tag("div","VARIABLE","None");//id=291
         mydb.insert_Tag("=","VARIABLE","None");//id=292
