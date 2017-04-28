@@ -314,9 +314,9 @@ public class NewQuestionView extends BaseGameActivity {
         }
 
 
-        Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
-        Log.i("TAG", "target pos"+ MainActivity.target_pos);
-        Log.i("TAG", "Target class "+ MainActivity.target_class);
+        //Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
+        //Log.i("TAG", "target pos"+ MainActivity.target_pos);
+        //Log.i("TAG", "Target class "+ MainActivity.target_class);
         this.upgrade_leaderboard_score(score);
         startActivity(transition_page);
         finish();

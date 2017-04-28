@@ -754,7 +754,6 @@ public class database_data_entry_initial extends Activity {
 
         //question 06 class - F
 
-
         mydb.insert_Tag(" item in data ) { \n","VARIABLE","None");//id=35
         mydb.insert_Tag("sum=+data; }\n","VARIABLE","None");//id=36
         mydb.insert_Tag("print(sum); \n","VARIABLE","None");//id=37
