@@ -524,7 +524,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Question(
                 "Calculate the arithmetics values (and precedence of operands)",
                 "Instruct to jump to the position 20",
-                "Z7","241,242,243,244,239,248,253,249,245,250,254,246,251,247,252,238,253,239,254","14","20","14","Z8","Z7");
+                "Z7","242,239,248,249,246,252,240,238,239|242,239,248,252,246,249,240,238,239","14","20","14","Z8","Z7");
 //        Q29
         mydb.insert_Question(
                 "The knowledge of conditional statements",
@@ -1067,22 +1067,23 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("Y = A+D+B;\n","VARIABLE","None");//id=237
         //234,233,235,232,230,231
 
+        //242,239,248,249,246,252,240,238,239|242,239,248,252,246,249,240,238,239
         //question 28 class - Z7
         mydb.insert_Tag("GOTO","MAIN","None");//id=238
         mydb.insert_Tag("Y","MAIN","None");//id=239
-        mydb.insert_Tag("(a+b);\n","VARIABLE","None");//id=240
-        mydb.insert_Tag("a=myPosition;\n","VARIABLE","None");//id=241
-        mydb.insert_Tag("b=1;\n","VARIABLE","None");//id=242
-        mydb.insert_Tag("c=4;\n","VARIABLE","None");//id=243
-        mydb.insert_Tag("d=3;\n","VARIABLE","None");//id=244
+        mydb.insert_Tag(";\n","VARIABLE","None");//id=240
+        mydb.insert_Tag("a=1;\n","VARIABLE","None");//id=241
+        mydb.insert_Tag("a=myPosition;\nb=1;\nc=4;\nd=3;\n","VARIABLE","None");//id=242
+        mydb.insert_Tag("c=1;\n","VARIABLE","None");//id=243
+        mydb.insert_Tag("d=1;\n","VARIABLE","None");//id=244
         mydb.insert_Tag("+","VARIABLE","None");//id=245
         mydb.insert_Tag("*","VARIABLE","None");//id=246
         mydb.insert_Tag("/","VARIABLE","None");//id=247
         mydb.insert_Tag("=","VARIABLE","None");//id=248
-        mydb.insert_Tag("a","VARIABLE","None");//id=249
+        mydb.insert_Tag("(a+b)","VARIABLE","None");//id=249
         mydb.insert_Tag("b","VARIABLE","None");//id=250
         mydb.insert_Tag("c","VARIABLE","None");//id=251
-        mydb.insert_Tag("d","VARIABLE","None");//id=252
+        mydb.insert_Tag("c/d","VARIABLE","None");//id=252
         mydb.insert_Tag("(","VARIABLE","None");//id=253
         mydb.insert_Tag(")","VARIABLE","None");//id=254
 
