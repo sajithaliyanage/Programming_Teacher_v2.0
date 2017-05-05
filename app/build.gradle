@@ -7,7 +7,7 @@ android {
         applicationId "game.programming.whileloop.canvas_game"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         multiDexEnabled true
     }
@@ -28,9 +28,10 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.google.android.gms:play-services-ads:7.5.0'
+    compile 'com.google.android.gms:play-services-ads:10.2.1'
     compile 'com.android.support:design:23.2.1'
-    compile 'com.google.android.gms:play-services:+'
+    compile 'com.google.android.gms:play-services:10.2.1'
     compile project(':BaseGameUtils')
-    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:multidex:1.0.1'
 }
+apply plugin: 'com.google.gms.google-services'

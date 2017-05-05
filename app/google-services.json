@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "278219738587",
+    "firebase_url": "https://mango-studio.firebaseio.com",
+    "project_id": "mango-studio",
+    "storage_bucket": "mango-studio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278219738587:android:7f6b8baa8461cc21",
+        "android_client_info": {
+          "package_name": "game.programming.whileloop.canvas_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278219738587-qple6nssru1lhcllvrdfcgi1hrrg6tk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN1WzA9La1ZFFHNnfvbZpSIxnulylYZcY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
