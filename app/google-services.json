@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "278219738587",
-    "firebase_url": "https://mango-studio.firebaseio.com",
-    "project_id": "mango-studio",
-    "storage_bucket": "mango-studio.appspot.com"
+    "project_number": "613170650482",
+    "firebase_url": "https://splendid-unison-134803.firebaseio.com",
+    "project_id": "splendid-unison-134803",
+    "storage_bucket": "splendid-unison-134803.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:278219738587:android:7f6b8baa8461cc21",
+        "mobilesdk_app_id": "1:613170650482:android:7f6b8baa8461cc21",
         "android_client_info": {
           "package_name": "game.programming.whileloop.canvas_game"
         }
       },
       "oauth_client": [
         {
-          "client_id": "278219738587-qple6nssru1lhcllvrdfcgi1hrrg6tk6.apps.googleusercontent.com",
+          "client_id": "613170650482-sag855seo22o7ocqmb0u9dccv4n37a1e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDN1WzA9La1ZFFHNnfvbZpSIxnulylYZcY"
+          "current_key": "AIzaSyDCGH5tBKt5o3nq_kD-LA8GgictFLu9nGs"
         }
       ],
       "services": {

@@ -122,6 +122,11 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         startActivity(transition_page);
         finish();
     }
+    public void Go_Mult(View view){
+        Intent transition_page = new Intent(this,MultiplayerActivity.class);
+        startActivity(transition_page);
+        finish();
+    }
 
     public void Go_Help(View view){
         Intent intent = new Intent(this, HelpActivity.class);

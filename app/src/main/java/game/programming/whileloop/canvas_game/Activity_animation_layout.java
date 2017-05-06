@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.pushpika.canvas_game.R;
-import com.google.example.games.*;
 
 /**
  * Created by whileloop on 3/19/16.

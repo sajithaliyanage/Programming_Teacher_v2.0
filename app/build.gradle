@@ -26,12 +26,15 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
+    compile project(':BaseGameUtils')
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.google.android.gms:play-services-ads:10.2.1'
     compile 'com.android.support:design:23.2.1'
     compile 'com.google.android.gms:play-services:10.2.1'
-    compile project(':BaseGameUtils')
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.firebase:firebase-core:10.2.1'
+    compile 'com.google.firebase:firebase-database:10.2.1'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
