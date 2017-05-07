@@ -1,61 +1,156 @@
 package game.programming.whileloop.canvas_game;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 
 import com.example.pushpika.canvas_game.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ServerValue;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.games.multiplayer.Invitation;
+import com.google.android.gms.games.multiplayer.OnInvitationReceivedListener;
+import com.google.android.gms.games.multiplayer.Participant;
+import com.google.android.gms.games.multiplayer.realtime.RealTimeMessage;
+import com.google.android.gms.games.multiplayer.realtime.RealTimeMessageReceivedListener;
+import com.google.android.gms.games.multiplayer.realtime.Room;
+import com.google.android.gms.games.multiplayer.realtime.RoomConfig;
+import com.google.android.gms.games.multiplayer.realtime.RoomStatusUpdateListener;
+import com.google.android.gms.games.multiplayer.realtime.RoomUpdateListener;
 
-public class MultiplayerActivity extends AppCompatActivity {
-    Context context;
+import java.util.ArrayList;
+import java.util.List;
 
-    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference routeRef;
-    int myroom = -1;
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-        routeRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //mRootRef.getKey("lastaccess");
-                for(DataSnapshot d:dataSnapshot.getChildren()){
+public class MultiplayerActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
+        View.OnClickListener, RealTimeMessageReceivedListener,
+        RoomStatusUpdateListener, RoomUpdateListener, OnInvitationReceivedListener {
 
-                    GameRoom room = d.getValue(GameRoom.class);
-                    if(room.getStatus().equals("WAITING") ){
-                        //connect to this
-                        myroom = room.getRoomid();
-                    }
-                    Log.i("FIREBASE_Status:",room.getStatus()+"");
-                    Log.i("FIREBASE_Time:",room.getTimestamp()+"");
-                    Log.i("USER_TIME:",ServerValue.TIMESTAMP+"");
 
-                }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiplayer);
-        String dbRouteKey = "rooms";
-        routeRef = mRootRef.child(dbRouteKey);
-        mRootRef.child("lastaccess").setValue(ServerValue.TIMESTAMP);
-        routeRef.child("0/timestamp").setValue(ServerValue.TIMESTAMP);
+
+
+    }
+   
+    @Override
+    public void onClick(View view) {
+
     }
 
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    public void onInvitationReceived(Invitation invitation) {
+
+    }
+
+    @Override
+    public void onInvitationRemoved(String s) {
+
+    }
+
+    @Override
+    public void onRealTimeMessageReceived(RealTimeMessage realTimeMessage) {
+
+    }
+
+    @Override
+    public void onRoomConnecting(Room room) {
+
+    }
+
+    @Override
+    public void onRoomAutoMatching(Room room) {
+
+    }
+
+    @Override
+    public void onPeerInvitedToRoom(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onPeerDeclined(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onPeerJoined(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onPeerLeft(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onConnectedToRoom(Room room) {
+
+    }
+
+    @Override
+    public void onDisconnectedFromRoom(Room room) {
+
+    }
+
+    @Override
+    public void onPeersConnected(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onPeersDisconnected(Room room, List<String> list) {
+
+    }
+
+    @Override
+    public void onP2PConnected(String s) {
+
+    }
+
+    @Override
+    public void onP2PDisconnected(String s) {
+
+    }
+
+    @Override
+    public void onRoomCreated(int i, Room room) {
+
+    }
+
+    @Override
+    public void onJoinedRoom(int i, Room room) {
+
+    }
+
+    @Override
+    public void onLeftRoom(int i, String s) {
+
+    }
+
+    @Override
+    public void onRoomConnected(int i, Room room) {
+
+    }
 }

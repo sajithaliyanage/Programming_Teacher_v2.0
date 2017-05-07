@@ -13,13 +13,13 @@ public class GameRoom {
     private List<Integer> questions;
     private String status;
     private int roomid;
-    private Map<String,String> timestamp;
+    private long timestamp;
 
-    public Map<String, String> getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Map<String, String> timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 

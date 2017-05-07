@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context="game.programming.whileloop.canvas_game.MultiplayerActivity">
 
+
+
 </android.support.constraint.ConstraintLayout>
