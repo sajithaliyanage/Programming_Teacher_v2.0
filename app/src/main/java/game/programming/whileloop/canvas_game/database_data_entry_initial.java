@@ -202,10 +202,11 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z14,320);
 
         //question 36 class - Z15
-        mydb.insert_tag_que_assist(z15,323);
-        mydb.insert_tag_que_assist(z15,325);
-        mydb.insert_tag_que_assist(z15,322);
         mydb.insert_tag_que_assist(z15,321);
+        mydb.insert_tag_que_assist(z15,322);
+        mydb.insert_tag_que_assist(z15,323);
+        mydb.insert_tag_que_assist(z15,324);
+        mydb.insert_tag_que_assist(z15,325);
 
         //question 37 class - Z16
         mydb.insert_tag_que_assist(z16,326);
@@ -214,7 +215,7 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z16,329);
         mydb.insert_tag_que_assist(z16,330);
         mydb.insert_tag_que_assist(z16,331);
-
+/*
         //P
         mydb.insert_tag_que_assist(p,142);
         mydb.insert_tag_que_assist(p,143);
@@ -582,7 +583,7 @@ public class database_data_entry_initial extends Activity {
                 "323,325,322,321",
                 "55","59","55","Z16","Z15");
 
-//        Q36
+//        Q37
         mydb.insert_Question(
                 "Sorting and searching-having an idea about efficiency of sorting algorithms.\n",
                 "Instruct to sort using most efficient sorting algorithm and go 4 steps forward",
