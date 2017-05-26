@@ -63,7 +63,7 @@ public class database_data_entry_initial extends Activity {
 
         int z1 = 1;int z2 = 2;int z3 = 3;int z4 = 4;int z5 = 5;
         int z6 = 6;int z7 = 7;int z8 = 8; int z9 = 9; int z10 = 10;
-        int z11 = 11; int z12 =12;int z13 =13;int z14 =14;
+        int z11 = 11; int z12 =12;int z13 =13;int z14 =14;int z15 =15;int z16=16;
 
         int p = 13;int a = 14;int t = 15;int u=16; int q = 17;int r=18;int b=19;
         int c=20;int d=21;int e=22;int f=23;int g=24;int h=25;int i=26;int j=27;
@@ -211,6 +211,21 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_tag_que_assist(z14,318);
         mydb.insert_tag_que_assist(z14,319);
         mydb.insert_tag_que_assist(z14,320);
+
+        //question 36 class - Z15
+        mydb.insert_tag_que_assist(z15,321);
+        mydb.insert_tag_que_assist(z15,322);
+        mydb.insert_tag_que_assist(z15,323);
+        mydb.insert_tag_que_assist(z15,324);
+        mydb.insert_tag_que_assist(z15,325);
+
+        //question 37 class - Z16
+        mydb.insert_tag_que_assist(z16,326);
+        mydb.insert_tag_que_assist(z16,327);
+        mydb.insert_tag_que_assist(z16,328);
+        mydb.insert_tag_que_assist(z16,329);
+        mydb.insert_tag_que_assist(z16,330);
+        mydb.insert_tag_que_assist(z16,331);
 /*
         //P
         mydb.insert_tag_que_assist(p,142);
@@ -570,6 +585,23 @@ public class database_data_entry_initial extends Activity {
                 "Z14",
                 "312,315,316,313,320,314,318,311|312,316,315,313,320,314,318,311|315,312,316,313,320,314,318,311|315,316,312,313,320,314,318,311|316,312,315,313,320,314,318,311|316,315,312,313,320,314,318,311",
                 "53","55","53","Z15","Z14");
+
+//        Q36
+        mydb.insert_Question(
+                "Sorting and searching",
+                "Instruct to goto 4 steps forward",
+                "Z15",
+                "323,325,322,321",
+                "55","59","55","Z16","Z15");
+
+//        Q37
+        mydb.insert_Question(
+                "Sorting and searching-having an idea about efficiency of sorting algorithms.\n",
+                "Instruct to sort using most efficient sorting algorithm and go 4 steps forward",
+                "Z16",
+                "328,329,327,326",
+                "59","63","59","Z17","Z16");
+
 
 
 
@@ -1198,6 +1230,24 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("X = sum mod 4\n ","VARIABLE","None");//id=318
         mydb.insert_Tag("X = sum\n","VARIABLE","None");//id=319
         mydb.insert_Tag("sum = sum + ArrayA[i]\n","VARIABLE","None");//id=320
+
+        //Question 36 - class Z15
+
+        mydb.insert_Tag("Go X steps forward;\n","MAIN","None");//id=321
+        mydb.insert_Tag("X = ArrayA[0];\n","MAIN","None");//id=322
+        mydb.insert_Tag("ArrayA = [3,4,1,0];\n","MAIN","None");//id=323
+        mydb.insert_Tag("sort ArrayA in accending;\n","VARIABLE","None");//id=324
+        mydb.insert_Tag("sort ArrayA in decending;\n","VARIABLE","None");//id=325
+
+        //Question 37 - class Z16
+
+        mydb.insert_Tag("Go X steps forward;\n","MAIN","None");//id=326
+        mydb.insert_Tag("X= ArrayA[2];\n","MAIN","None");//id=327
+        mydb.insert_Tag("ArrayA =[2,4,6,3,9];\n","MAIN","None");//id=328
+        mydb.insert_Tag("sort array using selection sort;\n","VARIABLE","None");//id=329
+        mydb.insert_Tag("sort array using bubble sort;\n","VARIABLE","None");//id=330
+        mydb.insert_Tag("X= ArrayA[1];\n","VARIABLE","None");//id=331
+
 
     }
 

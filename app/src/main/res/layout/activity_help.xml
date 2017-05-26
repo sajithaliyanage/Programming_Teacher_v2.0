@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pushpika.canvas_game.game.example.pushpika.canvas_game.HelpActivity">
+    tools:context="game.programming.whileloop.canvas_game.HelpActivity">
 
     <LinearLayout
         android:orientation="vertical"
