@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        
+        <ImageView
+            app:srcCompat="@drawable/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="20dp"/>
+        
+        <LinearLayout
+            android:paddingTop="22dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <TextView
+                android:text="Programming Teacher"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#6c6c6c"
+                android:paddingTop="2dp"
+                android:text="Version 2.0"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#6c6c6c"
+                android:paddingTop="2dp"
+                android:text="University of Colombo School of Computing"
+                android:textSize="12sp"/>
+            
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:text="This application helps you to enhance your programming and algorithmic knowledge. Start learning today and see where Programming Teacher can take you."
+        android:layout_height="wrap_content" />
+
+
+
+
+    <TextView
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:textAlignment="center"
+        android:text="Project Supervisor"
+        android:textColor="#FF9925"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:text="Dr. Rasika Dayarathne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#6c6c6c"
+        android:textAlignment="center"
+        android:text="Developed By"
+        android:id="@+id/textView10"
+        android:textSize="10sp"/>
+
+    <ImageView
+        app:srcCompat="@drawable/whileloop_Logo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingBottom="10dp"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="#8F3DAE"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Umesh Prabushitha Jayasinghe"
+                android:textColor="#ffffff"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Sajitha Gimash Liayanage"
+                android:textColor="#ffffff"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Sulochana Kodituwakku"
+                android:textColor="#ffffff"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Dulya Murage"
+                android:textColor="#ffffff"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

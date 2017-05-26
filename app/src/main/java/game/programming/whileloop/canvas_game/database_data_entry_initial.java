@@ -48,6 +48,17 @@ public class database_data_entry_initial extends Activity {
         finish();
     }
 
+    public void addQuestionFirebase(int firebaseID){
+        int z = firebaseID; //Question number
+        mydb.insert_tag_que_assist(z,208); //way of addig elements to sqlLite
+        mydb.insert_Question(
+                "Follow “GoTo” statement",
+                "Instruct to jump to the position 3",
+                "Z15","208,209","15","3","1","Z2","Z15");  //currentClass,tagID,currentPos,jumpPos,penaltyPos,JumpClass,PenaltyClass
+        mydb.insert_Tag("if","VARIABLE","None");   //adding sub tag
+        mydb.insert_Tag("bubble_sort","MAIN","None");  //adding main tag
+    }
+
     public void insertData_tag_ques_assist() {
 
         int z1 = 1;int z2 = 2;int z3 = 3;int z4 = 4;int z5 = 5;
