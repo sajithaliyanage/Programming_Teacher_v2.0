@@ -1,11 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="game.programming.whileloop.canvas_game.MultiplayerActivity">
 
+    <!-- SIGN-IN SCREEN -->
+    <LinearLayout android:id="@+id/screen_sign_in" style="@style/LLScreen">
+        <TextView style="@style/GameTitle" />
+        <TextView style="@style/GameBlurb" />
+
+        <Button android:id="@+id/button_single_player"
+            style="@style/MainScreenButton"
+            android:text="@string/single_player" />
+        <com.google.android.gms.common.SignInButton android:id="@+id/button_sign_in"
+            style="@style/SignInButton" />
+    </LinearLayout>
+
+    <!-- MAIN SCREEN -->
+    <LinearLayout android:id="@+id/screen_main" style="@style/LLScreen">
+        <TextView style="@style/GameTitle" />
+        <Button android:id="@+id/button_quick_game"
+            style="@style/MainScreenButton"
+            android:text="@string/quick_game" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/quick_game_explanation" />
+        <Button android:id="@+id/button_invite_players"
+            style="@style/MainScreenButton"
+            android:text="@string/invite_players" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/invite_players_explanation" />
+        <Button android:id="@+id/button_see_invitations"
+            style="@style/MainScreenButton"
+            android:text="@string/see_invitations" />
+        <TextView style="@style/MainScreenButtonBlurb"
+            android:text="@string/see_invitations_explanation" />
+        <Button android:id="@+id/button_sign_out"
+            style="@style/SignOutButton"
+            android:text="@string/sign_out" />
+    </LinearLayout>
+
+    <!-- INVITATION POPUP -->
+    <LinearLayout android:id="@+id/invitation_popup" style="@style/InvPopup">
+        <TextView android:id="@+id/incoming_invitation_text" style="@style/InvPopupText" />
+        <Button android:id="@+id/button_accept_popup_invitation"
+            style="@style/InvPopupButton"
+            android:text="@string/accept_popup_invite" />
+    </LinearLayout>
+
+    <!-- "PLEASE WAIT" SCREEN -->
+    <LinearLayout android:id="@+id/screen_wait" style="@style/LLScreen">
+        <TextView style="@style/Blurb" android:text="@string/please_wait" />
+    </LinearLayout>
+
+    <!-- GAME OVER SCREEN -->
+    <LinearLayout
+        android:id="@+id/screen_gameover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="GAME OVER"
+            android:textColor="@color/AccentColor"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/winloose"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:text="YOU WON"
+            android:textColor="#228B22"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"
+            />
+        <TextView
+            android:id="@+id/winlostpoints"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="By 18 Points"
+            android:textColor="#87CEEB"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"
+            />
+    </LinearLayout>
+
+    <!-- GAMEPLAY SCREEN -->
+    <LinearLayout
+        android:id="@+id/screen_game"
+        style="@style/LLScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <!-- Scores -->
+        <LinearLayout style="@style/ScoresBox">
+            <TextView android:id="@+id/score0" style="@style/ScoreText" />
+            <TextView android:id="@+id/countdown" style="@style/FigureLabel" />
+            <TextView android:id="@+id/score1" style="@style/ScoreText" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            >
+            <!-- Question -->
+            <TextView android:id="@+id/instructions"
+                style="@style/Instructions" android:text="Title" />
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/description"
+                    style="@style/Instructions" android:text="Description" />
+            </ScrollView>
+        </LinearLayout>
+
+        <!--<TextView android:id="@+id/my_score" style="@style/ScoreDisplay" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:layout_gravity="bottom"
+            >
+            <LinearLayout style="@style/OptionsBox">
+                <Button android:id="@+id/option1"
+                    style="@style/OptionButton"
+                    android:text="Option 01"
+                    android:layout_marginBottom="20dp" />
+                <Button android:id="@+id/option2"
+                    style="@style/OptionButton"
+                    android:text="Option 02"
+                    android:layout_marginBottom="20dp" />
+
+            </LinearLayout>
+            <LinearLayout style="@style/OptionsBox">
+                <Button android:id="@+id/option3"
+                    style="@style/OptionButton"
+                    android:text="Option 03"
+                    android:layout_marginBottom="20dp" />
+                <Button android:id="@+id/option4"
+                    style="@style/OptionButton"
+                    android:text="Option 04"
+                    android:layout_marginBottom="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

@@ -27,6 +27,8 @@
     <color name="SignOutButtonBackground">#e0e0e0</color>
     <color name="SignOutButtonTextColor">#404040</color>
 
+
+
     <style name="GameScreen">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -51,12 +53,20 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/BlurbColor</item>
     </style>
+    <style name="InvPopup" parent="@style/LLScreen">
+        <item name="android:background">@color/PopupColor</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">top|right</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 
     <style name="GameBlurb" parent="@style/Blurb">
         <item name="android:text">Programming Teacher Multiplayer</item>
         <item name="android:layout_marginBottom">40dp</item>
     </style>
-
 
     <style name="SignInButton">
         <item name="android:layout_width">wrap_content</item>
@@ -177,5 +187,36 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginBottom">20dp</item>
     </style>
+
+
+
+
+
+
+
+
+    <style name="GameplayScreen" parent="@style/LLScreen">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="OptionsBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#f0f0f0</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+    <style name="OptionButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/AccentColor</item>
+        <item name="android:textColor">@color/ButtonTextColor</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+    </style>
+
 
 </resources>
