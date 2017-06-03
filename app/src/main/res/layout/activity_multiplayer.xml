@@ -8,37 +8,78 @@
 
     <!-- SIGN-IN SCREEN -->
     <LinearLayout android:id="@+id/screen_sign_in" style="@style/LLScreen">
-        <TextView style="@style/GameTitle" />
-        <TextView style="@style/GameBlurb" />
-
+        <ImageView
+            android:src="@mipmap/logo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+        <TextView
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#323232"
+            android:textAlignment="center"
+            android:text="Programming Teacher - Multiplayer"
+            android:textSize="20sp"
+            android:layout_marginBottom="30dp"/>
+        <Button android:id="@+id/button_sign_in"
+            style="@style/MenuButton"
+            android:text="Sign In"/>
         <Button android:id="@+id/button_single_player"
-            style="@style/MainScreenButton"
-            android:text="@string/single_player" />
-        <com.google.android.gms.common.SignInButton android:id="@+id/button_sign_in"
-            style="@style/SignInButton" />
+            style="@style/MenuButton"
+            android:background="#fd9900"
+            android:onClick="Go_Main"
+            android:text="Main Menu" />
     </LinearLayout>
+
 
     <!-- MAIN SCREEN -->
     <LinearLayout android:id="@+id/screen_main" style="@style/LLScreen">
-        <TextView style="@style/GameTitle" />
-        <Button android:id="@+id/button_quick_game"
-            style="@style/MainScreenButton"
-            android:text="@string/quick_game" />
-        <TextView style="@style/MainScreenButtonBlurb"
-            android:text="@string/quick_game_explanation" />
-        <Button android:id="@+id/button_invite_players"
-            style="@style/MainScreenButton"
-            android:text="@string/invite_players" />
-        <TextView style="@style/MainScreenButtonBlurb"
-            android:text="@string/invite_players_explanation" />
-        <Button android:id="@+id/button_see_invitations"
-            style="@style/MainScreenButton"
-            android:text="@string/see_invitations" />
-        <TextView style="@style/MainScreenButtonBlurb"
-            android:text="@string/see_invitations_explanation" />
-        <Button android:id="@+id/button_sign_out"
-            style="@style/SignOutButton"
-            android:text="@string/sign_out" />
+        <ImageView
+            android:src="@mipmap/logo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+        <TextView
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#323232"
+            android:textAlignment="center"
+            android:text="Programming Teacher - Multiplayer"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:paddingTop="25dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/MainScreenButtonBlurb"
+                android:text="@string/quick_game_explanation" />
+            <Button
+                android:id="@+id/button_quick_game"
+                style="@style/MenuButton"
+                android:text="Quick Game"/>
+
+            <TextView style="@style/MainScreenButtonBlurb"
+                android:text="@string/invite_players_explanation" />
+            <Button
+                android:id="@+id/button_invite_players"
+                style="@style/MenuButton"
+                android:text="@string/invite_players"/>
+
+            <TextView style="@style/MainScreenButtonBlurb"
+                android:text="@string/see_invitations_explanation" />
+            <Button
+                android:id="@+id/button_see_invitations"
+                style="@style/MenuButton"
+                android:text="@string/see_invitations"/>
+
+            <Button
+                style="@style/MenuButton"
+                android:background="#fd9900"
+                android:onClick="Go_Main"
+                android:text="Main Menu"/>
+        </LinearLayout>
     </LinearLayout>
 
     <!-- INVITATION POPUP -->
@@ -63,35 +104,57 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:text="GAME OVER"
             android:textColor="@color/AccentColor"
             android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
             />
-        <TextView
-            android:id="@+id/winloose"
+        <ImageView
+            android:src="@mipmap/logo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
-            android:text="YOU WON"
-            android:textColor="#228B22"
-            android:textSize="60sp"
-            android:textStyle="bold"
-            android:gravity="center_vertical|center_horizontal"
-            />
-        <TextView
-            android:id="@+id/winlostpoints"
+            android:layout_weight="1" />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:text="By 18 Points"
-            android:textColor="#87CEEB"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center_vertical|center_horizontal"
-            />
+            android:layout_weight="4"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/winloose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YOU WON"
+                android:textColor="#228B22"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|center_horizontal"
+                />
+            <TextView
+                android:id="@+id/winlostpoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By 18 Points"
+                android:textColor="#005476"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_vertical|center_horizontal"
+                />
+
+            <Button
+                android:layout_gravity="center"
+                android:background="#fd9900"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:onClick="Go_Main"
+                android:text="Main Menu"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 
     <!-- GAMEPLAY SCREEN -->
@@ -103,10 +166,21 @@
         android:orientation="vertical"
         >
         <!-- Scores -->
-        <LinearLayout style="@style/ScoresBox">
-            <TextView android:id="@+id/score0" style="@style/ScoreText" />
-            <TextView android:id="@+id/countdown" style="@style/FigureLabel" />
-            <TextView android:id="@+id/score1" style="@style/ScoreText" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+            <LinearLayout style="@style/ScoresBox">
+                <TextView style="@style/ScoreInfo" android:background="#23e900" android:text="You"/>
+                <TextView style="@style/ScoreInfo" android:text="Time Left"/>
+                <TextView android:id="@+id/opponame" style="@style/ScoreInfo" android:background="#e90000" android:text="Opponent"/>
+            </LinearLayout>
+            <LinearLayout style="@style/ScoresBox">
+                <TextView android:id="@+id/score0" android:background="#7dff66" style="@style/ScoreText" />
+                <TextView android:id="@+id/countdown" style="@style/FigureLabel" />
+                <TextView android:id="@+id/score1" android:background="#ef6060" style="@style/ScoreText"/>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,12 +190,12 @@
             >
             <!-- Question -->
             <TextView android:id="@+id/instructions"
-                style="@style/Instructions" android:text="Title" />
+                style="@style/Instruction_title" android:text="Title" />
             <ScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
                 <TextView android:id="@+id/description"
-                    style="@style/Instructions" android:text="Description" />
+                    style="@style/Instruction_body" android:text="Description" />
             </ScrollView>
         </LinearLayout>
 
@@ -134,25 +208,27 @@
             android:layout_gravity="bottom"
             >
             <LinearLayout style="@style/OptionsBox">
-                <Button android:id="@+id/option1"
+
+                <Button
+                    android:id="@+id/option1"
                     style="@style/OptionButton"
-                    android:text="Option 01"
-                    android:layout_marginBottom="20dp" />
+                    android:background="@color/color_option1"
+                    android:text="Option 01" />
                 <Button android:id="@+id/option2"
                     style="@style/OptionButton"
-                    android:text="Option 02"
-                    android:layout_marginBottom="20dp" />
+                    android:background="@color/color_option2"
+                    android:text="Option 02" />
 
             </LinearLayout>
             <LinearLayout style="@style/OptionsBox">
                 <Button android:id="@+id/option3"
                     style="@style/OptionButton"
-                    android:text="Option 03"
-                    android:layout_marginBottom="20dp" />
+                    android:background="@color/color_option3"
+                    android:text="Option 03" />
                 <Button android:id="@+id/option4"
                     style="@style/OptionButton"
-                    android:text="Option 04"
-                    android:layout_marginBottom="20dp" />
+                    android:background="@color/color_option4"
+                    android:text="Option 04" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

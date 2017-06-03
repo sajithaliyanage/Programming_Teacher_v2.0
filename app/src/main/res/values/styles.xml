@@ -38,8 +38,24 @@
     <style name="LLScreen" parent="@style/GameScreen">
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+
+    <!-- Testing -->
+    <style name="GameScreenTest">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="LLScreenTest" parent="@style/GameScreenTest">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:padding">30dp</item>
     </style>
+
+
+
     <style name="GameTitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -88,7 +104,7 @@
     </style>
 
     <style name="MainScreenButtonBlurb" parent="@style/GameBlurb">
-        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
     </style>
 
     <style name="InvPopupText">
@@ -118,9 +134,12 @@
     </style>
 
     <style name="FigureLabel">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">00</item>
     </style>
 
     <style name="ScoreToast">
@@ -130,14 +149,32 @@
         <item name="android:layout_marginBottom">20dp</item>
     </style>
 
+
     <style name="ScoresBox">
         <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_weight">1</item>-->
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">#f0f0f0</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:layout_marginTop">30dp</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">0dp</item>
     </style>
+    <style name="ScoreText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">00</item>
+    </style>
+    <style name="ScoreInfo">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 
     <style name="ButtonsBox">
         <item name="android:layout_width">match_parent</item>
@@ -148,18 +185,19 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="ScoreText">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:gravity">left</item>
-    </style>
+
 
     <style name="Instructions" parent="@style/Blurb">
         <item name="android:layout_marginBottom">20dp</item>
     </style>
 
+    <style name="Instruction_title" parent="@style/Blurb">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="Instruction_body" parent="@style/Blurb">
+        <item name="android:textSize">15sp</item>
+    </style>
     <style name="ScoreLabel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -193,30 +231,42 @@
 
 
 
-
-
     <style name="GameplayScreen" parent="@style/LLScreen">
         <item name="android:gravity">center</item>
     </style>
 
     <style name="OptionsBox">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:background">#f0f0f0</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:padding">5dp</item>
-        <item name="android:layout_marginBottom">0dp</item>
+        <!--<item name="android:layout_marginTop">2dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>-->
     </style>
     <style name="OptionButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/AccentColor</item>
+        <item name="android:background">#ff3300</item>
         <item name="android:textColor">@color/ButtonTextColor</item>
-        <item name="android:paddingLeft">2dp</item>
-        <item name="android:paddingRight">2dp</item>
+        <item name="android:layout_margin">2dp</item>
     </style>
+    <color name="color_option1">#ff3300</color>
+    <color name="color_option2">#af2502</color>
+    <color name="color_option3">#af2502</color>
+    <color name="color_option4">#ff3300</color>
 
+
+    <style name="MenuButton">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#ff3300</item>
+        <item name="android:paddingLeft">25dp</item>
+        <item name="android:paddingRight">25dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
 
 </resources>

@@ -57,6 +57,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
     final static String TAG = "PT Multiplayer";
 
+
     // Request codes for the UIs that we show with startActivityForResult:
     final static int RC_SELECT_PLAYERS = 10000;
     final static int RC_INVITATION_INBOX = 10001;
@@ -100,8 +101,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
     final static int[] CLICKABLES = {
             R.id.button_accept_popup_invitation, R.id.button_invite_players,
-            R.id.button_quick_game, R.id.button_see_invitations, R.id.button_sign_in,
-            R.id.button_sign_out, R.id.option1,R.id.option2,R.id.option3,R.id.option4
+            R.id.button_quick_game, R.id.button_see_invitations, R.id.button_sign_in, R.id.option1,R.id.option2,R.id.option3,R.id.option4
     };
 
     // This array lists all the individual screens our game has.
@@ -109,6 +109,10 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
             R.id.screen_game, R.id.screen_main, R.id.screen_sign_in,
             R.id.screen_wait, R.id.screen_gameover
     };
+
+
+    int currentScreenId = -1;
+
     int mCurScreen = -1;
 
     View view;
@@ -158,15 +162,6 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
                 mSignInClicked = true;
                 mGoogleApiClient.connect();
                 break;
-            case R.id.button_sign_out:
-                // user wants to sign out
-                // sign out.
-                Log.d(TAG, "Sign-out button clicked");
-                mSignInClicked = false;
-                Games.signOut(mGoogleApiClient);
-                mGoogleApiClient.disconnect();
-                switchToScreen(R.id.screen_sign_in);
-                break;
             case R.id.button_invite_players:
                 // show list of invitable players
                 intent = Games.RealTimeMultiplayer.getSelectOpponentsIntent(mGoogleApiClient, 1, 1);
@@ -206,6 +201,15 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
                 scoreOnePoint(4,R.id.option4);
                 break;
         }
+    }
+    public void Go_Main(View view){
+        Intent transition_page = new Intent(this,MainActivity.class);
+        startActivity(transition_page);
+        finish();
+    }
+    @Override
+    public void onBackPressed() {
+        //do nothing
     }
 
     void startQuickGame() {
@@ -387,6 +391,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         }
         return super.onKeyDown(keyCode, e);
     }
+
 
     // Leave the room.
     void leaveRoom() {
@@ -641,7 +646,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
     /*
      * GAME LOGIC SECTION. Methods that implement the game's rules.
      */
-    //question bank
+    //question bank with sample questions. The will be replaced by multiplayequestionload mpQLoad object
     MultiplayerQuestion[] questionbank = new MultiplayerQuestion[]{
             new MultiplayerQuestion(
                     "Go 4 steps forward",
@@ -990,6 +995,10 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
 
     void switchToScreen(int screenId) {
+        if(mCurScreen==SCREENS[4]){
+            //game over screen, so do nothing
+            return;
+        }
         // make the requested screen visible; hide all others.
         for (int id : SCREENS) {
             findViewById(id).setVisibility(screenId == id ? View.VISIBLE : View.GONE);
@@ -1009,6 +1018,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
             showInvPopup = (mCurScreen == R.id.screen_main || mCurScreen == R.id.screen_game);
         }
         findViewById(R.id.invitation_popup).setVisibility(showInvPopup ? View.VISIBLE : View.GONE);
+
     }
 
     void switchToMainScreen() {
@@ -1022,7 +1032,8 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
     // updates the label that shows my score
     void updateScoreDisplay() {
-        ((TextView) findViewById(R.id.score0)).setText(formatScore(mScore)+ " - You");
+        //Update your score
+        ((TextView) findViewById(R.id.score0)).setText(formatScore(mScore));
     }
 
     // formats a score as a three-digit number
@@ -1050,8 +1061,9 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
                     continue;
                 int score = mParticipantScore.containsKey(pid) ? mParticipantScore.get(pid) : 0;
                 Log.i("Opponent",score+"");
-                ((TextView) findViewById(arr[i])).setText(formatScore(score) + " - " +
-                        "Opponent");//p.getDisplayName());
+                //Update opponent score
+                ((TextView) findViewById(arr[i])).setText(formatScore(score));//p.getDisplayName());
+                ((TextView) findViewById(R.id.opponame)).setText(p.getDisplayName());//p.getDisplayName());
                 ++i;
             }
         }
@@ -1059,7 +1071,8 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         for (; i < arr.length; ++i) {
             ((TextView) findViewById(arr[i])).setText("");
         }
-        ((TextView) findViewById(R.id.score0)).setText(formatScore(mScore)+ " - You");
+        //Update your score
+        ((TextView) findViewById(R.id.score0)).setText(formatScore(mScore));
     }
 
     /*
