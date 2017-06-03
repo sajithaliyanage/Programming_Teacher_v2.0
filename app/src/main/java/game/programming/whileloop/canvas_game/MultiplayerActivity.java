@@ -524,20 +524,28 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
     public void onLeftRoom(int statusCode, String roomId) {
         // we have left the room; return to main screen.
         Log.d(TAG, "onLeftRoom, code " + statusCode);
-        switchToMainScreen();
+
+        //goto main menu
+        View current = findViewById(mCurScreen);
+        Go_Main(current);
+        //switchToMainScreen();
     }
 
     // Called when we get disconnected from the room. We return to the main screen.
     @Override
     public void onDisconnectedFromRoom(Room room) {
         mRoomId = null;
+
         showGameError();
     }
 
     // Show error message about game being cancelled and return to main screen.
     void showGameError() {
         BaseGameUtils.makeSimpleDialog(this, getString(R.string.game_problem));
-        switchToMainScreen();
+
+        //switchToMainScreen();
+        View current = findViewById(mCurScreen);
+        Go_Main(current);
     }
 
     // Called when room has been created
@@ -1023,9 +1031,9 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
     void switchToMainScreen() {
         if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
-            //switchToScreen(R.id.screen_main);
-            View current = findViewById(mCurScreen);
-            Go_Main(current);
+            switchToScreen(R.id.screen_main);
+            //View current = findViewById(mCurScreen);
+            //Go_Main(current);
         }
         else {
             switchToScreen(R.id.screen_sign_in);
