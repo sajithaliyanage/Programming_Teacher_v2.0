@@ -600,7 +600,7 @@ public class database_data_entry_initial extends Activity {
                 "Instruct to sort using most efficient sorting algorithm and go 4 steps forward",
                 "Z16",
                 "328,329,327,326",
-                "59","63","59","Z17","Z16");
+                "59","63","59","Z17","V");
 
 
 

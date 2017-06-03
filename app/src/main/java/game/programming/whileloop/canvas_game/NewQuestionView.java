@@ -298,6 +298,11 @@ public class NewQuestionView extends BaseGameActivity {
         //Intent transition_page = new Intent(this,Question_view.class);
         Intent transition_page = new Intent(this,AnimationActivity.class);
         MainActivity.current_pos=Integer.parseInt(start_node);
+
+        //check if user finish game
+
+
+        //allowing both increments and decrements in board
         if(Integer.parseInt(start_node)<Integer.parseInt(promotion_node)){
             MainActivity.is_increment = 1;
             MainActivity.target_pos = Integer.parseInt(promotion_node);

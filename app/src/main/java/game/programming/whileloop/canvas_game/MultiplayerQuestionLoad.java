@@ -1,5 +1,6 @@
 package game.programming.whileloop.canvas_game;
 
+import android.os.Debug;
 import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
@@ -49,6 +50,7 @@ public class MultiplayerQuestionLoad {
                 for(DataSnapshot d:dataSnapshot.getChildren()){
                     MultiplayerQuestion question = d.getValue(MultiplayerQuestion.class);
                     allQuestions.add(question);
+                    Log.v("QUESTION",question.getQuestion());
                     TOTAL_QUESTIONS++;
                 }
                 doneQuestionLoad = true;
