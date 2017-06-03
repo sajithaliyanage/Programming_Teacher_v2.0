@@ -1023,7 +1023,9 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
 
     void switchToMainScreen() {
         if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
-            switchToScreen(R.id.screen_main);
+            //switchToScreen(R.id.screen_main);
+            View current = findViewById(mCurScreen);
+            Go_Main(current);
         }
         else {
             switchToScreen(R.id.screen_sign_in);

@@ -73,7 +73,8 @@
         <activity
             android:name="game.programming.whileloop.canvas_game.WinActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="game.programming.whileloop.canvas_game.MultiplayerActivity"></activity>
+        <activity android:name="game.programming.whileloop.canvas_game.MultiplayerActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
