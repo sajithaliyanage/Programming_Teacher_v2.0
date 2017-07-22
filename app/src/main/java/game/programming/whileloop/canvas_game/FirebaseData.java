@@ -1,8 +1,13 @@
 package game.programming.whileloop.canvas_game;
 
-import android.os.Debug;
+import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.example.pushpika.canvas_game.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -12,45 +17,36 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by prabushitha on 5/8/17.
- */
+public class FirebaseData {
 
-public class MultiplayerQuestionLoad {
+    //DatabaseHelper mydb;
+
+
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference questionRef;
+
+    DatabaseReference questionRef; //Question node
+    DatabaseReference mQuestionDataRef; //QArray node
     int TOTAL_QUESTIONS = 0;
     boolean doneQuestionLoad = false;
-    private List<MultiplayerQuestion> allQuestions;
-    MultiplayerQuestionLoad(){
-        allQuestions = new ArrayList<MultiplayerQuestion>();
-        questionRef = mRootRef.child("multquestions");
-        readAllQuestions();
-    }
-    public MultiplayerQuestion[] getQuestions(int...question_ids){
-        int paper_size = question_ids.length;
-        MultiplayerQuestion[] ques = new MultiplayerQuestion[paper_size];
-        if(allQuestions.size()>=paper_size){
-            for(int i=0;i<paper_size;i++){
-                ques[i] = allQuestions.get(question_ids[i]);
-            }
-        }else{
-            return null;
-        }
+    private List<NormalQuestion> allQuestions;
 
-        return ques;
+    FirebaseData(){
+        allQuestions = new ArrayList<NormalQuestion>();
+        questionRef = mRootRef.child("Questions");
+        mQuestionDataRef = mRootRef.child("Questions").child("QArray");
+        readAllQuestions();
     }
 
     public void readAllQuestions(){
-        questionRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        mQuestionDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 TOTAL_QUESTIONS=0;
-                allQuestions = new ArrayList<MultiplayerQuestion>();
+                allQuestions = new ArrayList<NormalQuestion>();
                 for(DataSnapshot d:dataSnapshot.getChildren()){
-                    MultiplayerQuestion question = d.getValue(MultiplayerQuestion.class);
+                    NormalQuestion question = d.getValue(NormalQuestion.class);
                     allQuestions.add(question);
-                    Log.v("QUESTION",question.getQuestion());
+                    Log.v("QUESTION",question.getDescription());
                     TOTAL_QUESTIONS++;
                 }
                 doneQuestionLoad = true;
@@ -63,4 +59,5 @@ public class MultiplayerQuestionLoad {
         });
 
     }
+
 }
