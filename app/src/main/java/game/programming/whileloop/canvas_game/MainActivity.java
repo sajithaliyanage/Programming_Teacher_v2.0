@@ -67,7 +67,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         findViewById(R.id.show_leaderboard).setOnClickListener(this);
         findViewById(R.id.show_achievements).setOnClickListener(this);
 
-        FirebaseData fd = new FirebaseData();
+
 
     }
 

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import com.example.pushpika.canvas_game.R;
 
-public class database_data_entry_initial extends Activity {
+public class database_data_entry_initial extends Activity implements CallBack{
 
     DatabaseHelper mydb;
     Button btn;
@@ -28,9 +28,11 @@ public class database_data_entry_initial extends Activity {
         btn = (Button) findViewById(R.id.go_firstpage);
         btn.setVisibility(View.GONE);
         mydb = new DatabaseHelper(this);
-        insertData_tags();
-        insertData_Question();
-        insertData_tag_ques_assist();
+        //insertData_tags();
+        //insertData_Question();
+        //insertData_tag_ques_assist();
+
+        FirebaseData fd = new FirebaseData(this,this);
 
     }
 
@@ -40,17 +42,19 @@ public class database_data_entry_initial extends Activity {
         finish();
     }
 
-    public void addQuestionFirebase(int firebaseID){
-        int z = firebaseID; //Question number
-        mydb.insert_tag_que_assist(z,208); //way of addig elements to sqlLite
-        mydb.insert_Question(
-                "Follow “GoTo” statement",
-                "Instruct to jump to the position 3",
-                "Z15","208,209","15","3","1","Z2","Z15");  //currentClass,tagID,currentPos,jumpPos,penaltyPos,JumpClass,PenaltyClass
-        mydb.insert_Tag("if","VARIABLE","None");   //adding sub tag
-        mydb.insert_Tag("bubble_sort","MAIN","None");  //adding main tag
+    @Override
+    public void onComplete(){
+        //appear goto 1st page button
+        btn.setVisibility(View.VISIBLE);
+
     }
 
+    @Override
+    public void onError(){
+        //appear retry button here
+    }
+
+/*
     public void insertData_tag_ques_assist() {
 
         int z1 = 1;int z2 = 2;int z3 = 3;int z4 = 4;int z5 = 5;
@@ -225,24 +229,12 @@ public class database_data_entry_initial extends Activity {
         btn.setVisibility(View.VISIBLE);
     }
 
-
+*/
+/*
     public void insertData_Question() {
         //(String question_topic,String question_desc,
         // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
-        /*
-            param 1 = title
-            param 2 = description
-            param 3 = Question class
-            param 4 = Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
-            param 5 = start node (current place)
-            param 6 = current node
-            param 7 = on success current node, next node (promotion)
-            param 8 = on fail current node, next node (punishment)
-            param 9 = promotion class
-            param 10 = punishment class
 
-
-         */
         //        Q22
         mydb.insert_Question(
                 "Follow “GoTo” statement",
@@ -338,8 +330,8 @@ public class database_data_entry_initial extends Activity {
                 "59","63","59","Z17","V");
 
     }
-
-    //
+*/
+/*
     public void insertData_tags(){
 
         //keyword is used for mainly use variables
@@ -742,12 +734,6 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("X=Y/4;\n","VARIABLE","None");//id=263
 
         //question 30 class - Z9
-        /*
-        X=2
-        Y=RANDOM_INTEGER
-        if Y mod 2 == 0 then
-        GO (X_steps_forward)
-         */
         //267,266,269,271,270,273,264,265
         mydb.insert_Tag("GO","MAIN","None");//id=264
         mydb.insert_Tag("(X_steps_forward)\n","MAIN","None");//id=265
@@ -797,14 +783,8 @@ public class database_data_entry_initial extends Activity {
 
 
         //question 34 class - Z13
-/*
-    ArrayC={32,50,53,30}
-    For (i=0;i++, i<4){
-    If i==2 then K=ArrayC(i)
-    }
-    Goto(K)
- */
-//302,303,308,306,309,304,307,305,310,301|302,303,308,306,309,304,307,305,301,310
+
+        //302,303,308,306,309,304,307,305,310,301|302,303,308,306,309,304,307,305,301,310
         mydb.insert_Tag("Goto(K);\n","MAIN","None");//id=301
         mydb.insert_Tag("ArrayC={32,50,53,30}\n","MAIN","None");//id=302
         mydb.insert_Tag("For (i=0;i++, i<4){\n","MAIN","None");//id=303
@@ -817,17 +797,6 @@ public class database_data_entry_initial extends Activity {
         mydb.insert_Tag("\n}\n","VARIABLE","None");//id=310
 
         //question 35 class - Z14
-/*
-        k=5
-        sum=0
-        ArrayA =[0,1,2,3,4]
-        For (i=0,i<k-1,i++){
-            Sum = sum + ArrayA[i]
-        }
-        X = Sum mod 4
-        Go X steps forward
-
-*/
         mydb.insert_Tag("Go X steps forward\n","MAIN","None");//id=311
         mydb.insert_Tag("ArrayA ={0,1,2,3,4}\n","MAIN","None");//id=312
         mydb.insert_Tag("For (i=0,i<k-1,i++){\n","MAIN","None");//id=313
@@ -858,5 +827,5 @@ public class database_data_entry_initial extends Activity {
 
 
     }
-
+*/
 }

@@ -10,31 +10,31 @@ import java.util.List;
 public class NormalQuestion {
     private String correctSequene;
     private String currentClass;
-    private String currentPos;
+    private int currentPos;
     private String description;
     private String heading;
 
-    private List<Object> mainTags;
-    private List<Object> subTags;
+    private List<Tag> mainTags;
+    private List<Tag> subTags;
 
     private String successClass;
-    private String successPos;
+    private int successPos;
 
-    NormalQuestion(String cs, String cc, String cp, String d, String h, Object[] mTag, Object[] sTags){
+    NormalQuestion(String cs, String cc, String cp, String d, String h, Tag[] mTag, Tag[] sTags){
         this.setCorrectSequene(cs);
         this.setCurrentClass(cc);
         this.setCurrentPos(cp);
         this.setDescription(d);
         this.setHeading(h);
 
-        setMainTags(new ArrayList<Object>());
-        setSubTags(new ArrayList<Object>());
+        setMainTags(new ArrayList<Tag>());
+        setSubTags(new ArrayList<Tag>());
 
-        for(Object x:mTag){
+        for(Tag x:mTag){
             getMainTags().add(x);
         }
 
-        for(Object x:sTags){
+        for(Tag x:sTags){
             getSubTags().add(x);
         }
     }
@@ -42,6 +42,27 @@ public class NormalQuestion {
 
     NormalQuestion(){
 
+    }
+    public static class Tag{
+        private int id;
+        private String tag_name;
+        Tag(){}
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTag_name() {
+            return tag_name;
+        }
+
+        public void setTag_name(String tag_name) {
+            this.tag_name = tag_name;
+        }
     }
 
 
@@ -61,12 +82,12 @@ public class NormalQuestion {
         this.currentClass = currentClass;
     }
 
-    public String getCurrentPos() {
+    public int getCurrentPos() {
         return currentPos;
     }
 
     public void setCurrentPos(String currentPos) {
-        this.currentPos = currentPos;
+        this.currentPos = Integer.parseInt(currentPos);
     }
 
     public String getDescription() {
@@ -85,19 +106,19 @@ public class NormalQuestion {
         this.heading = heading;
     }
 
-    public List<Object> getMainTags() {
+    public List<Tag> getMainTags() {
         return mainTags;
     }
 
-    public void setMainTags(List<Object> mainTags) {
+    public void setMainTags(List<Tag> mainTags) {
         this.mainTags = mainTags;
     }
 
-    public List<Object> getSubTags() {
+    public List<Tag> getSubTags() {
         return subTags;
     }
 
-    public void setSubTags(List<Object> subTags) {
+    public void setSubTags(List<Tag> subTags) {
         this.subTags = subTags;
     }
 
@@ -109,11 +130,11 @@ public class NormalQuestion {
         this.successClass = successClass;
     }
 
-    public String getSuccessPos() {
+    public int getSuccessPos() {
         return successPos;
     }
 
     public void setSuccessPos(String successPos) {
-        this.successPos = successPos;
+        this.successPos = Integer.parseInt(successPos);
     }
 }
