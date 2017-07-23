@@ -17,8 +17,9 @@ import com.example.pushpika.canvas_game.R;
 
 public class database_data_entry_initial extends Activity implements CallBack{
 
-    DatabaseHelper mydb;
     FirebaseData fd;
+
+    SharedPreferences settings1;
 
     Button btn;
     boolean isRetry = true;
@@ -36,7 +37,9 @@ public class database_data_entry_initial extends Activity implements CallBack{
         //setSupportActionBar(toolbar);
         btn = (Button) findViewById(R.id.go_firstpage);
         btn.setVisibility(View.GONE);
-        mydb = new DatabaseHelper(this);
+
+        settings1 = getSharedPreferences("prefs", 0);
+
 
         //show loading
         loading = new ProgressDialog(this);
@@ -45,7 +48,8 @@ public class database_data_entry_initial extends Activity implements CallBack{
         loading.setCancelable(false);
         loading.show();
 
-        fd = new FirebaseData(this,this);
+        fd = new FirebaseData(this);
+        fd.syncQuestions(this,true);
 
     }
 
@@ -60,7 +64,6 @@ public class database_data_entry_initial extends Activity implements CallBack{
         loading.dismiss();
 
         //false the 1st run
-        SharedPreferences settings1 = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings1.edit();
         editor.putBoolean("firstRun", false);
         editor.commit();

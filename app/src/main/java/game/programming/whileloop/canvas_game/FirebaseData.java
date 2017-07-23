@@ -1,8 +1,11 @@
 package game.programming.whileloop.canvas_game;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 public class FirebaseData {
 
     DatabaseHelper mydb;
+    SharedPreferences settings1;
+
     Context context;
     CallBack caller;
 
@@ -27,22 +32,24 @@ public class FirebaseData {
     int TOTAL_QUESTIONS = 0;
     int currentpos;
 
+    ProgressDialog loading;
 
-
-    FirebaseData(Context context, final CallBack caller){
+    FirebaseData(Context context){
         this.context = context;
-        this.caller = caller;
+        settings1 = context.getSharedPreferences("prefs", 0);
+
 
         questionRef = mRootRef.child("Questions");
         mQuestionDataRef = mRootRef.child("Questions").child("QArray");
         lastsyncRef = mRootRef.child("Questions").child("lastsync");
 
-        mydb = new DatabaseHelper(context);
 
-        //sync questions
-        syncQuestions();
     }
-    public void syncQuestions(){
+    public void syncQuestions(final CallBack caller, boolean isForceDownload){
+        this.caller = caller;
+        final boolean force = isForceDownload;
+
+
 
         lastsyncRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -59,7 +66,44 @@ public class FirebaseData {
 
 
                 if(lastfirebasesync != devicesync){
-                    readAllQuestions();
+                    if(force){
+                        //download questions without user permission.
+                        readAllQuestions(true);
+                    }else{
+                        //prompt user to download.
+                        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which){
+                                    case DialogInterface.BUTTON_POSITIVE:
+                                        //prepare loader for non force downloads. FORCE DOWNLOADS loader should be explicitly defined
+                                        loading = new ProgressDialog(context);
+                                        loading.setTitle("Questions are downloading...");
+                                        loading.setMessage("Please wait... \nConnect to the internet if not connected");
+                                        loading.setCancelable(false);
+                                        loading.show();
+
+                                        readAllQuestions(false);
+                                        break;
+
+                                    case DialogInterface.BUTTON_NEGATIVE:
+                                        caller.onError();
+                                        break;
+                                }
+                            }
+                        };
+                        //some times user navigate to another activity before this get fired
+                        try{
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                            builder.setMessage("New Questions are Available").setPositiveButton("Update Now!", dialogClickListener)
+                                    .setNegativeButton("Remind Later", dialogClickListener).show();
+                        }catch (Exception e){
+
+                            Log.v("Firebase Sync",e.getMessage());
+                        }
+
+                    }
+
                 }else{
                     Log.v("Firebase Sync","Questions are up to date");
                     caller.onComplete();
@@ -75,7 +119,11 @@ public class FirebaseData {
         });
 
     }
-    private void readAllQuestions(){
+
+    private void readAllQuestions(boolean isForceDownload){
+        final boolean force = isForceDownload;
+
+        mydb = new DatabaseHelper(context, settings1.getInt("dbversion",1)+1);
         mQuestionDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -84,35 +132,45 @@ public class FirebaseData {
 
                 TOTAL_QUESTIONS=0;
                 int maxpos = currentpos;
+
                 for(DataSnapshot d:dataSnapshot.getChildren()){
                     NormalQuestion question = d.getValue(NormalQuestion.class);
-                    if(question.getCurrentPos()>currentpos){
-                        addQuestion(question);
 
-                        if(question.getCurrentPos()>maxpos){
-                            maxpos = question.getCurrentPos();
-                        }
+                    addQuestion(question);
 
-                        TOTAL_QUESTIONS++;
+                    if(question.getCurrentPos()>maxpos){
+                        maxpos = question.getCurrentPos();
                     }
+
+                    TOTAL_QUESTIONS++;
                 }
 
                 //update device sync time and question position of last sync
-                SharedPreferences settings1 = context.getSharedPreferences("prefs", 0);
+                int mydb_version = settings1.getInt("dbversion",1)+1;
                 SharedPreferences.Editor editor = settings1.edit();
                 editor.putLong("lastsync", lastfirebasesync);
                 editor.putInt("last_qpos", maxpos);
+                editor.putInt("dbversion", mydb_version);
                 editor.commit();
 
 
                 Log.i("Firebase Sync","Downloaded "+TOTAL_QUESTIONS+" questions. Last Question synced is "+maxpos);
                 Log.v("Firebase Sync","Download Completed");
+
+                if(!force){
+                    //dismis loader
+                    loading.dismiss();
+                }
                 caller.onComplete();
 
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.v("Firebase Sync","Error Loading Data");
+                if(!force){
+                    //dismis loader
+                    loading.dismiss();
+                }
                 caller.onError();
             }
 

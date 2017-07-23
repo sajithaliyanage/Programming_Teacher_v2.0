@@ -27,7 +27,11 @@ import java.util.List;
 public class NewQuestionView extends BaseGameActivity {
 
     DatabaseHelper mydb;
+    SharedPreferences settings;
+
     LinearLayout compulsary_words_field,optional_words_field;
+
+
     TextView textView,pos_view;
     String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
     String text="",id="";
@@ -47,7 +51,7 @@ public class NewQuestionView extends BaseGameActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //share current stage
-        SharedPreferences settings = getSharedPreferences("prefs", 0);
+        settings = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("Current_class",MainActivity.target_class);
         editor.putInt("Current_pos",MainActivity.current_pos);
@@ -88,7 +92,7 @@ public class NewQuestionView extends BaseGameActivity {
     }
 
     public void dynamic_content(){
-        mydb = new DatabaseHelper(this);
+        mydb = new DatabaseHelper(this,settings.getInt("dbversion",1));
         final Animation animation_fade_out = AnimationUtils.loadAnimation(this, R.anim.fade_out_anim);
         // create the layout params that will be used to define how your
         // button will be displayed
@@ -298,7 +302,6 @@ public class NewQuestionView extends BaseGameActivity {
 
 
     public void increment_board(){
-        //Intent transition_page = new Intent(this,Question_view.class);
         Intent transition_page = new Intent(this,AnimationActivity.class);
         MainActivity.current_pos=Integer.parseInt(start_node);
 

@@ -55,7 +55,18 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             Intent intent = new Intent(this, database_data_entry_initial.class);
             startActivity(intent);
             finish();
+        }else{
+            //not the first run, check for database updates WITHOUT force downloading
+            FirebaseData fd = new FirebaseData(this);
+            fd.syncQuestions(new CallBack() {
+                @Override
+                public void onComplete() {}
+
+                @Override
+                public void onError() {}
+            },false);
         }
+
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);

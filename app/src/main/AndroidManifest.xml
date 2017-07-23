@@ -52,9 +52,6 @@
             android:name="game.programming.whileloop.canvas_game.AnimationActivity2"
             android:screenOrientation="portrait" />
         <activity
-            android:name="game.programming.whileloop.canvas_game.Question_view"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="game.programming.whileloop.canvas_game.database_data_entry_initial"
             android:label="@string/title_activity_database_data_entry_initial"
             android:theme="@style/AppTheme.NoActionBar" />

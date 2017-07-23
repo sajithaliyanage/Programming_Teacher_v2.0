@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by whileloop on 3/22/16.
@@ -48,8 +49,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+    public DatabaseHelper(Context context, int version) {
+        super(context, DATABASE_NAME, null,version);
         //SQLiteDatabase db = this.getWritableDatabase();
 
     }
@@ -68,7 +69,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTION);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_LOG);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TAG_QUE_ASSIST);
+        Log.v("DATABASE","Dropped the database version "+oldVersion);
         onCreate(db);
+        Log.v("DATABASE","Created the database version "+newVersion);
     }
 
     public boolean insert_Tag(String tag_name,String tag_type,String tag_desc ){
