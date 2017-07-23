@@ -87,7 +87,7 @@ public class NewQuestionView extends BaseGameActivity {
         Spannable endtxt = new SpannableString("$");
         endtxt.setSpan(new ForegroundColorSpan(Color.RED),0,endtxt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(endtxt);
-        
+
         //show question
         try{
             dynamic_content();

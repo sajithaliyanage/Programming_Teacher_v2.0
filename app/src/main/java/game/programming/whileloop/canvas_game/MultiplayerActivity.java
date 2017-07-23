@@ -35,6 +35,7 @@ import com.google.android.gms.games.multiplayer.realtime.RoomStatusUpdateListene
 import com.google.android.gms.games.multiplayer.realtime.RoomUpdateListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -673,6 +674,18 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
                     "ArrayA = [3,4,1,0];\n" + "sort ArrayA in ________;\n" + "X = ArrayA[0];\n" + "Go X steps forward;",
                     2,
                     "accending","decending","random","increasing order"
+            ),
+            new MultiplayerQuestion(
+                    "Go 4 steps forward",
+                    "ArrayA = [3,4,1,0];\n" + "sort ArrayA in ________;\n" + "X = ArrayA[0];\n" + "Go X steps forward;",
+                    2,
+                    "accending","decending","random","increasing order"
+            ),
+            new MultiplayerQuestion(
+                    "Go 4 steps forward",
+                    "ArrayA = [3,4,1,0];\n" + "sort ArrayA in ________;\n" + "X = ArrayA[0];\n" + "Go X steps forward;",
+                    2,
+                    "accending","decending","random","increasing order"
             )
 
     };
@@ -680,19 +693,27 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         int q1 = (myQids[0]+oppoQids[0])%mpQLoad.TOTAL_QUESTIONS;
         int q2 = (myQids[1]+oppoQids[1])%mpQLoad.TOTAL_QUESTIONS;
         int q3 = (myQids[2]+oppoQids[2])%mpQLoad.TOTAL_QUESTIONS;
+        int q4 = (myQids[3]+oppoQids[3])%mpQLoad.TOTAL_QUESTIONS;
+        int q5 = (myQids[4]+oppoQids[4])%mpQLoad.TOTAL_QUESTIONS;
 
-        while(q1==q2 || q1==q3 || q2==q3){
-            q1=(q1+1)%mpQLoad.TOTAL_QUESTIONS;
-            q2=(q2+2)%mpQLoad.TOTAL_QUESTIONS;
-            q3=(q3+3)%mpQLoad.TOTAL_QUESTIONS;
+        Integer[] nums = new Integer[]{q1,q2,q3,q4,q5};
+        Set<Integer>  numset = new HashSet<Integer>(Arrays.asList(nums));
+
+        while(nums.length != numset.size()){
+            nums[0]=(nums[0]+2)%mpQLoad.TOTAL_QUESTIONS;
+            nums[1]=(nums[1]+3)%mpQLoad.TOTAL_QUESTIONS;
+            nums[2]=(nums[2]+5)%mpQLoad.TOTAL_QUESTIONS;
+            nums[3]=(nums[3]+8)%mpQLoad.TOTAL_QUESTIONS;
+            nums[4]=(nums[4]+9)%mpQLoad.TOTAL_QUESTIONS;
+            numset = new HashSet<Integer>(Arrays.asList(nums));
         }
 
-        questionbank = mpQLoad.getQuestions(q1,q2,q3);
+        questionbank = mpQLoad.getQuestions(nums[0],nums[1],nums[2],nums[3],nums[4]);
     }
     int[] getRandomNumbers(int amount){
         ArrayList<Integer> list = new ArrayList<Integer>();
         int[] response = new int[amount];
-        if(mpQLoad.doneQuestionLoad && mpQLoad.TOTAL_QUESTIONS>=3){
+        if(mpQLoad.doneQuestionLoad && mpQLoad.TOTAL_QUESTIONS>=5){
             for(int i=0;i<mpQLoad.TOTAL_QUESTIONS;i++){
                 list.add(new Integer(i));
             }
@@ -737,7 +758,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         resetGameVars();
 
         //generating qids
-        myQids = getRandomNumbers(3);
+        myQids = getRandomNumbers(5);
 
         broadcastQuesIds(myQids);
         //wait till opponent send data
@@ -781,7 +802,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
     }
     void nextQuestion(){
         ++currentQuestion;
-        if(currentQuestion<=3){
+        if(currentQuestion<=5){
             //have questions left
             mSecondsLeft = GAME_DURATION;
             setQuestion();
@@ -844,8 +865,8 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
             broadcastQuesAnswered(currentQuestion);
         }
         if(selected==questionbank[currentQuestion-1].answer && lastAnsweredQuestion<currentQuestion){
-            //scoring criteria, 10+(2*mSecondsLeft) for correct answer
-            mScore += 10+(2*mSecondsLeft);
+            //scoring criteria, 10+(0.5*mSecondsLeft) for correct answer
+            mScore += (int)Math.round(10+0.5*mSecondsLeft);
             //++mScore;
         }
         lastAnsweredQuestion = currentQuestion;
@@ -930,15 +951,15 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         }else if(buf[0]=='N'){
             moveNextQuestion((int)buf[1]);
         }else if(buf[0]=='M'){
-            Log.i("Ques Ids",""+(int)buf[1]+""+(int)buf[2]+""+(int)buf[3]);
-            oppoQids = new int[]{(int)buf[1],(int)buf[2],(int)buf[3]};
+            Log.i("Ques Ids",""+(int)buf[1]+" "+(int)buf[2]+" "+(int)buf[3]+" "+(int)buf[4]+" "+(int)buf[5]);
+            oppoQids = new int[]{(int)buf[1],(int)buf[2],(int)buf[3],(int)buf[4],(int)buf[5]};
             startPlay();
         }else{
 
             Log.i("Invaliddddd","asdasd");
         }
     }
-
+    //MAX SCORE SHOULD BE LESS THAN 127
     // Broadcast my score to everybody else.
     void broadcastScore(boolean finalScore) {
         if (!mMultiplayer)
@@ -981,7 +1002,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         }
     }
     void broadcastQuesIds(int[] ids){
-        byte[] msg = new byte[]{(byte)'M',(byte)ids[0], (byte)ids[1], (byte)ids[2]} ;
+        byte[] msg = new byte[]{(byte)'M',(byte)ids[0], (byte)ids[1], (byte)ids[2], (byte)ids[3], (byte)ids[4]} ;
         for (Participant p : mParticipants) {
             if (p.getParticipantId().equals(mMyId))
                 continue;
