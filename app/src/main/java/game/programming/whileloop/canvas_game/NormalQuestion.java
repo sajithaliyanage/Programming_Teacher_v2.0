@@ -95,6 +95,7 @@ public class NormalQuestion {
     }
 
     public void setDescription(String description) {
+        description = description.replaceAll("\\\\n","\n");
         this.description = description;
     }
 
