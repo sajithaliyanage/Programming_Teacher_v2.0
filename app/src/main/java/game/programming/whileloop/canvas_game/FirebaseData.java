@@ -24,7 +24,6 @@ public class FirebaseData {
 
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
 
-    DatabaseReference questionRef; //Question node
     DatabaseReference mQuestionDataRef; //QArray node
     DatabaseReference lastsyncRef; //lastsync node
 
@@ -39,7 +38,6 @@ public class FirebaseData {
         settings1 = context.getSharedPreferences("prefs", 0);
 
 
-        questionRef = mRootRef.child("Questions");
         mQuestionDataRef = mRootRef.child("Questions").child("QArray");
         lastsyncRef = mRootRef.child("Questions").child("lastsync");
 
@@ -132,14 +130,16 @@ public class FirebaseData {
 
                 TOTAL_QUESTIONS=0;
                 int maxpos = currentpos;
+                String endclass = "z1";
 
                 for(DataSnapshot d:dataSnapshot.getChildren()){
                     NormalQuestion question = d.getValue(NormalQuestion.class);
 
                     addQuestion(question);
 
-                    if(question.getCurrentPos()>maxpos){
+                    if(question.getCurrentPos()>=maxpos){
                         maxpos = question.getCurrentPos();
+                        endclass = question.getSuccessClass();
                     }
 
                     TOTAL_QUESTIONS++;
@@ -151,10 +151,11 @@ public class FirebaseData {
                 editor.putLong("lastsync", lastfirebasesync);
                 editor.putInt("last_qpos", maxpos);
                 editor.putInt("dbversion", mydb_version);
+                editor.putString("endclass",endclass);
                 editor.commit();
 
 
-                Log.i("Firebase Sync","Downloaded "+TOTAL_QUESTIONS+" questions. Last Question synced is "+maxpos);
+                Log.i("Firebase Sync","Downloaded "+TOTAL_QUESTIONS+" questions. Last Question synced is "+maxpos+". End class is"+endclass);
                 Log.v("Firebase Sync","Download Completed");
 
                 if(!force){

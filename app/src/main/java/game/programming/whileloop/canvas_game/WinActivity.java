@@ -16,14 +16,16 @@ public class WinActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
     }
-
+    public void main_menu(View view){
+        onBackPressed();
+    }
     public void reset_data(View view){
         SharedPreferences settings = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("Current_class","P");
+        editor.putString("Current_class","z1");
         editor.putInt("Current_pos",1);
         editor.commit();
-        MainActivity.target_class = settings.getString("Current_class","P");
+        MainActivity.target_class = settings.getString("Current_class","z1");
         MainActivity.current_pos = settings.getInt("Current_pos",1);
         MainActivity.target_pos = settings.getInt("Current_pos",1);
         MainActivity.cur_position=MainActivity.current_pos;
@@ -39,8 +41,11 @@ public class WinActivity extends Activity {
         startActivity(i);
         finish();
         */
+        onBackPressed();
+       /*
         finish();
         System.exit(0);
+        */
     }
 
     @Override

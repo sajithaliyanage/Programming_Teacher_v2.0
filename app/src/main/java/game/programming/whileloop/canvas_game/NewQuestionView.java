@@ -58,7 +58,12 @@ public class NewQuestionView extends BaseGameActivity {
         editor.commit();
         Log.v("happened current share",String.valueOf(settings.getInt("Current_pos",0)));
         Log.v("happened cu","there is current share");
-        if(MainActivity.target_class.equals("V")){
+
+        String endclass = settings.getString("endclass","z1");
+        Log.v("QUESTION","current:"+MainActivity.target_class);
+        Log.v("QUESTION","end :"+endclass);
+        //Check for win
+        if(MainActivity.target_class.equals("V") || MainActivity.target_class.equals(endclass)){
             //when got 100 marks
             Intent intent = new Intent(this, WinActivity.class);
             startActivity(intent);
@@ -70,8 +75,16 @@ public class NewQuestionView extends BaseGameActivity {
         compulsary_words_field = (LinearLayout) findViewById(R.id.mainArea);
         optional_words_field = (LinearLayout) findViewById(R.id.optArea);
         textView = (TextView) findViewById(R.id.textView2);
-        dynamic_content();
-        show_message(quest_topic,quest_desc);
+
+        //show question
+        try{
+            dynamic_content();
+            show_message(quest_topic,quest_desc);
+        }catch (Exception e){
+            //handle question not found here
+            Log.v("QUESTION",e.getMessage());
+        }
+
     }
 
     @Override
