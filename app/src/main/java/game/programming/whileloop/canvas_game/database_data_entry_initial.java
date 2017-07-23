@@ -1,19 +1,28 @@
 package game.programming.whileloop.canvas_game;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.pushpika.canvas_game.R;
 
 public class database_data_entry_initial extends Activity implements CallBack{
 
     DatabaseHelper mydb;
+    FirebaseData fd;
+
     Button btn;
+    boolean isRetry = true;
+    ProgressDialog loading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +37,19 @@ public class database_data_entry_initial extends Activity implements CallBack{
         btn = (Button) findViewById(R.id.go_firstpage);
         btn.setVisibility(View.GONE);
         mydb = new DatabaseHelper(this);
-        //insertData_tags();
-        //insertData_Question();
-        //insertData_tag_ques_assist();
 
-        FirebaseData fd = new FirebaseData(this,this);
+        //show loading
+        loading = new ProgressDialog(this);
+        loading.setTitle("Questions are downloading...");
+        loading.setMessage("Please wait... \nConnect to the internet if not connected");
+        loading.setCancelable(false);
+        loading.show();
+
+        fd = new FirebaseData(this,this);
 
     }
 
-    public void go_first_page(View view){
+    public void onBtnClick(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
@@ -44,15 +57,33 @@ public class database_data_entry_initial extends Activity implements CallBack{
 
     @Override
     public void onComplete(){
+        loading.dismiss();
+
+        //false the 1st run
+        SharedPreferences settings1 = getSharedPreferences("prefs", 0);
+        SharedPreferences.Editor editor = settings1.edit();
+        editor.putBoolean("firstRun", false);
+        editor.commit();
+
         //appear goto 1st page button
+        isRetry = false;
+        btn.setText("Get Started");
         btn.setVisibility(View.VISIBLE);
 
     }
 
     @Override
     public void onError(){
-        //appear retry button here
+        //loading.dismiss();
+        Toast.makeText(this,"Error connecting internet",Toast.LENGTH_SHORT);
+
+        //Exit the application
+
     }
+
+
+
+
 
 /*
     public void insertData_tag_ques_assist() {
@@ -233,13 +264,15 @@ public class database_data_entry_initial extends Activity implements CallBack{
 /*
     public void insertData_Question() {
         //(String question_topic,String question_desc,
-        // String question_class,String answer_sequence,String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
+        // String question_class,String answer_sequence,
+        //String start_node,String promotion_node, String punishment_node, String promotion_class, String punishment_class){
 
         //        Q22
         mydb.insert_Question(
                 "Follow “GoTo” statement",
                 "Instruct to jump to the position 3",
                 "Z1","208,209","1","3","1","Z2","Z1");
+
 //        Q23
         mydb.insert_Question(
                 "Follow “Go” statement",

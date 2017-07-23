@@ -105,6 +105,9 @@ public class NewQuestionView extends BaseGameActivity {
         punishment_node = question_object.punishment_node;
         promotion_class =question_object.promotion_class;
         punishment_class = question_object.punishment_class;
+
+        Log.v("START NODE", start_node);
+
         score = Integer.parseInt(start_node);
 
         //split answer and set multiple answers

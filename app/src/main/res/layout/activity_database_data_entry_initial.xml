@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.pushpika.canvas_game.game.example.pushpika.canvas_game.database_data_entry_initial">
+    tools:context="game.programming.whileloop.canvas_game.database_data_entry_initial">
 
     <include layout="@layout/content_database_data_entry_initial" />
 

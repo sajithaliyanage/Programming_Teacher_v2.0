@@ -2,21 +2,14 @@ package game.programming.whileloop.canvas_game;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
-import com.example.pushpika.canvas_game.R;
+import android.util.Log;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class FirebaseData {
 
@@ -36,7 +29,7 @@ public class FirebaseData {
 
 
 
-    FirebaseData(Context context, CallBack caller){
+    FirebaseData(Context context, final CallBack caller){
         this.context = context;
         this.caller = caller;
 
@@ -46,6 +39,7 @@ public class FirebaseData {
 
         mydb = new DatabaseHelper(context);
 
+        //sync questions
         syncQuestions();
     }
     public void syncQuestions(){
@@ -58,7 +52,7 @@ public class FirebaseData {
                 SharedPreferences sp = context.getSharedPreferences("prefs",0);
                 long devicesync = sp.getLong("lastsync",0);
 
-                currentpos = sp.getInt("last_qpos",17);
+                currentpos = sp.getInt("last_qpos",0);
                 Log.v("Firebase Sync","Last question position is "+currentpos);
                 Log.v("Firebase Sync","Questions updated to device on : "+devicesync);
                 Log.v("Firebase Sync","Questions added to firebase on : "+lastfirebasesync);
@@ -77,6 +71,7 @@ public class FirebaseData {
                 Log.v("Firebase Sync","Error Connecting");
                 caller.onError();
             }
+
         });
 
     }
@@ -150,6 +145,15 @@ public class FirebaseData {
                 ques.getCurrentClass() //punishment class
         );
 
-
+        String q = ques.getHeading()+","+ //title
+        ques.getDescription()+","+ //description
+                ques.getCurrentClass()+","+ //Question class
+                ques.getCorrectSequene()+","+ //Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
+                ques.getCurrentPos()+","+ //start node (current place)
+                ques.getSuccessPos()+","+ //success node
+                ques.getCurrentPos()+","+ //punishment node
+                ques.getSuccessClass()+","+ //promotion class
+                ques.getCurrentClass(); //punishment class
+        Log.v("DB QUESTION",q);
     }
 }

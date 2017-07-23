@@ -34,7 +34,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
         boolean firstRun = settings.getBoolean("firstRun", true);
 
         //set current class
-        target_class = settings.getString("Current_class","Z1");
+        target_class = settings.getString("Current_class","z1");
         current_pos = settings.getInt("Current_pos",1);
         target_pos = settings.getInt("Current_pos",1);
         cur_position=current_pos;
@@ -47,7 +47,7 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             // here run your first-time instructions, for programming :
             SharedPreferences settings1 = getSharedPreferences("prefs", 0);
             SharedPreferences.Editor editor = settings1.edit();
-            editor.putString("Current_class", "Z1");
+            editor.putString("Current_class", "z1");
             editor.putInt("Current_pos", 1);
             editor.commit();
 
@@ -56,11 +56,6 @@ public class MainActivity extends BaseGameActivity implements View.OnClickListen
             startActivity(intent);
             finish();
         }
-
-        SharedPreferences settings1 = getSharedPreferences("prefs", 0);
-        SharedPreferences.Editor editor = settings1.edit();
-        editor.putBoolean("firstRun", false);
-        editor.commit();
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
