@@ -5,13 +5,20 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,7 +39,8 @@ public class NewQuestionView extends BaseGameActivity {
     LinearLayout compulsary_words_field,optional_words_field;
 
 
-    TextView textView,pos_view;
+    TextView pos_view;
+    TextView textView;
     String cur_text="",quest_topic="",quest_desc="",cur_seq="",answer_get="",start_node="",promotion_node="",punishment_node="",promotion_class="",punishment_class="";
     String text="",id="";
     String text_arr [] = new String [100];
@@ -76,6 +84,10 @@ public class NewQuestionView extends BaseGameActivity {
         optional_words_field = (LinearLayout) findViewById(R.id.optArea);
         textView = (TextView) findViewById(R.id.textView2);
 
+        Spannable endtxt = new SpannableString("$");
+        endtxt.setSpan(new ForegroundColorSpan(Color.RED),0,endtxt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(endtxt);
+        
         //show question
         try{
             dynamic_content();
@@ -221,8 +233,12 @@ public class NewQuestionView extends BaseGameActivity {
         }
         //add position
         //String pos = (String) pos_view.getText();
-        pos_view.setText("Position - "+start_node);
+        pos_view.setText("Level - "+start_node);
 
+    }
+    private String colortext(String text, String color) {
+        String input = "<font color=" + color + ">" + text + "</font>";
+        return input;
     }
     public void add_tag(String tag, String tag_id){
         String temp_str="";
@@ -233,7 +249,14 @@ public class NewQuestionView extends BaseGameActivity {
         for (i=0;i<cur_len;i++){
             temp_str= temp_str+ " " +text_arr[i];
         }
-        textView.setText(temp_str);
+        Spannable txt = new SpannableString(temp_str);
+        txt.setSpan(new ForegroundColorSpan(Color.BLACK),0,txt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(txt);
+
+        Spannable endtxt = new SpannableString(" $");
+        endtxt.setSpan(new ForegroundColorSpan(Color.RED),0,endtxt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.append(endtxt);
+
 
     }
 
@@ -248,11 +271,25 @@ public class NewQuestionView extends BaseGameActivity {
         for (i=0;i<cur_len;i++){
             temp_str= temp_str+ " " +text_arr[i];
         }
-        textView.setText(temp_str);
+
+        Spannable txt = new SpannableString(temp_str);
+        txt.setSpan(new ForegroundColorSpan(Color.BLACK),0,txt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(txt);
+
+        Spannable endtxt = new SpannableString(" $");
+        endtxt.setSpan(new ForegroundColorSpan(Color.RED),0,endtxt.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.append(endtxt);
 
     }
 
-
+    public void add_tab(View v){
+        //tab tag id is -2
+        add_tag("\t\t","-2");
+    }
+    public void add_line(View v){
+        //tab tag id is -1
+        add_tag("\n","-1");
+    }
 
     public void view_question(View view){
         show_message(quest_topic,quest_desc);
@@ -287,7 +324,13 @@ public class NewQuestionView extends BaseGameActivity {
         cur_seq="";
         int i;
         for(i=0;i<cur_len;i++){
-            cur_seq =cur_seq+ ","+id_arr[i];
+            if(id_arr[i].equals("-1") || id_arr[i].equals("-2")){
+                //tab or line break found
+                Log.v("TAG","Special character (tab/line breaK) found with id"+id_arr[i]);
+            }else{
+                cur_seq =cur_seq+ ","+id_arr[i];
+            }
+
         }
         cur_seq = cur_seq.replaceAll(",", "");
         Log.i("TAG", "The answer sequence is" +answer_get); //set text for button action

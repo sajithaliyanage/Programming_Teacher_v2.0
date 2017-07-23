@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pushpika.canvas_game.game.example.pushpika.canvas_game.NewQuestionView">
+    tools:context="game.programming.whileloop.canvas_game.NewQuestionView">
 
 
 
@@ -12,59 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="8">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/topbar"
-                android:background="#d7d7d7">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:padding="10dp"
-                    android:layout_weight="4"
-                    android:gravity="center|right"
-                    android:id="@+id/topbar_logo">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageView"
-                        android:src="@mipmap/logo"
-                        android:padding="5dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:padding="10dp"
-                    android:layout_weight="1"
-                    android:gravity="left|center"
-                    android:id="@+id/topbar_text">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Programming Teacher"
-                        android:id="@+id/textView"
-                        android:textSize="20dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -89,7 +37,7 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="2"
+                        android:layout_weight="3"
                         android:background="#ef8b19">
 
                         <LinearLayout
@@ -124,6 +72,8 @@
                                 android:textColor="@color/bright_foreground_material_dark"
                                 android:onClick="Go_Home" />
                         </LinearLayout>
+
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -131,6 +81,36 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/topbar_logo">
+                            <TextView
+                                android:layout_weight="4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/position_number"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="24sp"
+                                android:textColor="#ffffff"
+                                android:text="Level - "/>
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="24sp"
+                                android:textColor="#ffffff" />
+
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
@@ -149,6 +129,7 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#ffffff"
                     android:layout_weight="1.5">
 
                     <LinearLayout
@@ -162,14 +143,35 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/posBtnArea">
-                            <TextView
-                                android:layout_width="match_parent"
+
+                            <ImageButton
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/position_number"
-                                android:textAlignment="center"
-                                android:textStyle="bold"
-                                android:gravity="center_vertical"
-                                android:textSize="24sp" />
+                                android:paddingTop="5dp"
+                                android:background="@color/transparent"
+                                android:tint="#ff9925"
+                                android:src="@drawable/ic_keyboard_return_black_24dp"
+                                android:onClick="add_line"/>
+                            <ImageButton
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingTop="5dp"
+                                android:background="@color/transparent"
+                                android:tint="#ff9925"
+                                android:src="@drawable/ic_format_indent_increase_black_24dp"
+                                android:onClick="add_tab"/>
+                            <ImageButton
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:paddingTop="5dp"
+                                android:tint="#ff9925"
+                                android:background="@color/transparent"
+                                android:src="@drawable/ic_undo_black_24dp"
+                                android:onClick="remove_tag"/>
+
 
                         </LinearLayout>
 
@@ -202,10 +204,10 @@
                             <ImageButton
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/quesBtn"
                                 android:paddingTop="5dp"
                                 android:background="@color/transparent"
                                 android:src="@mipmap/viewq"
+                                android:id="@+id/quesBtn"
                                 android:onClick="view_question"/>
 
 
@@ -282,9 +284,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" "
+                        android:text=""
                         android:id="@+id/textView2"
-                        android:textColor="#272323" />
+                        android:textColor="#272323"
+                        android:background="@android:color/transparent" />
                     </ScrollView>
 
                     </LinearLayout>
@@ -301,28 +304,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:id="@+id/undoBtnArea"
-                            android:gravity="center|right"
-                            android:paddingTop="5dp"
-                            android:paddingBottom="5dp"
-                            android:paddingRight="10dp">
 
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Undo Action"
-                                android:id="@+id/button5"
-                                android:background="#9f9f9f"
-                                android:textColor="@color/background_floating_material_light"
-                                android:padding="10dp"
-                                android:nestedScrollingEnabled="false"
-                                android:onClick="remove_tag" />
-                        </LinearLayout>
 
                         <LinearLayout
                             android:orientation="horizontal"
@@ -333,9 +315,13 @@
                             android:paddingLeft="10dp"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp">
-
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"></LinearLayout>
                             <Button
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:text="Check Answer"
                                 android:id="@+id/button6"
@@ -343,6 +329,12 @@
                                 android:textColor="@color/background_floating_material_light"
                                 android:padding="10dp"
                                 android:onClick="check_answer" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"></LinearLayout>
+
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
