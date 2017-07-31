@@ -3,6 +3,9 @@ This is a mobile game application to learn programming concepts and syntax which
 
 ## How To Play - Single Player
 1. Download and install it to your android device
+```
+https://play.google.com/store/apps/details?id=game.programming.whileloop.canvas_game
+```
 2. Connect to the internet and open the app
 3. From the main screen, select 'Go TO QUEST'
 4. Follow the instructions
