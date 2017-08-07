@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pushpika.canvas_game.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -689,6 +690,17 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
             )
 
     };
+
+    int countOccurences(int[] arr, int val){
+        int count = 0;
+        for (int x:arr) {
+            if(x==val){
+                count ++;
+            }
+        }
+        return count;
+    }
+
     void generateGameQuestions(){
         int q1 = (myQids[0]+oppoQids[0])%mpQLoad.TOTAL_QUESTIONS;
         int q2 = (myQids[1]+oppoQids[1])%mpQLoad.TOTAL_QUESTIONS;
@@ -696,8 +708,50 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
         int q4 = (myQids[3]+oppoQids[3])%mpQLoad.TOTAL_QUESTIONS;
         int q5 = (myQids[4]+oppoQids[4])%mpQLoad.TOTAL_QUESTIONS;
 
-        Integer[] nums = new Integer[]{q1,q2,q3,q4,q5};
-        Set<Integer>  numset = new HashSet<Integer>(Arrays.asList(nums));
+        int[] nums = new int[]{q1,q2,q3,q4,q5};
+        //Set<Integer>  numset = new HashSet<Integer>(Arrays.asList(nums));
+
+        //get the repeating elements
+        int repeatCount =0;
+        for(int i=0;i<nums.length;i++){
+            if(countOccurences(nums,nums[i])>1){
+                //if we search for a match from 0, it will bias to 1st set of questions always. So we start from unmatching number
+
+
+                boolean foundMatch=false;
+
+                //from duplicate # ---> last question
+                for(int j=nums[i];j<mpQLoad.TOTAL_QUESTIONS;j++){
+                    if(countOccurences(nums,j)==0){
+                        nums[i] = j;
+                        foundMatch = true;
+                        break;
+                    }
+                }
+
+                if(!foundMatch){
+                    //from 0---->duplicate #
+                    for(int j=0;j<nums[i];j++){
+                        if(countOccurences(nums,j)==0){
+                            nums[i] = j;
+                            foundMatch = true;
+                            break;
+                        }
+                    }
+                }
+
+                //no match found iterating all questions, that means quesstion bank has not enough questions (i.e. less than 5)
+                if(!foundMatch){
+                    Toast.makeText(this,"Not enough questions are available",Toast.LENGTH_SHORT);
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                }
+
+            }
+        }
+        /*
 
         while(nums.length != numset.size()){
             nums[0]=(nums[0]+2)%mpQLoad.TOTAL_QUESTIONS;
@@ -707,6 +761,7 @@ public class MultiplayerActivity extends AppCompatActivity implements GoogleApiC
             nums[4]=(nums[4]+9)%mpQLoad.TOTAL_QUESTIONS;
             numset = new HashSet<Integer>(Arrays.asList(nums));
         }
+        */
 
         questionbank = mpQLoad.getQuestions(nums[0],nums[1],nums[2],nums[3],nums[4]);
     }
