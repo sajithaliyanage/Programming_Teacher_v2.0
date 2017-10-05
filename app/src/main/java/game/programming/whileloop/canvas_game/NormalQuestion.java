@@ -20,6 +20,25 @@ public class NormalQuestion {
     private String successClass;
     private int successPos;
 
+    public String getFailureClass() {
+        return failureClass;
+    }
+
+    public void setFailureClass(String failureClass) {
+        this.failureClass = failureClass;
+    }
+
+    public int getFailurePos() {
+        return failurePos;
+    }
+
+    public void setFailurePos(String failurePos) {
+        this.failurePos = Integer.parseInt(failurePos);
+    }
+
+    private String failureClass;
+    private int failurePos;
+
     NormalQuestion(String cs, String cc, String cp, String d, String h, Tag[] mTag, Tag[] sTags){
         this.setCorrectSequene(cs);
         this.setCurrentClass(cc);

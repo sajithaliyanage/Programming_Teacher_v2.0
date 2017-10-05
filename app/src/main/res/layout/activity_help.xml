@@ -1,67 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="game.programming.whileloop.canvas_game.HelpActivity">
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="game.programming.whileloop.canvas_game.HelpActivity"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="8">
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/topbar"
-                android:background="#d7d7d7">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:padding="10dp"
-                    android:layout_weight="4"
-                    android:gravity="center|right"
-                    android:id="@+id/topbar_logo">
-
-                    <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:id="@+id/imageView"
-                        android:background="@mipmap/logo" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:weightSum="1"
-                    android:padding="10dp"
-                    android:layout_weight="1"
-                    android:gravity="left|center"
-                    android:id="@+id/topbar_text">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Programming Teacher"
-                        android:id="@+id/textView"
-                        android:textSize="20dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -221,5 +166,3 @@
         </LinearLayout>
 
     </LinearLayout>
-
-</RelativeLayout>

@@ -3,6 +3,7 @@ package game.programming.whileloop.canvas_game;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -37,6 +38,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PROMOTION_CLASS = "Promotion_Class";
     public static final String COLUMN_PUNISHMENT_CLASS = "Punishment_Class";
 
+    //Question-Tag table
+    public static final String QT_COLUMN_QUESTION_POS = "Question_Pos";
+    public static final String QT_COLUMN_TAG_ID = "Tag_ID";
+
     //Log table
     public static final String COLUMN_LOG_ID = "Log_ID";
     //public static final String COLUMN_QUESTION_ID = "Question_ID";
@@ -60,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME_TAG + " ( Tag_ID INTEGER PRIMARY KEY AUTOINCREMENT, Tag_Name VARCHAR(20) , Tag_Type VARCHAR(20) , Tag_DESC VARCHAR(100) ); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_QUESTION + " ( Question_ID  INTEGER PRIMARY KEY AUTOINCREMENT,Question_topic VARCHAR(30),Question_desc VARCHAR(1000) , Question_class VARCHAR(5) , Answer_Sequence VARCHAR(1000),Start_node INTEGER , Promotion_node INTEGER,Punishment_node INTEGER ,Promotion_class VARCHAR(5), punishment_class VARCHAR(5)); ");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_LOG + " ( Log_ID INTEGER PRIMARY KEY AUTOINCREMENT, Question_ID INTEGER , Status VARCHAR(20) , Position VARCHAR(10) ); ");
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_ID INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_ID,Tag_ID)); ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_TAG_QUE_ASSIST + " (Question_Pos INTEGER , Tag_ID INTEGER, PRIMARY KEY(Question_Pos,Tag_ID)); ");
     }
 
     @Override
@@ -126,11 +131,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insert_tag_que_assist(int question_id , int tag_id){
+    public boolean insert_tag_que_assist(int question_pos , int tag_id){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_QUESTION_ID,question_id);
-        contentValues.put(COLUMN_TAG_ID,tag_id);
+        contentValues.put(QT_COLUMN_QUESTION_POS,question_pos);
+        contentValues.put(QT_COLUMN_TAG_ID,tag_id);
         long result =  db.insert(TABLE_TAG_QUE_ASSIST,null,contentValues);
         if (result ==-1){
             return false;
@@ -172,7 +177,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         //then use selected question id for queries..
-        String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='MAIN' AND Tag_que_assist.Question_ID = "+ question_id +" ;";
+        String sql2="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='MAIN' AND Tag_que_assist.Question_Pos = "+ Integer.parseInt(start_node)+" ;";
         Cursor res2= db.rawQuery(sql2,null);
         String[] Keyword_array = null,Keyword_id_array=null;
 
@@ -189,7 +194,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         //create variable array
-        String sql3="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE' AND Tag_que_assist.Question_ID = "+ question_id+" ;";
+        String sql3="SELECT Name_tag.* FROM Name_tag LEFT OUTER JOIN Tag_que_assist ON Name_tag.Tag_ID=Tag_que_assist.Tag_ID WHERE Name_tag.Tag_Type='VARIABLE' AND Tag_que_assist.Question_Pos = "+ Integer.parseInt(start_node)+" ;";
         Cursor res3= db.rawQuery(sql3,null);
 
         String[] Variable_array = null,variable_id_array=null;
@@ -213,6 +218,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Question_object question_object = new Question_object(arr1,arr2,"1,2,42,3,2,2",1);
         //return question_object;
         return new Question_object(Keyword_id_array,Keyword_array,variable_id_array,Variable_array,question_topic,question_desc,answer_sequence,question_id,start_node,promotion_node,punishment_node,promotion_class,punishment_class);
+
+    }
+
+    public void printTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql1="SELECT * FROM Question;";
+        Cursor res1= db.rawQuery(sql1, null);
+
+        DatabaseUtils.dumpCursor(res1);
+
+        res1 = db.rawQuery("SELECT * FROM Name_tag;",null);
+        DatabaseUtils.dumpCursor(res1);
+
+        res1 = db.rawQuery("SELECT * FROM Tag_que_assist;",null);
+        DatabaseUtils.dumpCursor(res1);
 
     }
 

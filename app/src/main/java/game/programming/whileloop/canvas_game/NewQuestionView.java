@@ -118,6 +118,8 @@ public class NewQuestionView extends BaseGameActivity {
 
     public void dynamic_content(){
         mydb = new DatabaseHelper(this,settings.getInt("dbversion",1));
+        //dump database
+        mydb.printTable();
         final Animation animation_fade_out = AnimationUtils.loadAnimation(this, R.anim.fade_out_anim);
         // create the layout params that will be used to define how your
         // button will be displayed

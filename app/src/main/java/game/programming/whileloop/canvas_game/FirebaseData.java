@@ -199,9 +199,9 @@ public class FirebaseData {
                 ques.getCorrectSequene(), //Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
                 ques.getCurrentPos()+"", //start node (current place)
                 ques.getSuccessPos()+"", //success node
-                ques.getCurrentPos()+"", //punishment node
+                ques.getFailurePos()+"", //punishment node
                 ques.getSuccessClass(), //promotion class
-                ques.getCurrentClass() //punishment class
+                ques.getFailureClass() //punishment class
         );
 
         String q = ques.getHeading()+","+ //title
@@ -210,9 +210,9 @@ public class FirebaseData {
                 ques.getCorrectSequene()+","+ //Answer Sequence (tag ids of correct answers) (multiple answer seperator is | )
                 ques.getCurrentPos()+","+ //start node (current place)
                 ques.getSuccessPos()+","+ //success node
-                ques.getCurrentPos()+","+ //punishment node
+                ques.getFailurePos()+","+ //punishment node
                 ques.getSuccessClass()+","+ //promotion class
-                ques.getCurrentClass(); //punishment class
+                ques.getFailureClass(); //punishment class
         Log.v("DB QUESTION",q);
     }
 }
