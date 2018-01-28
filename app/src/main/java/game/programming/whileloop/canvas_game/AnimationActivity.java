@@ -30,6 +30,7 @@ public class AnimationActivity extends AppCompatActivity {
         Log.i("TAG", "current pos-- "+ MainActivity.current_pos);
         Log.i("TAG", "target pos" + MainActivity.target_pos);
         Log.i("TAG", "Target class " + MainActivity.target_class);
+        int timeforanim = Math.abs(MainActivity.target_pos - MainActivity.current_pos);
         Handler handler = new Handler();
         //final Intent intent = new Intent(this, MainActivity.class);
         final Intent intent = new Intent(this, NewQuestionView.class);
@@ -39,7 +40,7 @@ public class AnimationActivity extends AppCompatActivity {
                 //bd_layout.setBackgroundColor(Color.WHITE);
                 finish();
             }
-        }, 5000);
+        }, timeforanim*500 + 2000);
 
 
     }
